@@ -1,12 +1,14 @@
 "use server";
 
 import type { Route } from "next";
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { env } from "@/lib/env";
 import { safeNext } from "@/lib/auth/session";
 import { hashIp, sha256Hex } from "@/lib/crypto";
 import { isEnabled } from "@/lib/flags";
 import { rateLimit } from "@/lib/http/rate-limit";
+import { authOrigin } from "@/lib/http/origin";
 import { requestMeta } from "@/lib/http/request";
 import { verifyTurnstile } from "@/lib/http/turnstile";
 import { log } from "@/lib/log";
@@ -18,8 +20,11 @@ export type SignInState =
   | { status: "sent"; email: string }
   | { status: "error"; code: "invalid_email" | "rate_limited" | "captcha" | "signups_closed" | "unavailable" };
 
-function callbackUrl(next: string) {
-  const url = new URL("/auth/callback", env().NEXT_PUBLIC_SITE_URL);
+async function callbackUrl(next: string) {
+  const { NEXT_PUBLIC_SITE_URL, APP_ENV } = env();
+  const h = await headers();
+  const origin = authOrigin(NEXT_PUBLIC_SITE_URL, APP_ENV, h.get("host"), h.get("x-forwarded-proto"));
+  const url = new URL("/auth/callback", origin);
   url.searchParams.set("next", next);
   return url.toString();
 }
@@ -53,7 +58,7 @@ export async function signInWithEmail(_prev: SignInState, formData: FormData): P
     email,
     options: {
       shouldCreateUser: signupsOpen,
-      emailRedirectTo: callbackUrl(next),
+      emailRedirectTo: await callbackUrl(next),
       data: ref ? { ref } : undefined,
     },
   });
@@ -75,7 +80,7 @@ export async function signInWithGoogle(formData: FormData): Promise<void> {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: { redirectTo: callbackUrl(next) },
+    options: { redirectTo: await callbackUrl(next) },
   });
   if (error || !data.url) {
     log("error", "auth.oauth_failed", { code: error?.code });

@@ -36,7 +36,9 @@ const enforcedPolicy = [
 const securityHeaders = [
   { key: "Content-Security-Policy", value: enforcedPolicy },
   { key: "Content-Security-Policy-Report-Only", value: fullPolicy },
-  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+  // HSTS only for an HTTPS site: sent from http://localhost, Safari caches it and then
+  // refuses plain HTTP on localhost for every project.
+  ...(httpsSite ? [{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" }] : []),
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
