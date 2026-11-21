@@ -2,6 +2,19 @@
 
 Record notable decisions here: date, decision, reason. Newest first.
 
+## 2026-11-21 — Phase 0 engineering decisions
+
+- **Hosting:** the owner's VPS behind Cloudflare, like Astrova (owner choice), not Vercel. One Next.js standalone container on loopback, host Caddy in front. NEXT_PUBLIC values are build-time, so one image per environment.
+- **Database tests on plain Postgres** with a Supabase auth shim that grants everything by default (Supabase's worst case), so RLS tests prove the migrations lock things down on their own. No Docker needed; CI uses a Postgres 17 service.
+- **Economy writes only through SECURITY DEFINER functions** executable by `service_role`, which re-check roles and invariants. Clients get column-level grants (profiles: `display_name` only).
+- **Rate limits in Postgres** (`rate_limit_hit`, fixed window, unlogged table): durable across restarts and containers, fail closed.
+- **Turnstile verified by the app**, not by Supabase's CAPTCHA (tokens are single-use).
+- **Waitlist identity by emailed token** (hash stored), exchanged for an httpOnly cookie; joins answer the same for new and existing emails. Position = confirmed members ordered by `seq − boost × confirmed_referrals` (boost in `site_settings`, default 5); a referral counts only on the friend's confirmation and only from a different IP hash.
+- **Country is set once at onboarding** (changing it is a support action) so it cannot be used to dodge geo rules; the stricter of declared and Cloudflare country wins.
+- **Admin requires TOTP MFA (`aal2`)** from day one; roles are re-checked in every page and in the database function.
+- **Trust pages as static routes** with content in messages, marked DRAFT; ready to move to the admin content editor.
+- **Waitlist page design:** "founding letter" structure chosen by the owner on the decision page (21 Nov 2026).
+
 ## 2026-11-21 — More trader tools (owner)
 
 - Added risk of ruin, currency converter, correlation matrix, volatility/range table, prop rules backtest check and verified track record pages.

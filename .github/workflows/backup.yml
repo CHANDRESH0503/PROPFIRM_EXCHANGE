@@ -1,0 +1,35 @@
+name: Backup
+
+# Nightly encrypted dump of production to off-site storage (docs/SYSTEM_DESIGN.md S2).
+# Secrets (environment "production"): PROD_SUPABASE_DB_URL, BACKUP_AGE_RECIPIENT (public key only),
+# B2_ACCOUNT_ID, B2_APPLICATION_KEY, BACKUP_BUCKET. The age private key stays offline with the owner.
+on:
+  schedule:
+    - cron: "30 20 * * *" # 02:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Postgres 17 client, age and rclone
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSo /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-17 age rclone
+      - name: Back up
+        env:
+          SUPABASE_DB_URL: ${{ secrets.PROD_SUPABASE_DB_URL }}
+          BACKUP_AGE_RECIPIENT: ${{ secrets.BACKUP_AGE_RECIPIENT }}
+          BACKUP_REMOTE: b2:${{ secrets.BACKUP_BUCKET }}/production
+          RCLONE_CONFIG_B2_TYPE: b2
+          RCLONE_CONFIG_B2_ACCOUNT: ${{ secrets.B2_ACCOUNT_ID }}
+          RCLONE_CONFIG_B2_KEY: ${{ secrets.B2_APPLICATION_KEY }}
+        run: PATH="/usr/lib/postgresql/17/bin:$PATH" deploy/backup/backup.sh

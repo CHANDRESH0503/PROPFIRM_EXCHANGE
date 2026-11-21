@@ -1,0 +1,504 @@
+{
+  "meta": {
+    "title": "{brand}: get more back on every prop firm challenge",
+    "description": "Prop firms pay us a commission when you buy a challenge through us. We give most of it back to you as Coins you can turn into free challenge accounts. Join the waitlist."
+  },
+  "nav": {
+    "howItWorks": "How it works",
+    "signIn": "Sign in",
+    "openApp": "Open app",
+    "skip": "Skip to content",
+    "tabs": {
+      "today": "Today",
+      "deals": "Deals",
+      "rewards": "Rewards",
+      "accounts": "Accounts",
+      "profile": "Profile"
+    }
+  },
+  "footer": {
+    "disclosure": "{brand} earns a commission when you buy a prop firm challenge through our links or codes. Prop firm challenges are simulated evaluations, and most traders do not pass. Nothing on this site is investment advice. Coins have no cash value.",
+    "trust": "How it works",
+    "legal": "Legal",
+    "draftNote": "Legal pages are drafts awaiting review.",
+    "adults": "For adults 18 and over."
+  },
+  "trustNav": {
+    "how-we-make-money": "How we make money",
+    "how-rewards-work": "How rewards work",
+    "how-we-rank-firms": "How we order and score firms",
+    "affiliate-disclosure": "Affiliate disclosure",
+    "risk-disclosure": "Risk disclosure",
+    "terms": "Terms of use",
+    "privacy": "Privacy policy",
+    "rewards-terms": "Rewards terms"
+  },
+  "home": {
+    "headlineBefore": "We earn a commission. You get",
+    "headlineFigure": "90%",
+    "headlineAfter": "of it back.",
+    "lede": "Prop firms pay a share of every challenge fee to the site that sent the buyer. Most sites keep it. In our Founding Season we return 90% of ours to you as Coins, and Coins turn into free challenge accounts.",
+    "candour": "Before you sign up, the plain version: challenges are simulated evaluations, most traders don't pass, and we only earn when you buy through us. We'll never push you to buy again.",
+    "signature": "Venkat",
+    "signatureRole": "Founder, {brand}",
+    "letterHeading": "What you're signing up for",
+    "promises": [
+      {
+        "title": "The real lowest price",
+        "body": "Every deal shows the list price, the discount code and the Coins you get back, so the net price is one number you can check."
+      },
+      {
+        "title": "Coins to an account in minutes",
+        "body": "Coins become available once the firm confirms your purchase and a 14-day hold passes. From then, redeeming them for a challenge account takes minutes: the code is shown straight away when it's in stock."
+      },
+      {
+        "title": "Useful when you're not buying",
+        "body": "A free trading journal, one place to track every prop account against its rule limits, and calculators that know your firm's daily loss and drawdown rules."
+      },
+      {
+        "title": "No pressure to re-buy",
+        "body": "Streaks and missions pay XP, never Coins, and none of them asks you to buy anything. A purchase earns by flat, published rates, and that's all."
+      }
+    ],
+    "exampleHeading": "The arithmetic, on one example",
+    "exampleNote": "Example only: a fictional firm and a typical 15% commission. Real rates differ by firm and are shown on each deal.",
+    "exampleRows": {
+      "program": "100K two-step challenge",
+      "listPrice": "List price",
+      "commission": "Commission the firm pays us (15%)",
+      "kept": "What we keep (10% of commission)",
+      "back": "Back to you (90%)",
+      "worth": "Worth {amount} toward a challenge"
+    },
+    "exampleFine": "Coins have no cash value and can't be withdrawn. 1 Coin counts as $0.01 toward rewards. The 90% rate applies during the Founding Season; after it, the give-back is 60–75% depending on your level.",
+    "closingHeading": "P.S. Get on the list before we open",
+    "closingBody": "The Founding Season pays 90% back on purchases for its first 90 days or the first 1,000 verified buyers, whichever comes first. Founding buyers then keep the top level (75% back) for 12 months.",
+    "exampleBadge": "Example",
+    "coinsUnit": "Coins",
+    "sumLabel": "Back to you (90%)"
+  },
+  "waitlist": {
+    "label": "Email address",
+    "placeholder": "you@email.com",
+    "submit": "Reserve my place",
+    "submitting": "Reserving…",
+    "fine": "One email to confirm. Each friend who confirms with your link moves you up the list.",
+    "sentTitle": "Check your inbox",
+    "sentBody": "We sent a link to {email}. Open it to confirm your place. If it hasn't arrived in a few minutes, check spam or send it again.",
+    "sendAgain": "Use a different email",
+    "consent": "By joining you agree to receive emails about the launch. Unsubscribe any time.",
+    "errors": {
+      "invalid_email": "Enter a valid email address, like name@example.com.",
+      "closed": "The waitlist is closed for now. Follow us for the launch date.",
+      "rate_limited": "Too many attempts. Wait a few minutes and try again.",
+      "captcha": "We couldn't confirm you're human. Reload the page and try again.",
+      "unavailable": "Something went wrong on our side. Your email wasn't saved; try again in a minute."
+    },
+    "link": {
+      "invalid": "That link has expired or was replaced by a newer one. Enter your email to get a fresh link.",
+      "unavailable": "We couldn't open your place just now. Try the link again in a minute."
+    },
+    "me": {
+      "title": "Your place",
+      "confirmed": "You're confirmed.",
+      "position": "Your place in line",
+      "of": "of {total} confirmed",
+      "referrals": "{count, plural, =0 {No confirmed friends yet} one {# friend confirmed} other {# friends confirmed}}",
+      "boost": "Each friend who confirms with your link moves you up {boost} places.",
+      "shareHeading": "Your invite link",
+      "copy": "Copy link",
+      "copied": "Copied",
+      "share": "Share",
+      "shareText": "I'm on the {brand} waitlist: prop firm challenges with most of the commission paid back as Coins.",
+      "notFoundTitle": "We don't know you yet",
+      "notFoundBody": "Join the waitlist on this device, or open the link from your confirmation email.",
+      "join": "Join the waitlist",
+      "next": "We'll email you when we open. Nothing to do until then."
+    }
+  },
+  "auth": {
+    "title": "Sign in to {brand}",
+    "subtitle": "We'll email you a sign-in link. No password to remember.",
+    "email": "Email address",
+    "sendLink": "Email me a sign-in link",
+    "sending": "Sending…",
+    "or": "or",
+    "google": "Continue with Google",
+    "sentTitle": "Check your inbox",
+    "sentBody": "We sent a sign-in link to {email}. It works once and expires in an hour.",
+    "useDifferent": "Use a different email",
+    "adultsOnly": "{brand} is for adults 18 and over.",
+    "errors": {
+      "invalid_email": "Enter a valid email address.",
+      "rate_limited": "Too many attempts. Wait a few minutes and try again.",
+      "captcha": "We couldn't confirm you're human. Reload the page and try again.",
+      "signups_closed": "We're not open to new accounts yet. Join the waitlist and we'll email you when we are.",
+      "unavailable": "Something went wrong on our side. Try again in a minute.",
+      "link": "That sign-in link has expired or was already used. Request a new one.",
+      "oauth": "Google sign-in didn't finish. Try again, or use your email."
+    }
+  },
+  "onboarding": {
+    "title": "Before you start",
+    "subtitle": "Deals and rules depend on where you live, and streaks reset at your midnight.",
+    "country": "Country of residence",
+    "countryPlaceholder": "Choose your country",
+    "countryHint": "Some offers aren't available in every country. Contact support if you move.",
+    "timezone": "Time zone",
+    "timezoneHint": "Detected from this device. Daily streaks and reminders use it.",
+    "adult": "I'm 18 or older",
+    "adultHint": "You must be an adult to use {brand}.",
+    "submit": "Continue",
+    "submitting": "Saving…",
+    "errors": {
+      "rate_limited": "Too many attempts. Wait a few minutes and try again.",
+      "unavailable": "We couldn't save that. Try again in a minute."
+    }
+  },
+  "today": {
+    "greeting": "Today",
+    "checkIn": {
+      "title": "Daily check-in",
+      "body": "Check in each day to build a streak and earn XP. Opens with the first release.",
+      "button": "Check in",
+      "soon": "Coming soon"
+    },
+    "wallet": {
+      "title": "Coins",
+      "available": "Available",
+      "pending": "Pending",
+      "emptyBody": "Coins come from purchases you claim after buying through a {brand} deal. They show as pending until the firm confirms the purchase."
+    },
+    "level": {
+      "title": "Level",
+      "name": "Bronze",
+      "ring": "Level progress",
+      "progress": "{xp} / {target} XP to Silver"
+    },
+    "goal": {
+      "title": "Reward goal",
+      "emptyTitle": "No goal yet",
+      "emptyBody": "Pick a free challenge account to aim for and we'll show how close you are."
+    },
+    "missions": {
+      "title": "Today's missions",
+      "emptyTitle": "Missions start at launch",
+      "emptyBody": "Three short tasks a day, like comparing two programs or using a calculator. None of them ever asks you to buy."
+    },
+    "accounts": {
+      "title": "Your prop accounts",
+      "emptyTitle": "Track your first account",
+      "emptyBody": "Add an account to see how much room you have before the daily loss and max loss limits."
+    },
+    "deals": {
+      "title": "Deals on firms you watch",
+      "emptyTitle": "Nothing watched yet",
+      "emptyBody": "Watch a firm to see its new codes and price changes here."
+    },
+    "activity": {
+      "title": "Recent activity",
+      "emptyBody": "Claims, Coins and level-ups will appear here."
+    },
+    "soon": "Opens at launch",
+    "soonList": {
+      "title": "Opens at launch"
+    }
+  },
+  "placeholder": {
+    "deals": "Live deals with real end dates and the net price after your Coins.",
+    "rewards": "Free challenge accounts and discount codes you can redeem with Coins.",
+    "accounts": "Guardian: every prop account you hold, with rule limits as rings.",
+    "soonTitle": "{section} opens at launch",
+    "back": "Back to Today"
+  },
+  "profile": {
+    "title": "Profile",
+    "email": "Email",
+    "country": "Country",
+    "timezone": "Time zone",
+    "referralCode": "Your referral code",
+    "memberSince": "Member since",
+    "signOut": "Sign out",
+    "signOutAll": "Sign out on all devices",
+    "admin": "Open admin"
+  },
+  "admin": {
+    "title": "Admin",
+    "nav": {
+      "dashboard": "Dashboard",
+      "waitlist": "Waitlist",
+      "flags": "Feature flags",
+      "audit": "Audit log"
+    },
+    "dashboard": {
+      "waitlistTotal": "Waitlist sign-ups",
+      "waitlistConfirmed": "Confirmed",
+      "users": "Accounts",
+      "onboarded": "Onboarded",
+      "recentAudit": "Latest audit entries",
+      "noAudit": "No admin actions recorded yet."
+    },
+    "waitlist": {
+      "search": "Search email",
+      "export": "Export CSV",
+      "columns": {
+        "email": "Email",
+        "status": "Status",
+        "referrals": "Referrals",
+        "source": "Source",
+        "country": "Country",
+        "joined": "Joined"
+      },
+      "empty": "No sign-ups match.",
+      "next": "Older",
+      "first": "Newest"
+    },
+    "flags": {
+      "intro": "Switches take effect within a minute. Every change is written to the audit log with your reason.",
+      "chanceWarning": "Chance-based. Do not switch on without a legal review for each region.",
+      "reason": "Reason for the change",
+      "turnOn": "Switch on",
+      "turnOff": "Switch off",
+      "on": "On",
+      "off": "Off",
+      "saved": "Saved",
+      "ownerOnly": "Only the owner can change flags.",
+      "cancel": "Cancel"
+    },
+    "audit": {
+      "columns": {
+        "when": "When",
+        "actor": "Actor",
+        "action": "Action",
+        "entity": "Entity",
+        "reason": "Reason"
+      },
+      "empty": "No entries yet."
+    },
+    "mfa": {
+      "title": "Two-factor authentication",
+      "enrollBody": "Admin sessions need an authenticator app. Scan the code with 1Password, Google Authenticator or similar, then enter the 6-digit code.",
+      "verifyBody": "Enter the 6-digit code from your authenticator app to open admin.",
+      "secret": "Can't scan? Enter this key",
+      "code": "6-digit code",
+      "verify": "Verify",
+      "verifying": "Checking…",
+      "invalid": "That code didn't match. Codes change every 30 seconds; try the current one.",
+      "error": "Something went wrong. Reload and try again.",
+      "qrAlt": "QR code to add Fundback admin to your authenticator app"
+    },
+    "forbidden": "You don't have access to this page."
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "body": "We've logged the problem. Try again, and if it keeps happening, contact support.",
+    "retry": "Try again",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The page you're looking for doesn't exist or has moved.",
+    "home": "Go to the home page",
+    "forbiddenTitle": "No access",
+    "forbiddenBody": "Your account doesn't have permission to open this page."
+  },
+  "trust": {
+    "draft": "DRAFT for legal review. This text is a placeholder and is not yet the final policy.",
+    "updated": "Last updated {date}",
+    "pages": {
+      "how-we-make-money": {
+        "title": "How we make money",
+        "summary": "We earn a commission from prop firms when you buy through us, and we give most of it back.",
+        "sections": [
+          {
+            "heading": "Commission",
+            "body": [
+              "When you buy a challenge using our link or code, the prop firm pays us a commission, usually a percentage of the fee. Rates differ by firm. We only earn when the firm confirms the purchase.",
+              "We return most of that commission to you as Coins. The share depends on your level and on any active season, and it is published in How rewards work."
+            ]
+          },
+          {
+            "heading": "Other income",
+            "body": [
+              "Pro membership, which you can pay for with Coins or cash. Sponsored placements, which are always labelled Sponsored and never change how firms are ordered or scored. Firm-sponsored contests. Affiliate links for trading tools, which are disclosed where they appear."
+            ]
+          },
+          {
+            "heading": "What we never do",
+            "body": [
+              "We don't sell your personal data. We don't let commission rates or sponsorship affect rankings or scores. We don't reward you for buying again after a failed challenge."
+            ]
+          }
+        ]
+      },
+      "how-rewards-work": {
+        "title": "How rewards work",
+        "summary": "Coins come only from confirmed purchases and funded campaigns. XP comes from using the site.",
+        "sections": [
+          {
+            "heading": "Coins",
+            "body": [
+              "When the firm confirms your purchase, we credit a share of our commission to you as Coins. They are pending until the commission is confirmed and 14 days have passed since the purchase, then they become available.",
+              "If a purchase is refunded or charged back, the Coins from it are reversed.",
+              "Coins have no cash value, cannot be withdrawn, sold or transferred, and are redeemed for rewards such as challenge accounts. Coins expire after 12 months with no sign-in, earning or redemption; we warn you 30 and 7 days before."
+            ]
+          },
+          {
+            "heading": "How many Coins",
+            "body": [
+              "Coins = commission × your give-back share. The default shares by level are Bronze 60%, Silver 64%, Gold 68%, Platinum 72% and Black 75%. During the Founding Season everyone gets 90%. The total paid out on any purchase, including boosters and referral bonuses, never exceeds 95% of the commission."
+            ]
+          },
+          {
+            "heading": "XP and levels",
+            "body": [
+              "XP comes from check-ins, missions, lessons, the journal and tools. XP never turns into Coins. Levels need both XP and verified purchases, and they never go down."
+            ]
+          }
+        ]
+      },
+      "how-we-rank-firms": {
+        "title": "How we order and score firms",
+        "summary": "Rankings use prices, rules and verified data only. Commission and sponsorship are never inputs.",
+        "sections": [
+          {
+            "heading": "Sorting",
+            "body": [
+              "You choose the order: net price, list price, newest or name. Net price is list price minus the active discount minus the value of Coins you would get back."
+            ]
+          },
+          {
+            "heading": "Scores and status",
+            "body": [
+              "Any score we publish will be explained on this page, with its inputs, before it goes live. Firms may carry a Watch or Delisted status when we see problems such as delayed payouts or changed rules; the reason is shown on the firm's page."
+            ]
+          },
+          {
+            "heading": "Sponsored placements",
+            "body": [
+              "Firms can pay for labelled placements. A sponsored slot always says Sponsored and never moves a firm up a sorted list."
+            ]
+          }
+        ]
+      },
+      "affiliate-disclosure": {
+        "title": "Affiliate disclosure",
+        "summary": "We are paid when you buy through our links and codes.",
+        "sections": [
+          {
+            "heading": "Our relationship with firms",
+            "body": [
+              "{brand} is an affiliate of the prop firms listed. When you buy through our link or use our code, the firm pays us a commission. This does not change the price you pay.",
+              "We share most of that commission with you as Coins, but only for firms that have given us written permission to do so. Other firms are listed and compared, and show that rewards are not available."
+            ]
+          }
+        ]
+      },
+      "risk-disclosure": {
+        "title": "Risk disclosure",
+        "summary": "Prop firm challenges are simulated evaluations. Most traders don't pass.",
+        "sections": [
+          {
+            "heading": "Challenges are not investments",
+            "body": [
+              "A challenge fee pays for a simulated trading evaluation. It is not a deposit or an investment, and it is not refundable unless the firm says so. Most traders do not pass, and many who pass never receive a payout.",
+              "Prop firms are often lightly regulated and some have closed or refused payouts. Read each firm's terms before you buy."
+            ]
+          },
+          {
+            "heading": "No advice",
+            "body": [
+              "{brand} does not give investment, trading or financial advice. Our tools help you follow rules and review your own trading; they do not tell you what to trade."
+            ]
+          },
+          {
+            "heading": "Where offers are unavailable",
+            "body": [
+              "Some offers are not shown in some countries because of local rules. For example, forex and CFD prop offers are not shown to residents of India."
+            ]
+          }
+        ]
+      },
+      "terms": {
+        "title": "Terms of use",
+        "summary": "The rules for using {brand}.",
+        "sections": [
+          {
+            "heading": "Who can use the site",
+            "body": [
+              "You must be 18 or older and may hold one account. Accounts found to be duplicates may be closed and their rewards removed."
+            ]
+          },
+          {
+            "heading": "Your conduct",
+            "body": [
+              "Don't submit false claims, reuse receipts, automate the site, or try to get around geographic restrictions. We may freeze rewards while we review suspicious activity."
+            ]
+          },
+          {
+            "heading": "Changes and contact",
+            "body": [
+              "We may update these terms and will tell you about material changes. Questions: {email}."
+            ]
+          }
+        ]
+      },
+      "privacy": {
+        "title": "Privacy policy",
+        "summary": "What we collect, why, and for how long.",
+        "sections": [
+          {
+            "heading": "What we collect",
+            "body": [
+              "Your email, country, time zone and the 18+ confirmation; purchase claims and receipts you upload; your activity on the site; and a hashed form of your IP address for fraud prevention. Waitlist members: email, a hashed IP and the referral link used."
+            ]
+          },
+          {
+            "heading": "How long we keep it",
+            "body": [
+              "Receipts and payout proofs: 24 months unless tied to an open dispute. Hashed IPs rotate monthly. When you delete your account, personal data is removed; ledger and claim records are kept without personal details for accounting."
+            ]
+          },
+          {
+            "heading": "Your rights",
+            "body": [
+              "You can export your data or delete your account from Profile, or email {email}. Your trading journal is private: our staff cannot read it unless you grant time-limited access."
+            ]
+          }
+        ]
+      },
+      "rewards-terms": {
+        "title": "Rewards terms",
+        "summary": "The rules for Coins, XP and redemptions.",
+        "sections": [
+          {
+            "heading": "Coins",
+            "body": [
+              "Coins are a loyalty reward with no cash value. They cannot be exchanged for money, crypto or gift cards, transferred, or sold. Earning rates are set in How rewards work and may change for future purchases; Coins already credited keep their value."
+            ]
+          },
+          {
+            "heading": "Redemptions",
+            "body": [
+              "When a reward is in stock, its code is shown at once. When it is not, the redemption is queued with a 48-hour target and you are told at every step."
+            ]
+          },
+          {
+            "heading": "Chance-based features",
+            "body": [
+              "Any spin or draw is free to enter, never tied to purchases, publishes its odds, and is not offered where local law does not allow it."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "email": {
+    "waitlistConfirm": {
+      "subject": "Confirm your place on the {brand} waitlist",
+      "preheader": "One tap to confirm, then share your link to move up.",
+      "heading": "Confirm your place",
+      "body1": "Thanks for joining. Open the link below to confirm your email and see your place in line.",
+      "body2": "After that, share your personal link: each friend who confirms moves you up the list.",
+      "action": "Confirm my place",
+      "footer": "You're getting this because this address was entered on the {brand} waitlist. If that wasn't you, ignore this email and you won't hear from us again."
+    }
+  }
+}

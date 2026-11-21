@@ -5,3 +5,23 @@ node_modules/
 supabase/.temp/
 coverage/
 playwright-report/
+/.next/
+/out/
+/build
+.DS_Store
+*.pem
+*.tsbuildinfo
+next-env.d.ts
+.env
+.env.*
+!.env.example
+test-results/
+.vercel
+# impeccable runtime
+.impeccable/config.local.json
+# IDE
+.idea/
+untitled/
+deploy/*.build.env
+.impeccable/review/
+.impeccable/mocks/

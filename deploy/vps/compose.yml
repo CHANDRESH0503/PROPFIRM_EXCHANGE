@@ -1,0 +1,32 @@
+# Fundback on the shared VPS (docs/SYSTEM_DESIGN.md §2, tasks D1–D2).
+# Published on loopback only; the host Caddy is the only thing that reaches it.
+# The image tag comes from deploy.sh (FUNDBACK_IMAGE).
+services:
+  web:
+    image: ${FUNDBACK_IMAGE:?set by deploy.sh}
+    container_name: fundback-web
+    restart: unless-stopped
+    env_file: /etc/fundback/env
+    environment:
+      NODE_ENV: production
+    ports:
+      - "127.0.0.1:3100:3000"
+    # Caps so Fundback can never starve the other services on this machine.
+    cpus: 2
+    mem_limit: 1536m
+    pids_limit: 512
+    read_only: true
+    tmpfs:
+      - /tmp
+    volumes:
+      # Next.js ISR / "use cache" disk cache survives restarts.
+      - fundback-cache:/app/.next/cache
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    logging:
+      driver: json-file
+      options: { max-size: "20m", max-file: "5" }
+
+volumes:
+  fundback-cache:

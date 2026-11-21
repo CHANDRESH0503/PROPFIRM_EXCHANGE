@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T15:05:01.599758+00:00",
+  "title": "Design System: Fundback",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(15.8% 0.007 258)",
+        "cssVar": "--ink",
+        "tonalRamp": [
+          "oklch(15% 0.007 258)",
+          "oklch(25% 0.007 258)",
+          "oklch(35% 0.007 258)",
+          "oklch(45% 0.007 258)",
+          "oklch(60% 0.007 258)",
+          "oklch(72% 0.007 258)",
+          "oklch(84% 0.007 258)",
+          "oklch(95% 0.007 258)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "oklch(20.4% 0.011 261)",
+        "cssVar": "--surface",
+        "tonalRamp": [
+          "oklch(15% 0.011 261)",
+          "oklch(25% 0.011 261)",
+          "oklch(35% 0.011 261)",
+          "oklch(45% 0.011 261)",
+          "oklch(60% 0.011 261)",
+          "oklch(72% 0.011 261)",
+          "oklch(84% 0.011 261)",
+          "oklch(95% 0.011 261)"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised",
+        "canonical": "oklch(24.2% 0.013 258)",
+        "cssVar": "--raised",
+        "tonalRamp": [
+          "oklch(15% 0.013 258)",
+          "oklch(25% 0.013 258)",
+          "oklch(35% 0.013 258)",
+          "oklch(45% 0.013 258)",
+          "oklch(60% 0.013 258)",
+          "oklch(72% 0.013 258)",
+          "oklch(84% 0.013 258)",
+          "oklch(95% 0.013 258)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(30.4% 0.016 260)",
+        "cssVar": "--hairline",
+        "tonalRamp": [
+          "oklch(15% 0.016 260)",
+          "oklch(25% 0.016 260)",
+          "oklch(35% 0.016 260)",
+          "oklch(45% 0.016 260)",
+          "oklch(60% 0.016 260)",
+          "oklch(72% 0.016 260)",
+          "oklch(84% 0.016 260)",
+          "oklch(95% 0.016 260)"
+        ]
+      },
+      "text": {
+        "role": "primary",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(95.5% 0.007 89)",
+        "cssVar": "--text",
+        "tonalRamp": [
+          "oklch(15% 0.007 89)",
+          "oklch(25% 0.007 89)",
+          "oklch(35% 0.007 89)",
+          "oklch(45% 0.007 89)",
+          "oklch(60% 0.007 89)",
+          "oklch(72% 0.007 89)",
+          "oklch(84% 0.007 89)",
+          "oklch(95% 0.007 89)"
+        ]
+      },
+      "text-soft": {
+        "role": "neutral",
+        "displayName": "Soft Paper",
+        "canonical": "oklch(84.7% 0.009 258)",
+        "cssVar": "--text-soft",
+        "tonalRamp": [
+          "oklch(15% 0.009 258)",
+          "oklch(25% 0.009 258)",
+          "oklch(35% 0.009 258)",
+          "oklch(45% 0.009 258)",
+          "oklch(60% 0.009 258)",
+          "oklch(72% 0.009 258)",
+          "oklch(84% 0.009 258)",
+          "oklch(95% 0.009 258)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "oklch(71.2% 0.020 256)",
+        "cssVar": "--muted",
+        "tonalRamp": [
+          "oklch(15% 0.020 256)",
+          "oklch(25% 0.020 256)",
+          "oklch(35% 0.020 256)",
+          "oklch(45% 0.020 256)",
+          "oklch(60% 0.020 256)",
+          "oklch(72% 0.020 256)",
+          "oklch(84% 0.020 256)",
+          "oklch(95% 0.020 256)"
+        ]
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Struck Gold",
+        "canonical": "oklch(77.2% 0.098 82)",
+        "cssVar": "--gold",
+        "tonalRamp": [
+          "oklch(15% 0.015 82)",
+          "oklch(25% 0.026 82)",
+          "oklch(35% 0.040 82)",
+          "oklch(45% 0.054 82)",
+          "oklch(60% 0.074 82)",
+          "oklch(72% 0.090 82)",
+          "oklch(84% 0.088 82)",
+          "oklch(95% 0.073 82)"
+        ]
+      },
+      "gold-soft": {
+        "role": "secondary",
+        "displayName": "Gold Wash",
+        "canonical": "oklch(77.2% 0.098 82 / 0.15)",
+        "cssVar": "--gold-soft",
+        "tonalRamp": [
+          "oklch(15% 0.015 82)",
+          "oklch(25% 0.026 82)",
+          "oklch(35% 0.040 82)",
+          "oklch(45% 0.054 82)",
+          "oklch(60% 0.074 82)",
+          "oklch(72% 0.090 82)",
+          "oklch(84% 0.088 82)",
+          "oklch(95% 0.073 82)"
+        ]
+      },
+      "positive": {
+        "role": "tertiary",
+        "displayName": "Safe Green",
+        "canonical": "oklch(75.2% 0.151 160)",
+        "cssVar": "--positive",
+        "tonalRamp": [
+          "oklch(15% 0.024 160)",
+          "oklch(25% 0.045 160)",
+          "oklch(35% 0.066 160)",
+          "oklch(45% 0.087 160)",
+          "oklch(60% 0.119 160)",
+          "oklch(72% 0.144 160)",
+          "oklch(84% 0.132 160)",
+          "oklch(95% 0.109 160)"
+        ]
+      },
+      "caution": {
+        "role": "tertiary",
+        "displayName": "Signal Amber",
+        "canonical": "oklch(81.0% 0.144 79)",
+        "cssVar": "--caution",
+        "tonalRamp": [
+          "oklch(15% 0.022 79)",
+          "oklch(25% 0.031 79)",
+          "oklch(35% 0.051 79)",
+          "oklch(45% 0.071 79)",
+          "oklch(60% 0.101 79)",
+          "oklch(72% 0.125 79)",
+          "oklch(84% 0.138 79)",
+          "oklch(95% 0.115 79)"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Breach Red",
+        "canonical": "oklch(66.4% 0.189 16)",
+        "cssVar": "--danger",
+        "tonalRamp": [
+          "oklch(15% 0.053 16)",
+          "oklch(25% 0.079 16)",
+          "oklch(35% 0.106 16)",
+          "oklch(45% 0.132 16)",
+          "oklch(60% 0.172 16)",
+          "oklch(72% 0.174 16)",
+          "oklch(84% 0.142 16)",
+          "oklch(95% 0.113 16)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The one page headline; Sora 700, 2.125rem phone, 3rem sm, 3.5rem lg."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings on public pages (1.5rem to 1.75rem)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel and list-item titles, Sora 600."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text in Soft Paper at a 62-68ch measure."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Hints, captions, empty-state bodies in Muted Slate."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, button and tab text."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Every amount, XP count, rate and code: JetBrains Mono, tabular, slashed zero."
+      }
+    },
+    "shadows": [
+      {
+        "name": "overlay",
+        "value": "0 12px 32px -8px rgb(0 0 0 / 0.6), 0 2px 6px rgb(0 0 0 / 0.4)",
+        "cssVar": "--shadow-overlay",
+        "purpose": "The single elevation: floating overlays (sheet) only. Page surfaces are flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default easing for control state changes and ring fills."
+      },
+      {
+        "name": "duration-control",
+        "value": "150ms",
+        "purpose": "Buttons, inputs, tabs."
+      },
+      {
+        "name": "duration-overlay",
+        "value": "200ms",
+        "purpose": "Sheet open and close."
+      },
+      {
+        "name": "duration-ring",
+        "value": "700ms",
+        "purpose": "Progress ring fill on mount."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "All animation and transition durations under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "theming": {
+      "mode": "dark-only",
+      "source": "src/app/globals.css :root custom properties",
+      "runtimeOverride": "Admin-saved themes (09-admin.md §2) override the :root variables; components must read variables, never literals.",
+      "radiusRoot": "--radius: 0.75rem (sm 0.5x, md 0.75x, lg 1x, xl 1.33x, 2xl 1.66x)"
+    },
+    "focus": {
+      "value": "2px solid color-mix(in oklab, var(--text) 70%, transparent)",
+      "offset": "2px"
+    },
+    "selection": {
+      "background": "color-mix(in oklab, var(--text) 24%, transparent)",
+      "caret": "var(--text)"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Paper on ink; the one main action on a screen.",
+      "html": "<button class=\"ds-btn-primary\">Reserve my place</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; font-weight:500; border:0; cursor:pointer; transition: background-color 150ms cubic-bezier(0.16,1,0.3,1), color 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); background: var(--text, #f2f0eb); color: var(--ink, #0b0d10); } .ds-btn-primary:hover { background: color-mix(in oklab, var(--text, #f2f0eb) 88%, var(--ink, #0b0d10)); } .ds-btn-primary:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink, #0b0d10), 0 0 0 4px color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Surface fill with a hairline border; supporting actions.",
+      "html": "<button class=\"ds-btn-secondary\">Check in</button>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; font-weight:500; border:0; cursor:pointer; transition: background-color 150ms cubic-bezier(0.16,1,0.3,1), color 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); background: var(--surface, #14171c); color: var(--text, #f2f0eb); border: 1px solid var(--hairline, #2a2f37); } .ds-btn-secondary:hover { background: var(--raised, #1c2026); } .ds-btn-secondary:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink, #0b0d10), 0 0 0 4px color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); } .ds-btn-secondary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Soft paper text, raised fill on hover; tertiary actions.",
+      "html": "<button class=\"ds-btn-ghost\">Cancel</button>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; font-weight:500; border:0; cursor:pointer; transition: background-color 150ms cubic-bezier(0.16,1,0.3,1), color 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); background: transparent; color: var(--text-soft, #c9cdd3); } .ds-btn-ghost:hover { background: var(--raised, #1c2026); color: var(--text, #f2f0eb); } .ds-btn-ghost:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink, #0b0d10), 0 0 0 4px color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "48px field with label above and hint below.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-email\">Email</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\" placeholder=\"you@email.com\"><p class=\"ds-field-hint\">One email to confirm.</p></div>",
+      "css": ".ds-field { display:grid; gap:8px; max-width:360px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; } .ds-field-label { font-size:0.875rem; font-weight:500; color: var(--text-soft, #c9cdd3); } .ds-field-hint { margin:0; font-size:0.75rem; line-height:1.6; color: var(--muted, #9aa3af); } .ds-input { height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--hairline, #2a2f37); background: var(--surface, #14171c); color: var(--text, #f2f0eb); font-size:1rem; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; outline:none; transition: border-color 150ms, box-shadow 150ms; } .ds-input::placeholder { color: var(--muted, #9aa3af); } .ds-input:hover { border-color: color-mix(in oklab, var(--hairline, #2a2f37) 60%, var(--text, #f2f0eb)); } .ds-input:focus-visible { border-color: color-mix(in oklab, var(--hairline, #2a2f37) 30%, var(--text, #f2f0eb)); box-shadow: 0 0 0 2px color-mix(in oklab, var(--text, #f2f0eb) 28%, transparent); }"
+    },
+    {
+      "name": "Checkbox Row",
+      "kind": "input",
+      "refersTo": "",
+      "description": "Native checkbox themed with appearance:none inside a 48px+ label row; the whole row is the target.",
+      "html": "<label class=\"ds-check-row\"><input class=\"ds-check\" type=\"checkbox\" checked><span><span class=\"ds-check-title\">I am 18 or older</span><span class=\"ds-check-hint\">Required to join.</span></span></label>",
+      "css": ".ds-check-row { display:flex; align-items:flex-start; gap:12px; min-height:48px; max-width:360px; padding:12px 16px; border-radius:12px; border:1px solid var(--hairline, #2a2f37); background: var(--surface, #14171c); cursor:pointer; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; } .ds-check { appearance:none; margin:2px 0 0; display:grid; place-content:center; width:20px; height:20px; flex-shrink:0; border-radius:5px; border:1px solid color-mix(in oklab, var(--hairline, #2a2f37) 40%, var(--text, #f2f0eb)); background: var(--ink, #0b0d10); cursor:pointer; transition: background-color 150ms, border-color 150ms; } .ds-check::before { content:''; width:10px; height:10px; background: var(--ink, #0b0d10); transform:scale(0); transition: transform 150ms; clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); } .ds-check:checked { background: var(--text, #f2f0eb); border-color: var(--text, #f2f0eb); } .ds-check:checked::before { transform:scale(1); } .ds-check:focus-visible { outline:2px solid color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); outline-offset:2px; } .ds-check-title { display:block; font-weight:500; color: var(--text, #f2f0eb); } .ds-check-hint { display:block; font-size:0.875rem; color: var(--muted, #9aa3af); }"
+    },
+    {
+      "name": "Coin Amount",
+      "kind": "custom",
+      "refersTo": "coin-amount",
+      "description": "The only source of gold text: glyph, mono tabular figure, unit. Pending renders muted.",
+      "html": "<div class=\"ds-coins-row\"><span class=\"ds-coin\"><svg viewBox=\"0 0 20 20\" width=\"18\" height=\"18\" aria-hidden=\"true\" style=\"align-self:center\"><circle cx=\"10\" cy=\"10\" r=\"8.75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"10\" cy=\"10\" r=\"5.25\" fill=\"currentColor\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.25\"/><path d=\"M10 7.2v5.6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg><span>2,025</span><span class=\"ds-coin-unit\">Coins</span></span><span class=\"ds-coin ds-coin-pending\"><svg viewBox=\"0 0 20 20\" width=\"18\" height=\"18\" aria-hidden=\"true\" style=\"align-self:center\"><circle cx=\"10\" cy=\"10\" r=\"8.75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"10\" cy=\"10\" r=\"5.25\" fill=\"currentColor\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.25\"/><path d=\"M10 7.2v5.6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg><span>150</span><span class=\"ds-coin-unit\">Coins pending</span></span></div>",
+      "css": ".ds-coins-row { display:flex; gap:20px; align-items:baseline; flex-wrap:wrap; } .ds-coin { display:inline-flex; align-items:baseline; gap:6px; font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings: 'tnum','zero'; font-size:1.5rem; font-weight:600; color: var(--gold, #d4af6a); } .ds-coin-unit { font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.75em; font-weight:500; } .ds-coin-pending { color: var(--muted, #9aa3af); font-size:0.875rem; font-weight:400; }"
+    },
+    {
+      "name": "Stat Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "One bordered panel split into cells by 1px hairline gaps; never cards in cards.",
+      "html": "<section class=\"ds-panel\"><div class=\"ds-cell\"><p class=\"ds-cell-title\">Daily check-in</p><p class=\"ds-cell-body\">Opens with missions.</p></div><div class=\"ds-cell\"><p class=\"ds-cell-title ds-gold\">Bronze</p><p class=\"ds-cell-fig\">0 / 1,000 XP</p></div></section>",
+      "css": ".ds-panel { display:grid; grid-template-columns:1fr 1fr; gap:1px; overflow:hidden; border-radius:16px; border:1px solid var(--hairline, #2a2f37); background: var(--hairline, #2a2f37); max-width:520px; } .ds-cell { background: var(--surface, #14171c); padding:20px; } .ds-cell-title { margin:0; font-family: var(--font-sora), Sora, sans-serif; font-weight:600; font-size:1rem; letter-spacing:-0.02em; color: var(--text, #f2f0eb); } .ds-gold { color: var(--gold, #d4af6a); font-size:1.125rem; } .ds-cell-body { margin:4px 0 0; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.875rem; line-height:1.6; color: var(--muted, #9aa3af); } .ds-cell-fig { margin:4px 0 0; font-family: var(--font-jetbrains), 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; font-size:0.75rem; color: var(--text-soft, #c9cdd3); }"
+    },
+    {
+      "name": "Ledger Statement",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "A worked calculation as a ruled statement: strong top rule, hairline rows, double rule above the total.",
+      "html": "<div class=\"ds-ledger\"><dl><div class=\"ds-lrow\"><dt>List price</dt><dd>$150.00</dd></div><div class=\"ds-lrow\"><dt>Commission (15%)</dt><dd>$22.50</dd></div><div class=\"ds-lrow ds-lmuted\"><dt>What we keep</dt><dd>$2.25</dd></div></dl><div class=\"ds-ltotal\"><span>Back to you (90%)</span><span class=\"ds-ltotal-fig\">2,025 <small>Coins</small></span></div></div>",
+      "css": ".ds-ledger { max-width:380px; border-top:1px solid color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; } .ds-ledger dl { margin:0; } .ds-lrow { display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--hairline, #2a2f37); color: var(--text-soft, #c9cdd3); } .ds-lrow dd { margin:0; font-family: var(--font-jetbrains), 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; color: var(--text, #f2f0eb); } .ds-lmuted, .ds-lmuted dd { color: var(--muted, #9aa3af); } .ds-ltotal { display:flex; justify-content:space-between; align-items:baseline; padding:16px 0; border-top:3px double color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); color: var(--text, #f2f0eb); font-weight:500; } .ds-ltotal-fig { font-family: var(--font-jetbrains), 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; font-size:1.5rem; font-weight:700; color: var(--gold, #d4af6a); } .ds-ltotal-fig small { font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.875rem; font-weight:500; }"
+    },
+    {
+      "name": "Bottom Tab Bar",
+      "kind": "nav",
+      "refersTo": "tab-bar-item",
+      "description": "Phone navigation: five 56px targets on ink with a top hairline; active is paper.",
+      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tab ds-tab-active\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4\"/></svg>Today</a><a class=\"ds-tab\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"/><path d=\"M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"/></svg>Rewards</a><a class=\"ds-tab\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><circle cx=\"12\" cy=\"8\" r=\"5\"/><path d=\"M20 21a8 8 0 0 0-16 0\"/></svg>Profile</a></nav>",
+      "css": ".ds-tabs { display:grid; grid-template-columns:repeat(3,1fr); max-width:390px; border-top:1px solid var(--hairline, #2a2f37); background: color-mix(in oklab, var(--ink, #0b0d10) 95%, transparent); } .ds-tab { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; min-height:56px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.6875rem; font-weight:500; color: var(--muted, #9aa3af); text-decoration:none; transition: color 150ms; } .ds-tab:hover { color: var(--text-soft, #c9cdd3); } .ds-tab-active, .ds-tab-active:hover { color: var(--text, #f2f0eb); } .ds-tab:focus-visible { outline:2px solid color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); outline-offset:-2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signed Ledger",
+    "overview": "Fundback reads like a statement from a private bank that happens to keep score. The ground is near-black ink, the text is warm paper, and structure comes from one-pixel hairlines rather than boxes, shadows or colour fills. Numbers are the content: every amount, rate and count is set in JetBrains Mono with tabular figures, so columns align and nothing reads as decoration. The game layer (Coins, the streak flame, the level ring) sits inside this calm frame and is the only place colour carries excitement.\n\nThe system is dark-only (the root element carries `dark`; there is no light theme). It is a default theme, not a fixed one: every component reads CSS custom properties from `:root` in `src/app/globals.css`, so a theme the owner saves in admin (09-admin.md §2) restyles the product by overriding those variables, with no rebuild. Never hard-code a palette value in a component.\n\nDensity is phone-first and moderate: 20px gutters, 20px panel padding, 16–20px list rows, 44px minimum touch targets everywhere a finger lands. Desktop widens the container but keeps reading text at a measure.",
+    "keyCharacteristics": [
+      "Ink ground, paper text, hairline rules; flat at rest.",
+      "Gold means Coins, levels and rewards, and nothing else.",
+      "Positive, caution and danger mean state, and nothing else.",
+      "Primary action is paper on ink: the brightest thing on screen without a brand colour.",
+      "Every figure is mono and tabular.",
+      "Themeable by variable; dark-only."
+    ],
+    "rules": [
+      {
+        "name": "The Gold Means Coins Rule",
+        "body": "Gold appears only on Coins, levels and rewards. All gold text comes through the Coin amount component or a level/reward figure. Never use gold for links, buttons, headings or emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The State Only Rule",
+        "body": "Green, amber and red describe the state of something (safe, caution, breach, error, success). They are never decoration, brand colour or a call to action.",
+        "section": "colors"
+      },
+      {
+        "name": "The Variables Only Rule",
+        "body": "Components read `var(--ink)`, `var(--gold)` and the rest, or their Tailwind mappings (`bg-surface`, `text-gold`, `border-hairline`). Literal hex lives only in `globals.css`, plus the places that cannot read CSS (the `themeColor` meta, the global error fallback, email templates).",
+        "section": "colors"
+      },
+      {
+        "name": "The Every Figure Is Mono Rule",
+        "body": "Money, Coins, XP, percentages and codes are set in JetBrains Mono with the `tabular` utility. A number in Inter is a bug.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight Heading Rule",
+        "body": "Headings h1–h4 are Sora with -0.02em tracking and balanced wrapping; paragraphs use pretty wrapping.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Not Box Rule",
+        "body": "Group related figures into one bordered panel split by 1px hairline gaps (a grid with a 1px gap over a hairline fill), or into a ruled list (`divide-y` with a top and bottom rule). Never put a card inside a card, and never stack empty boxes.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ledger Rule",
+        "body": "A worked calculation is a ruled statement: a strong top rule (paper at 70%), hairline rows, and a double rule above the total.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** read every colour, radius and font from the CSS variables in `globals.css`, so an admin theme applies everywhere.",
+      "**Do** set every figure in JetBrains Mono with the `tabular` utility.",
+      "**Do** keep touch targets at 44px or larger (inputs 48px, bottom tabs 56px).",
+      "**Do** separate content with hairlines: one bordered panel with hairline gaps, or a ruled list.",
+      "**Do** design the empty, loading (skeleton in Raised) and error state of every screen.",
+      "**Do** keep motion to 150–300ms on the expo ease-out for controls; ring fills and count-ups may run longer, and all of it collapses under `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** use gold for anything except Coins, levels and rewards.",
+      "**Don't** use green, amber or red as decoration or as a call to action.",
+      "**Don't** fill the primary button with a colour; it is paper on ink.",
+      "**Don't** nest cards or give page surfaces drop shadows; the overlay shadow is for floating layers only.",
+      "**Don't** add a light theme or light sections; the product is dark-only.",
+      "**Don't** hard-code hex values in components.",
+      "**Don't** build custom dropdowns or checkboxes; theme the native controls."
+    ]
+  }
+}

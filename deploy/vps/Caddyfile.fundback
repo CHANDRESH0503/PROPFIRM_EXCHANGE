@@ -1,0 +1,41 @@
+# Site block for the host Caddy (task D1, D3). Replace fundback.example with the real domain.
+# Cloudflare proxies the domain (Full strict TLS); the firewall admits 443 only from Cloudflare.
+fundback.example {
+	encode zstd gzip
+
+	reverse_proxy 127.0.0.1:3100 {
+		# The app reads CF-Connecting-IP (set by Cloudflare, unforgeable because the firewall
+		# only admits Cloudflare). Drop X-Forwarded-For so nothing else is ever trusted.
+		header_up -X-Forwarded-For
+		lb_try_duration 10s
+		lb_try_interval 250ms
+		health_uri /api/health
+		health_interval 15s
+		flush_interval -1
+	}
+
+	request_body {
+		max_size 10MB
+	}
+
+	header {
+		-Server
+	}
+
+	log {
+		output file /var/log/caddy/fundback.log {
+			roll_size 20MiB
+			roll_keep 10
+		}
+		format filter {
+			request>remote_ip delete
+			request>client_ip delete
+			request>headers>Cookie delete
+			request>headers>Authorization delete
+			request>headers>Cf-Connecting-Ip delete
+			request>uri query {
+				delete token
+			}
+		}
+	}
+}
