@@ -2,6 +2,8 @@
 
 Part of the project brief. The rules in `/CLAUDE.md` §2 override anything here.
 
+**Implementation status, 22 November 2026.** The public directory supports filters, comparison and region-aware deals. Firm pages show recent list prices. Members can track claims, view their wallet and redeem rewards. The remaining feature work is listed by prompt in [PROGRESS.md](../PROGRESS.md).
+
 
 ### Public site
 - **Home.** Headline and search/compare box → today's best net prices → how it works (Buy → Claim → Redeem) with a Coin calculator slider → the tracker preview → wallet and levels preview → verified payout feed (when live) → how we make money and risk disclosure.

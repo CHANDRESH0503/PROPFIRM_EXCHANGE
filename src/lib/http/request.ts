@@ -1,4 +1,5 @@
 import "server-only";
+import { connection } from "next/server";
 import { headers } from "next/headers";
 import { isIP } from "node:net";
 
@@ -27,11 +28,15 @@ export function parseRequestMeta(h: Headers): RequestMeta {
     requestId: h.get("x-request-id") ?? crypto.randomUUID(),
     ip: candidate && isIP(candidate) ? candidate : null,
     // Cloudflare uses XX for unknown and T1 for Tor.
-    ipCountry: country && /^[A-Z]{2}$/.test(country) && country !== "XX" && country !== "T1" ? country : null,
+    ipCountry:
+      country && /^[A-Z]{2}$/.test(country) && country !== "XX" && country !== "T1"
+        ? country
+        : null,
     userAgent: h.get("user-agent"),
   };
 }
 
 export async function requestMeta(): Promise<RequestMeta> {
+  await connection();
   return parseRequestMeta(await headers());
 }

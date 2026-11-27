@@ -15,7 +15,11 @@ export const user = (sub: string): Actor => ({ role: "authenticated", sub });
 
 export interface TestDb {
   /** Run one statement as `actor` in its own committed transaction, like a PostgREST request. */
-  as<T extends pg.QueryResultRow = pg.QueryResultRow>(actor: Actor, sql: string, params?: unknown[]): Promise<pg.QueryResult<T>>;
+  as<T extends pg.QueryResultRow = pg.QueryResultRow>(
+    actor: Actor,
+    sql: string,
+    params?: unknown[],
+  ): Promise<pg.QueryResult<T>>;
   /** Create an auth user (the profile is created by trigger). */
   createUser(opts?: { email?: string; ref?: string }): Promise<string>;
   pool: pg.Pool;
@@ -58,8 +62,13 @@ export function setupTestDb(): TestDb {
       try {
         await client.query("begin");
         if (actor.role !== "postgres") {
-          const claims = actor.role === "authenticated" ? { sub: actor.sub, role: actor.role } : { role: actor.role };
-          await client.query("select set_config('request.jwt.claims', $1, true)", [JSON.stringify(claims)]);
+          const claims =
+            actor.role === "authenticated"
+              ? { sub: actor.sub, role: actor.role }
+              : { role: actor.role };
+          await client.query("select set_config('request.jwt.claims', $1, true)", [
+            JSON.stringify(claims),
+          ]);
           await client.query(`set local role ${actor.role}`);
         }
         const result = await client.query(sql, params);
@@ -87,7 +96,9 @@ export function setupTestDb(): TestDb {
 }
 
 /** Postgres error code of a rejected promise, for asserting why something was refused. */
-export async function pgError(promise: Promise<unknown>): Promise<{ code?: string; message: string }> {
+export async function pgError(
+  promise: Promise<unknown>,
+): Promise<{ code?: string; message: string }> {
   try {
     await promise;
   } catch (error) {

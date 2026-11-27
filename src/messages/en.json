@@ -4,6 +4,7 @@
     "description": "Prop firms pay us a commission when you buy a challenge through us. We give most of it back to you as Coins you can turn into free challenge accounts. Join the waitlist."
   },
   "nav": {
+    "firms": "Firms",
     "howItWorks": "How it works",
     "signIn": "Sign in",
     "openApp": "Open app",
@@ -14,14 +15,29 @@
       "rewards": "Rewards",
       "accounts": "Accounts",
       "profile": "Profile"
-    }
+    },
+    "deals": "Deals",
+    "tools": "Tools",
+    "journal": "Journal"
   },
   "footer": {
     "disclosure": "{brand} earns a commission when you buy a prop firm challenge through our links or codes. Prop firm challenges are simulated evaluations, and most traders do not pass. Nothing on this site is investment advice. Coins have no cash value.",
     "trust": "How it works",
     "legal": "Legal",
     "draftNote": "Legal pages are drafts awaiting review.",
-    "adults": "For adults 18 and over."
+    "adults": "For adults 18 and over.",
+    "explore": "Explore",
+    "links": {
+      "firms": "Firm directory",
+      "compare": "Compare programs",
+      "deals": "Deals",
+      "tools": "Trader tools",
+      "calendar": "Economic calendar",
+      "sessions": "Market sessions",
+      "journal": "Trading journal",
+      "help": "Help centre",
+      "changelog": "What's new"
+    }
   },
   "trustNav": {
     "how-we-make-money": "How we make money",
@@ -35,9 +51,8 @@
   },
   "home": {
     "headlineBefore": "We earn a commission. You get",
-    "headlineFigure": "90%",
     "headlineAfter": "of it back.",
-    "lede": "Prop firms pay a share of every challenge fee to the site that sent the buyer. Most sites keep it. In our Founding Season we return 90% of ours to you as Coins, and Coins turn into free challenge accounts.",
+    "lede": "Prop firms pay a share of every challenge fee to the site that sent the buyer. Most sites keep it. In our Founding Season we return {share}% of ours to you as Coins, and Coins turn into free challenge accounts.",
     "candour": "Before you sign up, the plain version: challenges are simulated evaluations, most traders don't pass, and we only earn when you buy through us. We'll never push you to buy again.",
     "signature": "Venkat",
     "signatureRole": "Founder, {brand}",
@@ -49,7 +64,7 @@
       },
       {
         "title": "Coins to an account in minutes",
-        "body": "Coins become available once the firm confirms your purchase and a 14-day hold passes. From then, redeeming them for a challenge account takes minutes: the code is shown straight away when it's in stock."
+        "body": "Coins become available once the firm confirms your purchase and a {hold}-day hold passes. From then, redeeming them for a challenge account takes minutes: the code is shown straight away when it's in stock."
       },
       {
         "title": "Useful when you're not buying",
@@ -66,16 +81,32 @@
       "program": "100K two-step challenge",
       "listPrice": "List price",
       "commission": "Commission the firm pays us (15%)",
-      "kept": "What we keep (10% of commission)",
-      "back": "Back to you (90%)",
+      "kept": "What we keep ({kept}% of commission)",
+      "back": "Back to you ({share}%)",
       "worth": "Worth {amount} toward a challenge"
     },
-    "exampleFine": "Coins have no cash value and can't be withdrawn. 1 Coin counts as $0.01 toward rewards. The 90% rate applies during the Founding Season; after it, the give-back is 60–75% depending on your level.",
+    "exampleFine": "Coins have no cash value and can't be withdrawn. 1 Coin counts as $0.01 toward rewards. During the Founding Season the rate is {share}%. After the season it is {min}–{max}% depending on your level.",
     "closingHeading": "P.S. Get on the list before we open",
-    "closingBody": "The Founding Season pays 90% back on purchases for its first 90 days or the first 1,000 verified buyers, whichever comes first. Founding buyers then keep the top level (75% back) for 12 months.",
+    "closingBody": "The Founding Season pays {share}% of commission back for its first {days} days or its first {buyers} verified buyers, whichever comes first. Founding buyers then keep the top level ({max}% back) for 12 months.",
     "exampleBadge": "Example",
     "coinsUnit": "Coins",
-    "sumLabel": "Back to you (90%)"
+    "sumLabel": "Back to you ({share}%)",
+    "toolsHeading": "Free tools you can use today",
+    "toolsBody": "Calculators that know prop-firm rules, a sessions clock, an economic calendar and a private trading journal. No account needed for the calculators.",
+    "dropsHeading": "Current drops",
+    "dropsBody": "Programs from the catalogue, lowest net price first. Sample firms are fictional until real firms are listed.",
+    "dropsAll": "See every program",
+    "chips": {
+      "share": "{share}% back as Coins",
+      "hold": "{hold}-day hold, then redeem",
+      "tools": "{count} free trader tools",
+      "xp": "XP and streaks, never a buy push"
+    },
+    "chipsLabel": "At a glance",
+    "splitLegend": {
+      "you": "You, as Coins",
+      "us": "We keep"
+    }
   },
   "waitlist": {
     "label": "Email address",
@@ -135,8 +166,11 @@
       "signups_closed": "We're not open to new accounts yet. Join the waitlist and we'll email you when we are.",
       "unavailable": "Something went wrong on our side. Try again in a minute.",
       "link": "That sign-in link has expired or was already used. Request a new one.",
-      "oauth": "Google sign-in didn't finish. Try again, or use your email."
-    }
+      "oauth": "Google sign-in didn't finish. Try again, or use your email.",
+      "invalid_ref": "We couldn’t find that member code. Check it with your friend or leave it blank."
+    },
+    "referral": "Referral code (optional)",
+    "referralHint": "Joining through a friend? Use their Fundback member code when creating your account."
   },
   "onboarding": {
     "title": "Before you start",
@@ -159,31 +193,44 @@
     "greeting": "Today",
     "checkIn": {
       "title": "Daily check-in",
-      "body": "Check in each day to build a streak and earn XP. Opens with the first release.",
+      "body": "Check in each day to build a streak and earn XP.",
       "button": "Check in",
+      "streak": "{days, plural, one {# day} other {# days}} in your streak",
+      "done": "Checked in today",
+      "failed": "Could not check in. Try again shortly.",
+      "saving": "Checking in…",
+      "earned": "{xp} XP recorded for today.",
+      "calendar": "Check-ins · {month}",
       "soon": "Coming soon"
     },
     "wallet": {
       "title": "Coins",
       "available": "Available",
       "pending": "Pending",
-      "emptyBody": "Coins come from purchases you claim after buying through a {brand} deal. They show as pending until the firm confirms the purchase."
+      "emptyBody": "Coins come from purchases you claim after buying through a {brand} deal. They show as pending until the firm confirms the purchase.",
+      "pendingLine": "+{n} pending"
     },
     "level": {
       "title": "Level",
       "name": "Bronze",
       "ring": "Level progress",
-      "progress": "{xp} / {target} XP to Silver"
+      "top": "{xp} XP",
+      "progress": "{xp} / {target} XP toward the next level",
+      "headerRing": "XP to the next level"
     },
     "goal": {
       "title": "Reward goal",
+      "remaining": "{n, number} Coins to go",
+      "browse": "Browse rewards",
       "emptyTitle": "No goal yet",
       "emptyBody": "Pick a free challenge account to aim for and we'll show how close you are."
     },
     "missions": {
       "title": "Today's missions",
+      "done": "Cleared",
       "emptyTitle": "Missions start at launch",
-      "emptyBody": "Three short tasks a day, like comparing two programs or using a calculator. None of them ever asks you to buy."
+      "emptyBody": "Three short tasks a day, like comparing two programs or using a calculator. None of them ever asks you to buy.",
+      "count": "{done}/{total} cleared"
     },
     "accounts": {
       "title": "Your prop accounts",
@@ -202,16 +249,19 @@
     "soon": "Opens at launch",
     "soonList": {
       "title": "Opens at launch"
+    },
+    "tools": {
+      "title": "Trader tools",
+      "dailyRoom": "Daily room before your limits",
+      "lotSize": "Lot size for your risk",
+      "calendar": "Economic calendar",
+      "sessions": "Market sessions clock",
+      "journal": "Trading journal"
     }
   },
-  "placeholder": {
-    "deals": "Live deals with real end dates and the net price after your Coins.",
-    "rewards": "Free challenge accounts and discount codes you can redeem with Coins.",
-    "accounts": "Guardian: every prop account you hold, with rule limits as rings.",
-    "soonTitle": "{section} opens at launch",
-    "back": "Back to Today"
-  },
   "profile": {
+    "wallet": "Wallet",
+    "claims": "My purchase claims",
     "title": "Profile",
     "email": "Email",
     "country": "Country",
@@ -220,7 +270,18 @@
     "memberSince": "Member since",
     "signOut": "Sign out",
     "signOutAll": "Sign out on all devices",
-    "admin": "Open admin"
+    "admin": "Open admin",
+    "badges": "Earned badges",
+    "foundingBadge": "Founding Member",
+    "streakBadge": "{days}-day check-in streak",
+    "notifications": "Notifications",
+    "inviteHeading": "Invite a friend",
+    "inviteHelp": "Share your link or member code. You can earn Coins when your friend’s first eligible purchase is confirmed.",
+    "inviteText": "Join Fundback with my referral link.",
+    "inviteLink": "Your member referral link",
+    "invitedCount": "{count, plural, =0 {No friends have joined yet.} one {# friend has joined.} other {# friends have joined.}}",
+    "support": "Support tickets",
+    "data": "Your data"
   },
   "admin": {
     "title": "Admin",
@@ -228,7 +289,34 @@
       "dashboard": "Dashboard",
       "waitlist": "Waitlist",
       "flags": "Feature flags",
-      "audit": "Audit log"
+      "stock": "Rewards",
+      "economy": "Economy",
+      "finance": "Finance",
+      "claims": "Claims queue",
+      "catalogue": "Catalogue",
+      "health": "System health",
+      "audit": "Audit log",
+      "users": "Users",
+      "support": "Support inbox",
+      "campaigns": "Campaigns",
+      "appeals": "Appeals",
+      "dataRequests": "Data requests",
+      "help": "Help centre",
+      "changelog": "Changelog",
+      "spin": "Spin and draw"
+    },
+    "health": {
+      "title": "System health",
+      "delivery": "Email delivery",
+      "healthy": "Worker is on schedule.",
+      "waiting": "Waiting for the first successful run.",
+      "late": "Worker is overdue. Check the delivery timer on the host.",
+      "last": "Last successful run",
+      "history": "Recent job runs",
+      "empty": "Job history will appear when the host timer runs.",
+      "success": "Completed",
+      "failed": "Failed",
+      "running": "In progress"
     },
     "dashboard": {
       "waitlistTotal": "Waitlist sign-ups",
@@ -236,7 +324,28 @@
       "users": "Accounts",
       "onboarded": "Onboarded",
       "recentAudit": "Latest audit entries",
-      "noAudit": "No admin actions recorded yet."
+      "noAudit": "No admin actions recorded yet.",
+      "claims": "Claims awaiting review",
+      "claimsOldest": "Oldest waiting {hours, plural, one {# hour} other {# hours}}",
+      "claimsNone": "Queue clear",
+      "redemptions": "Redemptions awaiting fulfillment",
+      "redemptionsOverdue": "{n} past the 48-hour target",
+      "redemptionsOnTime": "All within target",
+      "coins": "Outstanding Coins",
+      "coinsSub": "{pending} pending · {available} available",
+      "ratio": "Coin liability ratio",
+      "ratioSub": "Outstanding Coin value / confirmed commission. Alert above 1.000.",
+      "failedJobs": "Failed jobs (24 hours)",
+      "failedJobsSub": "See System health",
+      "alerts": "Open alerts",
+      "alertsNone": "No open alerts. The owner is messaged on Telegram when one opens or clears.",
+      "alertSince": "Open since {date}",
+      "alert": {
+        "liability": "Coin liability ratio is {ratio} (limit 1.000).",
+        "claims_waiting": "{count, plural, one {# claim has} other {# claims have}} waited more than 24 hours.",
+        "redemption_overdue": "{count, plural, one {# redemption is} other {# redemptions are}} past the 48-hour target.",
+        "low_stock": "Low voucher stock for {name}: {remaining} left (threshold {threshold})."
+      }
     },
     "waitlist": {
       "search": "Search email",
@@ -297,7 +406,8 @@
     "notFoundBody": "The page you're looking for doesn't exist or has moved.",
     "home": "Go to the home page",
     "forbiddenTitle": "No access",
-    "forbiddenBody": "Your account doesn't have permission to open this page."
+    "forbiddenBody": "Your account doesn't have permission to open this page.",
+    "app": "Back to Today"
   },
   "trust": {
     "draft": "DRAFT for legal review. This text is a placeholder and is not yet the final policy.",
@@ -499,6 +609,1679 @@
       "body2": "After that, share your personal link: each friend who confirms moves you up the list.",
       "action": "Confirm my place",
       "footer": "You're getting this because this address was entered on the {brand} waitlist. If that wasn't you, ignore this email and you won't hear from us again."
+    },
+    "noticeFooter": "You're receiving this because you have a {brand} account.",
+    "digest": {
+      "subject": "{count, plural, one {# high-impact event} other {# high-impact events}} today · {currencies}",
+      "heading": "Today's high-impact events",
+      "intro": "Scheduled for {date} in your timezone ({zone}) for {currencies}. Times can change; check the calendar before you trade.",
+      "line": "{time} · {currency} · {title}",
+      "figures": "Forecast {forecast} · previous {previous}",
+      "sample": "These are fictional sample events. The calendar shows sample data until a licensed data provider is connected.",
+      "noAdvice": "This is a schedule, not trading advice.",
+      "action": "Open the calendar",
+      "manage": "You chose this daily digest. Change the time or currencies, or turn it off, in Notifications."
     }
+  },
+  "catalogue": {
+    "claim": "Claim a purchase",
+    "outboundUnavailable": "This deal is currently unavailable for your account or location.",
+    "firms": "Firm directory",
+    "deals": "Live deals",
+    "dealsIntro": "Scheduled discounts on published programs, ordered by the date the offer ends.",
+    "intro": "Pay the checkout price. Net price includes estimated Bronze-level Coins, earned after commission confirmation. Coins have no cash value.",
+    "filter": "Filter and sort programs",
+    "asset": "Asset class",
+    "all": "Any",
+    "size": "Account size",
+    "steps": "Steps",
+    "max": "Maximum list price",
+    "platform": "Platform",
+    "payout": "Payout frequency",
+    "drawdown": "Drawdown type",
+    "static": "Static",
+    "trailing": "Trailing",
+    "end_of_day": "End of day",
+    "sort": "Sort by",
+    "name": "Firm name",
+    "net": "Estimated net price",
+    "list": "List price",
+    "newest": "Newest program",
+    "apply": "Apply filters",
+    "clear": "Clear filters",
+    "results": "{count, plural, one {# program} other {# programs}}",
+    "compare": "Compare programs",
+    "select": "Select {program} for comparison",
+    "addCompare": "Add to comparison",
+    "empty": "No matching programs",
+    "browse": "Browse all programs",
+    "previous": "Previous page",
+    "next": "Next page",
+    "ends": "Ends {date}",
+    "checkout": "Checkout",
+    "coins": "Estimated Coins",
+    "watch": "Under review.",
+    "delisted": "Delisted.",
+    "programs": "Programs",
+    "dailyLoss": "Daily loss limit",
+    "maxLoss": "Maximum loss",
+    "unavailable": "Rewards are unavailable for this firm.",
+    "changes": "Rule and price changes",
+    "source": "View source",
+    "noChanges": "No changes have been published.",
+    "selection": "Choose up to four available programs from the directory to compare their fees and rules.",
+    "recentPrices": "Recent list prices",
+    "assets": {
+      "forex": "Forex",
+      "futures": "Futures",
+      "crypto": "Crypto",
+      "cfd": "CFDs",
+      "stocks": "Stocks",
+      "options": "Options"
+    },
+    "rarity": {
+      "common": "Common",
+      "rare": "Rare",
+      "epic": "Epic",
+      "legendary": "Legendary"
+    },
+    "stepsCount": "{n, plural, =0 {Instant} one {# step} other {# steps}}",
+    "affix": "−{pct}% code",
+    "statTarget": "Target",
+    "statDaily": "Daily",
+    "statMax": "Max",
+    "statSplit": "Split",
+    "netShort": "Net after Coins",
+    "earnBack": "Earn about {coins} Coins back on a confirmed purchase",
+    "viewProgram": "View program",
+    "ends_sort": "Offer end date"
+  },
+  "editor": {
+    "title": "Catalogue",
+    "newFirm": "Add firm",
+    "editFirm": "Edit firm",
+    "newOffer": "Add offer",
+    "editOffer": "Edit offer",
+    "newProgram": "Add program",
+    "editProgram": "Edit program",
+    "previous": "Previous page",
+    "next": "Next page",
+    "empty": "Add the first firm to start the directory.",
+    "duplicate": "Duplicate",
+    "children": "Programs and offers",
+    "asset_classes": "Asset classes",
+    "program_ids": "Covered programs",
+    "fields": {
+      "name": "Name",
+      "slug": "URL slug",
+      "description": "Description",
+      "platforms": "Platforms, comma separated",
+      "status": "Firm status",
+      "status_note": "Public status note",
+      "logo_url": "Logo URL (HTTPS)",
+      "published_at": "Publish at (UTC, blank for draft)",
+      "tracking_url": "Affiliate tracking URL (HTTPS)",
+      "promo_code": "Firm promo code",
+      "commission_bps": "Commission (basis points)",
+      "rebate_permission": "Written rebate permission received",
+      "evidence_url": "Permission evidence URL (HTTPS)",
+      "account_size": "Account size",
+      "steps": "Evaluation steps",
+      "list_price_cents": "List price in minor units",
+      "currency": "Currency (3-letter code)",
+      "profit_target_bps": "Profit target (basis points)",
+      "daily_loss_bps": "Daily loss limit (basis points)",
+      "max_loss_bps": "Maximum loss (basis points)",
+      "profit_split_bps": "Profit split (basis points)",
+      "drawdown_type": "Drawdown type",
+      "payout_frequency": "Payout frequency",
+      "rules": "Additional rules (JSON object of labels and text)",
+      "title": "Offer title",
+      "terms": "Offer terms",
+      "code": "Checkout code",
+      "discount_bps": "Discount (basis points)",
+      "starts_at": "Starts at (UTC)",
+      "ends_at": "Ends at (UTC)",
+      "exclusive": "Exclusive offer",
+      "published": "Publish during scheduled dates",
+      "change_summary": "Public change summary",
+      "source_url": "Public source URL (HTTPS)",
+      "reason": "Reason for this change",
+      "asset_classes": "Asset classes",
+      "program_ids": "Covered programs",
+      "firm_id": "Firm",
+      "id": "Record",
+      "revision": "Revision",
+      "kind": "Record type"
+    },
+    "choice": {
+      "active": "Active",
+      "watch": "Watch",
+      "delisted": "Delisted",
+      "static": "Static",
+      "trailing": "Trailing",
+      "end_of_day": "End of day"
+    },
+    "publicChange": "Publish a sourced change note",
+    "saving": "Saving…",
+    "save": "Save changes",
+    "saved": "Changes saved.",
+    "invalid": "Check the value for {field}.",
+    "stale": "Another editor saved a newer version. Reload before editing again.",
+    "unavailable": "Could not save this change. Review the fields and try again.",
+    "limited": "Too many edits. Try again in a minute."
+  },
+  "purchase": {
+    "get": "Get this deal",
+    "disclosure": "We earn a commission when you buy through this link. Challenges are simulated evaluations and most traders do not pass.",
+    "copy": "Copy code",
+    "copied": "Copied",
+    "buy": "Continue to the firm and check its final price and terms before paying.",
+    "claimAfter": "Return here with your receipt to claim the purchase.",
+    "signIn": "Sign in to track your purchase",
+    "country": "Country of residence",
+    "choose": "Choose an option",
+    "continue": "Continue to firm ↗",
+    "claims": "Purchase claims",
+    "chooseProgram": "Open an eligible program to submit its receipt.",
+    "browse": "Browse programs",
+    "history": "Your claims",
+    "empty": "You haven’t submitted a claim.",
+    "reference": "Order reference",
+    "purchased": "Purchase date",
+    "amount": "Amount paid",
+    "email": "Checkout email",
+    "receipt": "Receipt (PDF, JPEG or PNG, up to 4 MB)",
+    "invalid": "Check this value and try again.",
+    "fileError": "Choose a PDF, JPEG or PNG receipt no larger than 4 MB.",
+    "duplicate": "This receipt or order has already been claimed.",
+    "captcha": "Human verification failed. Try again.",
+    "limited": "Too many attempts. Please try again later.",
+    "unavailable": "Could not complete this request. Check the current status before trying again.",
+    "submitting": "Submitting…",
+    "submit": "Submit claim",
+    "decision": "Review decision",
+    "note": "Reason shown to the trader",
+    "save": "Save decision",
+    "saved": "Decision saved.",
+    "stale": "This claim has changed. Reload the queue before reviewing.",
+    "queue": "Claims queue",
+    "queueEmpty": "No claims await review.",
+    "clickFound": "Linked click found",
+    "noClick": "No linked click",
+    "priceCheck": "Expected checkout price was {expected}.",
+    "view": "Open private receipt",
+    "previous": "Previous page",
+    "next": "Next page",
+    "status": {
+      "submitted": "Submitted",
+      "needs_info": "More information requested",
+      "flagged": "Flagged for review",
+      "approved": "Approved — awaiting commission",
+      "rejected": "Rejected",
+      "matched": "Matched",
+      "confirmed": "Commission confirmed",
+      "released": "Coins available",
+      "reversed": "Reversed"
+    },
+    "appeals": "Claim appeals"
+  },
+  "wallet": {
+    "title": "Wallet",
+    "pending": "Pending",
+    "available": "Available",
+    "history": "Coin activity",
+    "xp": "XP activity",
+    "older": "Older entries",
+    "release": "Eligible for release from {date}.",
+    "empty": "Your verified purchases and reward redemptions will appear here.",
+    "emptyXp": "Your first XP award will appear here.",
+    "types": {
+      "purchase": "Purchase credit",
+      "referral": "Referral credit",
+      "release": "Hold released",
+      "clawback": "Commission reversal",
+      "redemption": "Reward redemption",
+      "refund": "Redemption refund",
+      "pro": "Pro membership"
+    },
+    "sources": {
+      "verified_purchase": "Verified purchase",
+      "verified_referral": "Verified referral",
+      "checkin": "Daily check-in",
+      "mission": "Mission completed",
+      "journal_trade": "Journal entry",
+      "journal_none": "No-trade day logged",
+      "journal_review": "Weekly journal review"
+    }
+  },
+  "finance": {
+    "title": "Finance",
+    "firm": "Firm",
+    "file": "USD commission report (CSV, up to 500 rows)",
+    "external": "Transaction ID column",
+    "order": "Order reference column",
+    "amount": "Commission in USD column",
+    "select": "Choose column",
+    "import": "Import commission report",
+    "reason": "Reason for audit log",
+    "reports": "Commission review",
+    "reported": "Reported commission",
+    "confirmed": "Confirmed commission",
+    "pending": "Pending Coins",
+    "available": "Available Coins",
+    "ratio": "Outstanding Coin value / confirmed commission",
+    "liabilityAlert": "Outstanding Coin value exceeds confirmed commission.",
+    "noFirms": "Add a firm with a live agreement before importing its report.",
+    "confidence": "Match confidence {score}%",
+    "released": "Released",
+    "reversed": "Clawed back",
+    "review": "Review transaction",
+    "confirm": "Confirm commission",
+    "reverse": "Record clawback",
+    "previous": "Previous page",
+    "next": "Next page",
+    "limited": "Too many changes. Try again in a minute.",
+    "invalid": "Check the CSV, column mapping and reason, then try again.",
+    "importError": "Import failed. Check for a conflicting transaction reference. No rows were imported.",
+    "imported": "Report recorded. Review the matched claims below.",
+    "empty": "No reports have been imported.",
+    "capReview": "I reviewed the monthly cap exception for this purchase.",
+    "capRequired": "This purchase exceeds the monthly earn cap. Review the account before confirming an exception.",
+    "decisionError": "The commission could not be updated. Reload and check the current claim and report.",
+    "saved": "Decision saved.",
+    "paid": "Paid by firms",
+    "paidStatus": "Paid {date} · {reference}",
+    "unpaid": "Not yet paid by the firm",
+    "selectPaid": "Include in payment",
+    "paidTitle": "Record a firm payment",
+    "paidHelp": "Tick the confirmed commissions this payment covers in the list below, then record the payout reference from the bank or partner statement.",
+    "paidReference": "Payout reference",
+    "paidOn": "Payment date",
+    "markPaid": "Mark selected as paid",
+    "paidSaved": "Payment recorded.",
+    "paidInvalid": "Select at least one commission and enter the reference, date and reason.",
+    "paidError": "The payment could not be recorded. Reload and try again.",
+    "reconciliation": "Reconciliation",
+    "reconciliationHelp": "Where our claims and the firms' reports disagree.",
+    "reconciliationEmpty": "Claims, reports and payments agree.",
+    "issue": {
+      "claim_without_commission": "Approved claim with no commission after 7 days",
+      "commission_without_claim": "Reported commission with no matching claim",
+      "unpaid": "Confirmed commission unpaid after 45 days"
+    }
+  },
+  "shop": {
+    "title": "Rewards",
+    "catalogue": "Reward catalogue",
+    "history": "Your redemptions",
+    "available": "available",
+    "firm": "Firm",
+    "size": "Account size",
+    "any": "Any",
+    "affordable": "Within my balance",
+    "filter": "Apply filters",
+    "redeem": "Redeem",
+    "confirmBody": "Spend {cost} available Coins on this reward?",
+    "confirm": "Confirm redemption",
+    "goal": "Set as my goal",
+    "currentGoal": "Current goal",
+    "goalSaved": "Reward goal updated.",
+    "changed": "The reward has changed or is unavailable. Reload the catalogue.",
+    "insufficient": "You need more available Coins.",
+    "held": "You already hold this booster.",
+    "limited": "Too many requests. Try again shortly.",
+    "redeemed": "Redemption recorded. See your redemptions below.",
+    "instant": "Available immediately.",
+    "queueNote": "Out of stock. Redeeming reserves a place in the queue with a 48-hour fulfillment target.",
+    "ineligible": "Your level or per-person limit prevents redemption.",
+    "empty": "The shop opens at launch.",
+    "noOrders": "Your redemptions will appear here.",
+    "pending": "Awaiting fulfillment",
+    "fulfilled": "Fulfilled",
+    "cancelled": "Cancelled",
+    "target": "Fulfillment target {date}",
+    "reveal": "Reveal voucher code",
+    "revealError": "Could not reveal this code. Try again or contact support.",
+    "boosterTab": "Booster",
+    "price": "Price",
+    "progressTo": "Coins toward {name}",
+    "short": "{n} Coins to go",
+    "lockedStamp": "Opens at launch"
+  },
+  "stock": {
+    "title": "Rewards and inventory",
+    "new": "Add reward",
+    "saved": "Reward saved.",
+    "name": "Reward name",
+    "description": "Description",
+    "instructions": "Redemption instructions",
+    "kind": "Reward type",
+    "free_challenge_voucher": "Free challenge voucher",
+    "discount_voucher": "Discount voucher",
+    "booster": "Next-purchase booster (+5%)",
+    "program": "Program",
+    "noProgram": "No linked program",
+    "cost_coins": "Price in Coins",
+    "per_user_limit": "Limit per member (optional)",
+    "min_tier": "Minimum level (1–5)",
+    "low_stock": "Low-stock threshold",
+    "countries": "Country codes, comma separated (blank for all)",
+    "starts_at": "Start time (UTC)",
+    "ends_at": "End time (UTC)",
+    "active": "Available to members",
+    "reason": "Reason for audit log",
+    "save": "Save reward",
+    "upload": "Add voucher stock",
+    "codes": "Voucher codes, one per line (up to 500)",
+    "expiry": "Voucher expiration (UTC, optional)",
+    "queue": "Awaiting fulfillment",
+    "empty": "No redemptions are waiting.",
+    "due": "Fulfillment target {date}",
+    "refund": "Cancel and refund",
+    "confirmRefund": "Confirm Coin refund",
+    "previous": "Previous page",
+    "next": "Next page",
+    "low": "Low stock · {n} available",
+    "remaining": "{n} available",
+    "limited": "Too many requests. Try again shortly.",
+    "invalid": "Check the required fields, dates, price and program.",
+    "unavailable": "Could not save. Reload and check the current state.",
+    "stale": "Another editor saved a newer version. Reload before editing.",
+    "keyMissing": "Voucher encryption is unavailable. Check the server key before uploading stock.",
+    "stocked": "Inventory updated and waiting redemptions processed.",
+    "refunded": "The pending redemption was cancelled and its Coins returned."
+  },
+  "rates": {
+    "title": "Economy settings",
+    "version": "Current version {version}. Saving creates a new version. One hundred basis points equals one percent.",
+    "levels": "Give-back by level (basis points)",
+    "founding_share_bps": "Founding give-back (basis points)",
+    "max_total_giveback_bps": "Total give-back cap (basis points)",
+    "referral_bps": "Referral share (basis points)",
+    "monthly_cap": "Monthly Coin review threshold",
+    "hold_days": "Hold period in days",
+    "founding_days": "Founding Season duration in days",
+    "founding_buyers": "Founding buyer limit",
+    "starts": "Founding Season starts (UTC, blank for unscheduled)",
+    "reason": "Reason for rate change",
+    "save": "Publish new version",
+    "saved": "New economy version published.",
+    "stale": "A newer version exists. Reload before publishing.",
+    "limited": "Too many changes. Try again shortly.",
+    "invalid": "Check the dates and rates. Level shares must increase or stay equal and must fit within the cap."
+  },
+  "inbox": {
+    "title": "Notifications",
+    "prefs": "In-app preferences",
+    "claim_status": "Purchase claim updates",
+    "redemption_status": "Reward redemption updates",
+    "coins_released": "Coins released to my wallet",
+    "save": "Save preferences",
+    "saved": "Preferences saved.",
+    "empty": "Your claim, reward and wallet updates will appear here.",
+    "read": "Mark as read",
+    "older": "Older notifications",
+    "limited": "Too many changes. Try again shortly.",
+    "failed": "Could not save this change. Try again.",
+    "release": "{amount, number} Coins are now available in your wallet.",
+    "claim": "Purchase claim · {status}",
+    "reward": "Reward redemption · {status}",
+    "coinsAdded": "{amount} Coins were added to your wallet.",
+    "coinsRemoved": "{amount} Coins were removed from your wallet.",
+    "expiring": "{amount} Coins expire on {date}. Sign in, earn or redeem before then to keep them.",
+    "expired": "{amount} Coins expired after 12 months without activity.",
+    "supportReply": "New reply on your support request: {subject}",
+    "appeal": {
+      "overturned": "Your claim appeal was accepted. The claim is approved.",
+      "upheld": "Your claim appeal was reviewed. The original decision stands."
+    },
+    "deletion": "Your account is scheduled for deletion on {date}. Cancel from Your data before then to keep it.",
+    "drawWon": "You won the draw: {title}. We'll contact you about your prize.",
+    "journal_review": "Weekly journal review reminder",
+    "journalReview": "Your weekly journal review for the week of {date} is open.",
+    "channelsTitle": "Email, Telegram and push",
+    "channelsHelp": "Your inbox always gets everything. These limits apply to messages we send outside the app.",
+    "quiet": "Quiet hours (your time)",
+    "quietHelp": "Nothing is sent outside the app during these hours; it arrives when they end.",
+    "quietOff": "Off",
+    "quietFrom": "From",
+    "quietTo": "Until",
+    "cap": "Most reminders per day",
+    "capHelp": "Money, claim, reward and account updates are always sent and never count toward this.",
+    "capOff": "No limit",
+    "invalidQuiet": "Choose both a start and an end time, and make them different.",
+    "digestTitle": "Economic calendar digest",
+    "digestHelp": "A morning email with today's high-impact events for the currencies you trade. Off unless you turn it on.",
+    "digestOn": "Send me the daily digest",
+    "digestHour": "Send at (your time)",
+    "digestCurrencies": "Currencies",
+    "digestSave": "Save digest",
+    "digestSaved": "Digest settings saved.",
+    "digestInvalid": "Choose at least one currency and a time."
+  },
+  "tools": {
+    "index": {
+      "title": "Trader tools",
+      "metaDescription": "Free prop trading calculators: lot size, daily room, pip value and margin, payout, risk/reward and drawdown recovery, plus a market sessions clock and economic calendar.",
+      "intro": "Free calculators for prop traders. Size positions to your risk, see your daily room before a trade, and plan payouts. No sign-in needed."
+    },
+    "common": {
+      "calculate": "Calculate",
+      "live": "Results update as you type.",
+      "results": "Result",
+      "empty": "Enter your figures to see the result.",
+      "fixErrors": "Check the highlighted fields.",
+      "share": "Copy link to this result",
+      "copied": "Link copied",
+      "copyFailed": "Copy the address from your browser instead.",
+      "maths": "How the calculation works",
+      "estimate": "Figures are estimates for planning. Your trading platform's numbers are final.",
+      "allTools": "All tools",
+      "noAdvice": "These tools help you size risk and follow your firm's rules. They are not trading advice.",
+      "breadcrumb": "Tools",
+      "credited": "Counted toward today's calculator mission.",
+      "moreTools": "More tools",
+      "indicative": "Using the indicative price {price} (Twelve Data, {time} UTC, refreshed hourly). Type your platform's price to use it instead."
+    },
+    "errors": {
+      "required": "Enter a value.",
+      "invalid": "Enter a number, for example 1250.50.",
+      "positive": "Enter a number above 0.",
+      "integer": "Enter a whole number.",
+      "range": "Enter a value from {min} to {max}."
+    },
+    "groups": {
+      "account": "Account",
+      "risk": "Risk",
+      "trade": "Trade",
+      "broker": "Broker settings",
+      "rules": "Program rules",
+      "today": "Today",
+      "timing": "Timing"
+    },
+    "options": {
+      "riskMode": {
+        "percent": "% of balance",
+        "amount": "Fixed amount"
+      },
+      "stopMode": {
+        "pips": "Pips",
+        "price": "Price distance"
+      },
+      "dailyBasis": {
+        "initial": "Starting account size",
+        "dayStart": "Today's starting figure"
+      },
+      "drawdown": {
+        "static": "Static",
+        "trailing": "Trailing (intraday)",
+        "eod": "Trailing (end of day)"
+      },
+      "lock": {
+        "no": "No",
+        "yes": "Yes"
+      },
+      "refund": {
+        "no": "No",
+        "yes": "Yes"
+      }
+    },
+    "lot-size": {
+      "title": "Prop lot size calculator",
+      "metaDescription": "Calculate lots for a set risk and stop loss, with correct pip sizes for JPY pairs, gold, silver and indices. Warns when a loss would exceed your daily room.",
+      "short": "Lots for a set risk and stop, with pip value and money at risk.",
+      "intro": "Enter your balance, how much you want to risk and your stop. The size rounds down to your broker's lot step, so the trade never risks more than you set.",
+      "fields": {
+        "account": {
+          "label": "Account currency"
+        },
+        "balance": {
+          "label": "Account balance"
+        },
+        "riskMode": {
+          "label": "Risk as"
+        },
+        "risk": {
+          "label": "Risk per trade",
+          "hint": "A percentage of the balance, or an amount in the account currency."
+        },
+        "dailyRoom": {
+          "label": "Daily room left (optional)",
+          "hint": "From the daily room calculator. Used to warn you before a trade that could breach the daily limit."
+        },
+        "symbol": {
+          "label": "Instrument"
+        },
+        "stopMode": {
+          "label": "Stop loss in"
+        },
+        "stop": {
+          "label": "Stop loss distance",
+          "hint": "In pips, or as a price difference such as 0.0020."
+        },
+        "price": {
+          "label": "{symbol} price",
+          "hint": "Needed because {account} is the base currency of this pair."
+        },
+        "rate": {
+          "label": "{pair} price",
+          "hint": "Needed to convert {quote} into {account}."
+        },
+        "lotStep": {
+          "label": "Lot step",
+          "hint": "The smallest size change your platform allows."
+        },
+        "contract": {
+          "label": "Contract size (optional)",
+          "hint": "Units per 1.00 lot. Default for {symbol}: {size}. Check your platform's contract specification."
+        }
+      },
+      "rows": {
+        "lots": "Position size (lots)",
+        "moneyAtRisk": "Money at risk",
+        "riskPercent": "Risk of balance",
+        "stopPips": "Stop loss (pips)",
+        "pipValue": "Pip value for this position",
+        "pipValuePerLot": "Pip value per 1.00 lot",
+        "exactLots": "Unrounded size"
+      },
+      "notes": {
+        "belowMinimum": "Your risk is smaller than the smallest position. One lot step risks {amount} at this stop.",
+        "exceedsDailyRoom": "This loss is larger than your remaining daily room. Hitting the stop would breach the daily limit."
+      },
+      "explain": [
+        "Risk amount is the balance times the risk percentage, or the fixed amount you enter.",
+        "Pip value per lot is the pip size times the contract size, converted into your account currency. A pip is 0.0001 on most pairs, 0.01 on JPY pairs, 0.10 on gold and 0.01 on silver. Indices use one point.",
+        "Lots equal the risk amount divided by the stop in pips times the pip value per lot, rounded down to your lot step. Money at risk is then recalculated from the rounded size.",
+        "Contract sizes for metals and indices differ between brokers. Enter the figure from your platform when it differs from the default."
+      ]
+    },
+    "pip-value": {
+      "title": "Pip value and margin calculator",
+      "metaDescription": "Calculate pip value, position value and required margin for forex pairs, gold, silver and indices in your account currency.",
+      "short": "Pip value, position value and the margin a trade needs.",
+      "intro": "Enter the instrument, size and current price. Margin depends on your account leverage, which your firm sets.",
+      "fields": {
+        "account": {
+          "label": "Account currency"
+        },
+        "symbol": {
+          "label": "Instrument"
+        },
+        "lots": {
+          "label": "Position size (lots)"
+        },
+        "price": {
+          "label": "{symbol} price",
+          "hint": "The current price on your platform."
+        },
+        "rate": {
+          "label": "{pair} price",
+          "hint": "Needed to convert {quote} into {account}."
+        },
+        "leverage": {
+          "label": "Leverage (1:x)",
+          "hint": "Enter 100 for 1:100."
+        },
+        "contract": {
+          "label": "Contract size (optional)",
+          "hint": "Units per 1.00 lot. Default for {symbol}: {size}. Check your platform's contract specification."
+        }
+      },
+      "rows": {
+        "pipValue": "Pip value for this position",
+        "pipValuePerLot": "Pip value per 1.00 lot",
+        "notional": "Position value",
+        "margin": "Margin required"
+      },
+      "notes": {},
+      "explain": [
+        "Pip value equals the pip size times the contract size times the lots, converted into your account currency.",
+        "Position value equals the lots times the contract size times the price, converted into your account currency. Margin required is the position value divided by the leverage.",
+        "Firms often set different leverage for forex, metals and indices. Check your program's rules."
+      ]
+    },
+    "daily-room": {
+      "title": "Daily room calculator",
+      "metaDescription": "See how much you can lose today before your prop firm's daily loss or max loss limit, for static, trailing and end-of-day trailing drawdown.",
+      "short": "How much you can lose today before the daily or max loss limit.",
+      "intro": "Enter your program's limits and today's figures. The calculator shows the room left before each limit and which one is closer.",
+      "fields": {
+        "account": {
+          "label": "Account currency"
+        },
+        "initial": {
+          "label": "Starting account size"
+        },
+        "dailyPercent": {
+          "label": "Daily loss limit (%)"
+        },
+        "dailyBasis": {
+          "label": "Daily limit is a percentage of"
+        },
+        "maxPercent": {
+          "label": "Max loss limit (%)"
+        },
+        "drawdown": {
+          "label": "Max loss type"
+        },
+        "lock": {
+          "label": "Trailing stops at the starting size"
+        },
+        "dayStart": {
+          "label": "Balance or equity at today's reset",
+          "hint": "Use the figure your firm measures from at its daily reset time."
+        },
+        "peak": {
+          "label": "Highest point reached",
+          "hint": "Highest equity for intraday trailing, or highest end-of-day balance for end-of-day trailing."
+        },
+        "balance": {
+          "label": "Current balance"
+        },
+        "floating": {
+          "label": "Open profit or loss (optional)",
+          "hint": "Negative for a loss."
+        },
+        "costs": {
+          "label": "Open commission and swap (optional)",
+          "hint": "Negative for a cost."
+        },
+        "symbol": {
+          "label": "Instrument for sizing"
+        },
+        "stopPips": {
+          "label": "Stop loss in pips (optional)",
+          "hint": "Add a stop to see the largest position that fits inside the room."
+        },
+        "price": {
+          "label": "{symbol} price",
+          "hint": "Needed because {account} is the base currency of this pair."
+        },
+        "rate": {
+          "label": "{pair} price",
+          "hint": "Needed to convert {quote} into {account}."
+        }
+      },
+      "rows": {
+        "room": "Room before the nearest limit",
+        "equity": "Current equity",
+        "dailyRoom": "Room before the daily limit",
+        "dailyFloor": "Daily limit level",
+        "maxRoom": "Room before max loss",
+        "maxFloor": "Max loss level",
+        "maxLots": "Largest position for your stop"
+      },
+      "notes": {
+        "breached": "Equity is at or below a limit. Check your firm's dashboard: the account may already be breached.",
+        "close": "You are within 20% of the daily limit.",
+        "bindingDaily": "The daily limit is the closer limit today.",
+        "bindingMax": "The max loss limit is closer than the daily limit."
+      },
+      "explain": [
+        "Equity equals the balance plus open profit or loss plus open commission and swap.",
+        "The daily limit level is today's reset figure minus the daily limit. The limit is a percentage of either the starting size or today's figure, depending on your firm.",
+        "A static max loss stays at the starting size minus the max loss. An intraday trailing level rises with the highest equity reached. An end-of-day trailing level rises only with the highest closing balance. Some firms stop the trailing level once it reaches the starting size.",
+        "Firms word these rules differently. Check your program's rules page: this calculator cannot know your firm's exact method."
+      ]
+    },
+    "payout": {
+      "title": "Payout calculator",
+      "metaDescription": "Estimate a prop firm payout after profit split, buffer, minimum payout and fees, with an expected arrival date.",
+      "short": "What you receive after split, buffer and fees, and when.",
+      "intro": "Enter your profit and your program's payout terms. The result shows your share, what arrives after fees, and an estimated date.",
+      "fields": {
+        "account": {
+          "label": "Account currency"
+        },
+        "profit": {
+          "label": "Profit above the starting balance"
+        },
+        "split": {
+          "label": "Your profit split (%)"
+        },
+        "buffer": {
+          "label": "Buffer kept in the account (optional)",
+          "hint": "Some firms require part of the profit to stay in the account."
+        },
+        "minimum": {
+          "label": "Minimum payout (optional)"
+        },
+        "fee": {
+          "label": "Fee per payout (optional)"
+        },
+        "processingDays": {
+          "label": "Processing time in business days (optional)"
+        },
+        "requestDate": {
+          "label": "Request date (optional)"
+        }
+      },
+      "rows": {
+        "received": "You receive",
+        "traderShare": "Your share",
+        "withdrawable": "Profit eligible for payout",
+        "firmShare": "Firm's share",
+        "expectedDate": "Estimated arrival"
+      },
+      "notes": {
+        "belowMinimum": "Your share is below the minimum payout. You need {amount} more profit to request it."
+      },
+      "explain": [
+        "Eligible profit equals the profit minus the buffer. Your share is the eligible profit times your split. You receive your share minus the payout fee.",
+        "The estimated date adds the processing time in business days, Monday to Friday, to the request date. Bank holidays and firm reviews can add time.",
+        "Payouts depend on each firm's rules and reviews. A calculated amount is not a promise that a firm will pay."
+      ]
+    },
+    "risk-reward": {
+      "title": "Risk/reward calculator",
+      "metaDescription": "Calculate reward per unit of risk and the breakeven win rate for a given gain and loss.",
+      "short": "Reward per unit of risk and the win rate needed to break even.",
+      "intro": "Enter a potential loss and gain in the same currency, after fees. The result shows the win rate needed to break even at those amounts.",
+      "fields": {
+        "loss": {
+          "label": "Loss per losing trade"
+        },
+        "gain": {
+          "label": "Gain per winning trade"
+        }
+      },
+      "rows": {
+        "ratio": "Reward per unit of risk",
+        "breakeven": "Breakeven win rate"
+      },
+      "notes": {},
+      "explain": [
+        "Reward per unit of risk divides gain by loss. The breakeven win rate divides loss by the sum of gain and loss.",
+        "Both calculations assume the amounts stay the same across trades."
+      ]
+    },
+    "drawdown-recovery": {
+      "title": "Drawdown recovery calculator",
+      "metaDescription": "Calculate the percentage gain needed to recover from a drawdown, and the amount to regain.",
+      "short": "The gain you need to get back to where you started.",
+      "intro": "A loss takes a larger percentage gain to recover, because the gain is made on a smaller balance.",
+      "fields": {
+        "account": {
+          "label": "Account currency"
+        },
+        "loss": {
+          "label": "Loss (%)"
+        },
+        "balance": {
+          "label": "Balance before the loss (optional)"
+        }
+      },
+      "rows": {
+        "recovery": "Gain needed to recover",
+        "after": "Balance after the loss",
+        "regain": "Amount to regain"
+      },
+      "notes": {},
+      "explain": [
+        "The gain needed equals the loss divided by 100 minus the loss, times 100. A 10% loss needs an 11.1% gain. A 50% loss needs 100%.",
+        "In a prop challenge, the max loss limit usually ends the account long before a deep drawdown could be recovered."
+      ]
+    },
+    "sessions": {
+      "title": "Market sessions clock",
+      "metaDescription": "See the Sydney, Tokyo, London and New York forex sessions in your timezone, with overlaps, daily rollover and the weekly close and open.",
+      "short": "Forex sessions in your timezone, with overlaps and the weekly close.",
+      "intro": "Session times follow each city's local clock, so daylight-saving changes are applied automatically. Times are shown in your device's timezone.",
+      "yourTime": "Your time ({zone})",
+      "marketOpen": "Forex market open",
+      "marketClosed": "Forex market closed for the weekend",
+      "timelineCaption": "Today's sessions on a 24-hour timeline in your timezone, with overlaps and the current time.",
+      "names": {
+        "sydney": "Sydney",
+        "tokyo": "Tokyo",
+        "london": "London",
+        "newYork": "New York"
+      },
+      "overlap": "Overlap",
+      "open": "Open",
+      "closed": "Closed",
+      "opensIn": "Opens {when}",
+      "closesIn": "Closes {when}",
+      "inDays": "in {d}d {h}h",
+      "inHours": "in {h}h {m}m",
+      "inMinutes": "in {m}m",
+      "rollover": "Daily rollover",
+      "weeklyClose": "Weekly close",
+      "weeklyOpen": "Weekly open",
+      "explain": [
+        "Each session runs from 08:00 to 17:00 local time in London and New York, 09:00 to 18:00 in Tokyo and 07:00 to 16:00 in Sydney. These are the common conventions; liquidity builds and fades gradually rather than at exact times.",
+        "The daily rollover, when swap is charged, and the weekly close and open are at 17:00 New York time. Many firms do not allow holding positions over the weekend: check your program's rules before the Friday close.",
+        "Bank holidays are not shown yet."
+      ]
+    },
+    "calendar": {
+      "title": "Economic calendar",
+      "short": "Scheduled economic releases in your timezone, filtered by currency and impact.",
+      "metaDescription": "Economic calendar for forex prop traders: scheduled releases in your timezone with impact, forecast, previous and actual figures.",
+      "intro": "Scheduled economic releases in your timezone. Many prop firms restrict trading around high-impact news, so check your program's rules for each event.",
+      "sample": "Sample data. A licensed calendar feed is not connected yet, so every event and figure below is fictional. Do not use it to plan trades.",
+      "nextHigh": "Next high-impact event:",
+      "rangeLabel": "Dates",
+      "impactLabel": "Impact",
+      "currencyLabel": "Currencies",
+      "ranges": {
+        "today": "Today",
+        "week": "This week",
+        "next": "Next week"
+      },
+      "levels": {
+        "all": "All impact",
+        "medium": "Medium and high",
+        "high": "High only"
+      },
+      "impact": {
+        "low": "Low impact",
+        "medium": "Medium impact",
+        "high": "High impact"
+      },
+      "figures": {
+        "actual": "Actual",
+        "forecast": "Forecast",
+        "previous": "Previous"
+      },
+      "zoneNote": "Times in {zone}. Choose no currency to see all.",
+      "empty": "No events match these filters.",
+      "inDays": "in {d}d {h}h",
+      "inHours": "in {h}h {m}m",
+      "inMinutes": "in {m}m",
+      "aboutTitle": "About this calendar",
+      "about": "Impact levels describe how much a release usually moves prices, not which way. Forecasts are consensus estimates from the data provider. Members can get a free morning digest of high-impact events for their currencies; alerts before events and firm news-rule windows for tracked accounts are coming to the signed-in app.",
+      "digestCta": "Get today's high-impact events by email each morning"
+    },
+    "consistency": {
+      "title": "Consistency rule calculator",
+      "metaDescription": "Check a prop firm consistency rule: your largest day's share of profit, the profit still needed before a payout, and the most you can make today.",
+      "short": "Your best day's share of profit and how much more you need before a payout.",
+      "intro": "Many funded programs cap how much of your total profit can come from one day. Enter your profit so far and your best day to see where you stand.",
+      "fields": {
+        "account": {
+          "label": "Account currency"
+        },
+        "profit": {
+          "label": "Total profit before today"
+        },
+        "bestDay": {
+          "label": "Largest single-day profit",
+          "hint": "Your best day so far, in the same currency."
+        },
+        "limit": {
+          "label": "Largest day allowed (% of total profit)",
+          "hint": "From your program's rules, for example 30."
+        }
+      },
+      "rows": {
+        "share": "Best day's share of profit",
+        "maxToday": "Most you can make today",
+        "neededTotal": "Total profit the rule needs",
+        "moreNeeded": "More profit needed"
+      },
+      "notes": {
+        "passes": "Your best day is within the rule.",
+        "fails": "Your best day is above the limit. Keep trading to the rule until total profit reaches the figure above."
+      },
+      "explain": [
+        "Best day's share equals your largest single-day profit divided by total profit.",
+        "For the rule to pass, total profit must be at least the best day divided by the limit. Today breaks the rule only if it becomes your largest day and its share goes over the limit; that happens above the limit times profit so far, divided by one minus the limit.",
+        "Firms apply consistency rules differently: some count only payout periods, some include today's open profit. Check your program's rules page."
+      ]
+    },
+    "challenge-cost": {
+      "title": "Challenge cost calculator",
+      "metaDescription": "Work out the cost per prop firm challenge attempt after a discount, the total for several attempts, and the payout needed to break even.",
+      "short": "Cost per attempt, total for several attempts and the break-even payout.",
+      "intro": "See what a challenge really costs if it takes more than one attempt. Most traders do not pass, so plan for the number of attempts you can afford.",
+      "fields": {
+        "account": {
+          "label": "Account currency"
+        },
+        "fee": {
+          "label": "Challenge fee"
+        },
+        "discount": {
+          "label": "Discount code (%) (optional)"
+        },
+        "attempts": {
+          "label": "Attempts you plan for"
+        },
+        "refund": {
+          "label": "Fee refunded with first payout"
+        },
+        "split": {
+          "label": "Your profit split (%)"
+        }
+      },
+      "rows": {
+        "perAttempt": "Cost per attempt",
+        "total": "Total for these attempts",
+        "breakEvenPayout": "Payout needed to break even",
+        "breakEvenProfit": "Funded profit needed to break even"
+      },
+      "notes": {
+        "odds": "Challenges are simulated evaluations and most traders do not pass. Only spend what you can afford to lose."
+      },
+      "explain": [
+        "Cost per attempt equals the fee minus the discount. The total multiplies it by the attempts.",
+        "If the firm refunds the fee with the first payout, the passing attempt's fee comes back, so only the other attempts need to be covered. Funded profit needed divides that payout by your split.",
+        "Coins earned on a purchase are rewards with no cash value and are not counted here."
+      ]
+    }
+  },
+  "journal": {
+    "title": "Journal",
+    "intro": "Log trades, tag what happened and see which setups and mistakes make or lose money. Private to you.",
+    "logTrade": "Log a trade",
+    "allTrades": "All trades",
+    "strategies": "Strategies and tags",
+    "guardianNote": "Tracking each prop account's limits arrives with Guardian. Until then, trades are journaled without an account.",
+    "today": {
+      "title": "Today",
+      "streak": "{days, plural, one {# day journal streak} other {# day journal streak}}",
+      "noStreak": "Log a tagged trade or mark a day with no trades to start a journal streak.",
+      "noTrades": "No trades today",
+      "noTradesDone": "Marked as a no-trade day",
+      "logged": "Journaled today",
+      "failed": "That didn't save. Try again."
+    },
+    "quick": {
+      "title": "Quick log",
+      "hint": "Symbol, direction, result and one tag. Add details later.",
+      "symbol": "Symbol",
+      "direction": "Direction",
+      "result": "Result",
+      "currency": "Currency",
+      "tag": "Tag (optional)",
+      "noTag": "No tag",
+      "submit": "Log trade",
+      "saved": "Trade logged."
+    },
+    "direction": {
+      "long": "Long",
+      "short": "Short"
+    },
+    "session": {
+      "asia": "Asia",
+      "london": "London",
+      "new_york": "New York",
+      "overlap": "Overlap",
+      "off": "Market closed"
+    },
+    "weekday": {
+      "0": "Monday",
+      "1": "Tuesday",
+      "2": "Wednesday",
+      "3": "Thursday",
+      "4": "Friday",
+      "5": "Saturday",
+      "6": "Sunday"
+    },
+    "periods": {
+      "label": "Period",
+      "7": "7 days",
+      "30": "30 days",
+      "90": "90 days",
+      "all": "All time"
+    },
+    "currencyLabel": "Currency",
+    "stats": {
+      "net": "Net P&L",
+      "winRate": "Win rate",
+      "profitFactor": "Profit factor",
+      "avgR": "Average R",
+      "trades": "{n, plural, one {# trade} other {# trades}}",
+      "winsLosses": "{wins} won · {losses} lost",
+      "noLosses": "No losing trades",
+      "noR": "Add stop losses to see R",
+      "longestWin": "Longest winning run",
+      "longestLoss": "Longest losing run",
+      "best": "Best trade",
+      "worst": "Worst trade"
+    },
+    "charts": {
+      "equity": "Equity curve",
+      "equityDesc": "Cumulative net P&L by day, from {start} to {end}: {value} at the end.",
+      "daily": "Daily P&L",
+      "dailyDesc": "Net P&L per trading day. Gains rise above the line; losses fall below it.",
+      "table": "Show as table",
+      "day": "Day",
+      "net": "Net P&L",
+      "tradesCol": "Trades",
+      "calendar": "Calendar",
+      "calendarDesc": "Each day shows its net result: + marks a gain, − a loss.",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "noTradeDay": "No trades",
+      "running": "Running total",
+      "dayResult": "That day",
+      "winsLosses": "Won / lost",
+      "keyboardHint": "Use the left and right arrow keys to move between days.",
+      "calendarHint": "Hover or tap a day to see its result. Select it to open that day's trades."
+    },
+    "breakdowns": {
+      "title": "Breakdowns",
+      "symbol": "By symbol",
+      "session": "By session",
+      "direction": "By direction",
+      "weekday": "By weekday",
+      "strategy": "By strategy",
+      "key": "Group",
+      "trades": "Trades",
+      "winRate": "Win rate",
+      "net": "Net P&L",
+      "noStrategy": "No strategy"
+    },
+    "mistakes": {
+      "title": "Cost of mistakes",
+      "hint": "Losses on trades tagged with each mistake.",
+      "empty": "Tag mistakes on losing trades to see what they cost.",
+      "trades": "{n, plural, one {# trade} other {# trades}}"
+    },
+    "gallery": {
+      "title": "Chart gallery",
+      "empty": "Add screenshots to trades to see them here.",
+      "alt": "{symbol} chart, result {result}"
+    },
+    "empty": {
+      "title": "Your journal is empty",
+      "body": "Log your first trade. A basic entry takes under 20 seconds; add tags so the dashboard can show what works.",
+      "period": "No trades in this period."
+    },
+    "list": {
+      "title": "All trades",
+      "empty": "No trades yet.",
+      "more": "Older trades",
+      "when": "Closed",
+      "symbol": "Symbol",
+      "result": "Net result",
+      "tags": "Tags",
+      "shots": "{n, plural, one {# screenshot} other {# screenshots}}",
+      "quick": "Quick log",
+      "dayTitle": "Trades on {day}",
+      "allDays": "Show all trades"
+    },
+    "form": {
+      "newTitle": "Log a trade",
+      "editTitle": "Edit trade",
+      "basics": "Trade",
+      "prices": "Prices (optional)",
+      "costs": "Result",
+      "plan": "Strategy and tags",
+      "mind": "Mindset (optional)",
+      "symbol": "Symbol",
+      "symbolHint": "For example EURUSD, XAUUSD or US30.",
+      "direction": "Direction",
+      "opened": "Opened (optional)",
+      "closed": "Closed",
+      "timeHint": "In your timezone ({zone}).",
+      "lots": "Lots (optional)",
+      "entry": "Entry price",
+      "exit": "Exit price",
+      "stopLoss": "Stop loss",
+      "takeProfit": "Take profit",
+      "priceHint": "Add entry, exit and stop loss to calculate pips and R.",
+      "currency": "Account currency",
+      "result": "Profit or loss",
+      "resultHint": "As your platform shows it, before commission and swap. Use a minus sign for a loss.",
+      "commission": "Commission (optional)",
+      "swap": "Swap (optional)",
+      "costHint": "Use a minus sign for a cost.",
+      "strategy": "Strategy",
+      "noStrategy": "None",
+      "rules": "Rules for this trade",
+      "ruleFollowed": "Followed",
+      "ruleBroken": "Broken",
+      "ruleSkip": "Not checked",
+      "setup": "Setups",
+      "mistake": "Mistakes",
+      "emotion": "Emotions",
+      "noTags": "No tags of this kind yet. Add them under Strategies and tags.",
+      "emotionBefore": "Feeling before (1–5)",
+      "emotionAfter": "Feeling after (1–5)",
+      "confidence": "Confidence (1–5)",
+      "scaleNone": "Not rated",
+      "notes": "Notes",
+      "notesHint": "What you saw, what you did and why. Up to 4,000 characters.",
+      "save": "Save trade",
+      "saving": "Saving…",
+      "xpHint": "A trade with a tag or a note earns 5 XP, up to 10 trades a day. Journal XP never earns Coins."
+    },
+    "errors": {
+      "invalid": "Check the highlighted fields.",
+      "limited": "Too many saves in a minute. Wait a moment and try again.",
+      "unavailable": "The journal couldn't save right now. Your entry wasn't saved; try again.",
+      "notFound": "That item no longer exists.",
+      "field": "Check this value.",
+      "order": "Opening time must be before closing time."
+    },
+    "detail": {
+      "title": "{symbol} {direction}",
+      "saved": "Trade saved.",
+      "net": "Net result",
+      "pips": "Pips",
+      "r": "R-multiple",
+      "session": "Session",
+      "held": "Held",
+      "lots": "Lots",
+      "source": "Logged with",
+      "sourceQuick": "Quick log",
+      "sourceManual": "Full entry",
+      "screenshots": "Screenshots",
+      "addShot": "Add screenshot",
+      "shotHint": "Up to 4 per trade. Large images are resized on your device before upload.",
+      "uploading": "Uploading…",
+      "removeShot": "Remove screenshot",
+      "shotFailed": "That image couldn't be added. Use a PNG, JPEG or WebP under 2 MB.",
+      "shotLimit": "This trade already has 4 screenshots.",
+      "delete": "Delete trade",
+      "deleteConfirm": "Delete this trade and its screenshots? This can't be undone.",
+      "deleteYes": "Yes, delete",
+      "cancel": "Cancel",
+      "edit": "Edit details",
+      "back": "Journal"
+    },
+    "strategiesPage": {
+      "title": "Strategies and tags",
+      "intro": "Write the rules you trade by, then tick which ones you followed on each trade. The dashboard compares results when rules were followed or broken.",
+      "new": "New strategy",
+      "name": "Name",
+      "description": "Description (optional)",
+      "rules": "Rules, one per line",
+      "rulesHint": "Up to 20 rules.",
+      "save": "Save strategy",
+      "saved": "Saved.",
+      "archive": "Archive",
+      "empty": "No strategies yet.",
+      "edit": "Edit",
+      "tags": "Tags",
+      "newTag": "New tag",
+      "kind": "Kind",
+      "tagName": "Tag name",
+      "addTag": "Add tag",
+      "preset": "Preset",
+      "deleteTag": "Delete tag {name}",
+      "duplicate": "You already have a strategy with that name.",
+      "ruleFollowRate": "Rules followed: {rate}"
+    },
+    "kinds": {
+      "setup": "Setup",
+      "mistake": "Mistake",
+      "emotion": "Emotion"
+    },
+    "landing": {
+      "title": "A free trading journal built for prop traders",
+      "metaDescription": "Log trades in seconds, tag setups and mistakes, and see what each mistake costs you. Free and private, with pips, R-multiple and sessions worked out for you.",
+      "lead": "Log a trade in under 20 seconds. Tag the setup and the mistake. See exactly which habits make you money and which ones breach accounts.",
+      "cta": "Start your journal",
+      "signedIn": "Open your journal",
+      "features": [
+        {
+          "title": "Fast on a phone",
+          "body": "Quick log takes a symbol, a direction, the result and one tag. Add prices, screenshots and notes later."
+        },
+        {
+          "title": "Mistakes with a price tag",
+          "body": "Tag revenge trades, moved stops or oversized lots. The dashboard ranks each mistake by what it cost you."
+        },
+        {
+          "title": "The numbers prop rules care about",
+          "body": "Pips, R-multiple, session and holding time are worked out for you. A calendar shows every day's result."
+        },
+        {
+          "title": "Private by default",
+          "body": "Only you can read your journal. Screenshots are stored privately and shown through short-lived links."
+        }
+      ],
+      "honest": "A journal helps you review your own trading. It doesn't predict markets or tell you what to trade, and most traders do not pass prop challenges."
+    },
+    "badges": {
+      "journal_first": "First journal entry",
+      "journal_100": "100 trades journaled"
+    },
+    "exportCsv": "Export CSV",
+    "review": {
+      "nav": "Weekly review",
+      "title": "Weekly review",
+      "week": "Week of {start} – {end}",
+      "intro": "Five minutes on the week you just traded: what the numbers show, what you'd keep and one rule for next week. Your answers are private.",
+      "xp": "+100 XP when you finish",
+      "done": "Review saved. Your rule shows on Today all next week.",
+      "edited": "Review updated.",
+      "stats": "The week in numbers",
+      "noTrades": "No trades logged this week. You can still review your plan and set a rule.",
+      "trades": "Trades",
+      "net": "Net result",
+      "winRate": "Win rate",
+      "avgR": "Average R",
+      "best": "Best trade",
+      "worst": "Worst trade",
+      "costliest": "Costliest mistake tag",
+      "noMistakes": "No mistake tags this week.",
+      "viewTrade": "Open trade",
+      "questions": "Questions",
+      "whatWorked": "What worked?",
+      "whatDidnt": "What didn't?",
+      "costlyMistake": "Which mistake cost the most?",
+      "followedPlan": "Did you follow your plan?",
+      "plan": {
+        "yes": "Yes",
+        "partly": "Partly",
+        "no": "No"
+      },
+      "feeling": "How did you feel this week? (1 = drained, 5 = calm)",
+      "previousRule": "Last week's rule: “{rule}”. Did you keep it?",
+      "kept": {
+        "yes": "Kept it",
+        "no": "Didn't keep it"
+      },
+      "nextRule": "One rule to follow next week",
+      "nextRuleHint": "Short and checkable, e.g. “No trades in the first 15 minutes after the open.”",
+      "save": "Finish review",
+      "update": "Update review",
+      "day": "Review day",
+      "dayHint": "The review opens on this day each week, and we remind you at 18:00 your time.",
+      "saveDay": "Save review day",
+      "daySaved": "Review day saved.",
+      "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "errors": {
+        "invalid": "Check the highlighted answers and try again.",
+        "limited": "Too many saves. Try again in a minute.",
+        "stale": "This review week has closed. Reload to review the current week.",
+        "unavailable": "Could not save your review. Try again."
+      },
+      "todayRule": "This week's rule",
+      "todayRuleFrom": "From your weekly review",
+      "todayOpen": "Your weekly review is open",
+      "todayOpenBody": "Look back at the week of {start} and set one rule for next week.",
+      "todayStart": "Start review"
+    }
+  },
+  "channels": {
+    "title": "Telegram and phone alerts",
+    "intro": "Get the same updates outside the app. They follow your preferences above.",
+    "telegram": "Telegram",
+    "telegramBody": "Claim, reward and Coin updates in Telegram, plus commands like /coins, /streak and /next.",
+    "connectTelegram": "Connect Telegram",
+    "openTelegram": "Open Telegram app",
+    "telegramSteps": "Finish in Telegram: press Start in @{bot}. This link works once and expires in 15 minutes.",
+    "telegramLinked": "Connected to Telegram.",
+    "telegramLinkedAs": "Connected to Telegram as @{name}.",
+    "disconnect": "Disconnect",
+    "telegramUnavailable": "Telegram alerts are not available right now.",
+    "push": "Notifications on this device",
+    "pushBody": "Alerts from your browser, even when the site is closed. On iPhone, add the site to your Home Screen first.",
+    "pushEnable": "Turn on device notifications",
+    "pushDisable": "Turn off",
+    "pushOn": "Device notifications are on.",
+    "pushDenied": "Notifications are blocked for this site in your browser settings.",
+    "pushUnsupported": "This browser doesn't support notifications from websites.",
+    "checking": "Checking this device…",
+    "errors": {
+      "limited": "Too many changes. Try again in a minute.",
+      "failed": "That didn't work. Try again.",
+      "unavailable": "This is not available right now."
+    },
+    "telegramWaiting": "Waiting for you to press Start in Telegram…",
+    "telegramTimeout": "Still not linked. The link may have expired: reload this page and choose Connect Telegram again.",
+    "openTelegramWeb": "Use Telegram Web",
+    "qrAlt": "QR code that opens the Fundback bot in Telegram",
+    "qrHint": "On a computer without the Telegram app? Scan this with your phone's camera to finish in the Telegram app there.",
+    "manualHint": "If no link opens, send this message to @{bot} in any Telegram app:",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "restricted": {
+    "suspendedTitle": "Your account is suspended",
+    "bannedTitle": "Your account is closed",
+    "suspendedBody": "You can't use your account while it is suspended. Your Coins and records are kept.",
+    "bannedBody": "This account has been closed permanently. Pending Coins are frozen and records are kept as the rewards terms describe.",
+    "clearBody": "Your account has no restrictions.",
+    "help": "If you think this is a mistake, contact support from the help centre.",
+    "helpLink": "Help centre",
+    "signOut": "Sign out",
+    "continue": "Continue to the app",
+    "frozenTitle": "Your rewards are paused",
+    "frozenBody": "You can use the site, but new claims and redemptions are paused while we review your account."
+  },
+  "results": {
+    "saved": "Saved.",
+    "sent": "Sent.",
+    "invalid": "Check the fields and try again.",
+    "limited": "Too many actions in a minute. Wait and try again.",
+    "forbidden": "Your role can't do this.",
+    "stale": "Someone else changed this first. Reload and try again.",
+    "unavailable": "That didn't work. Try again.",
+    "notFound": "That item no longer exists or the link has expired.",
+    "capReached": "The campaign budget's cap would be exceeded.",
+    "needsConfirm": "This amount needs the confirmation box ticked.",
+    "budgetClosed": "That campaign budget is not open.",
+    "overBalance": "That's more than the member's available balance.",
+    "differentReviewer": "A different reviewer must decide this appeal.",
+    "windowClosed": "The 14-day appeal window has closed.",
+    "alreadyDone": "This has already been done.",
+    "notOpen": "This is not open.",
+    "notEnded": "The draw hasn't ended yet.",
+    "oddsTotal": "Odds must add up to exactly 100%.",
+    "frozen": "Rewards are paused on this account.",
+    "tooMany": "Too many open requests. Wait for a reply first."
+  },
+  "adminUsers": {
+    "title": "Users",
+    "search": "Search",
+    "searchHint": "Email, referral code, user ID or order reference",
+    "email": "Email",
+    "code": "Referral code",
+    "country": "Country",
+    "joined": "Joined",
+    "status": "Status",
+    "active": "Active",
+    "empty": "No members match.",
+    "back": "All users",
+    "levels": {
+      "none": "No restriction",
+      "frozen": "Rewards frozen",
+      "suspended": "Suspended",
+      "banned": "Banned"
+    },
+    "available": "Available Coins",
+    "pending": "Pending Coins",
+    "xp": "XP",
+    "level": "Level",
+    "streak": "Check-in streak",
+    "restrictTitle": "Account status",
+    "restrictSave": "Save status",
+    "reason": "Reason (audit log)",
+    "memberMessage": "Message shown to the member (optional)",
+    "grantTitle": "Add Coins from a campaign",
+    "grantHint": "Coins not tied to a commission must come from a funded campaign budget with a hard cap.",
+    "grantSave": "Add Coins",
+    "budget": "Campaign budget",
+    "budgetOption": "{name} ({remaining} left)",
+    "noBudgets": "No open campaign budget. Create one under Campaigns first.",
+    "amount": "Amount",
+    "note": "Note shown to the member (optional)",
+    "confirmLarge": "I confirm this amount (at or above {threshold} Coins)",
+    "removeTitle": "Remove Coins",
+    "removeSave": "Remove Coins",
+    "xpTitle": "XP and boosters",
+    "xpAmount": "XP change (negative to remove)",
+    "xpSave": "Adjust XP",
+    "booster": "Booster",
+    "boosterSave": "Grant booster",
+    "boosters": {
+      "giveback3": "+3% give-back on next purchase",
+      "giveback5": "+5% give-back on next purchase",
+      "xp24": "2× XP for 24 hours",
+      "freeze1": "One streak freeze"
+    },
+    "noteTitle": "Staff notes",
+    "noteBody": "Note (staff only)",
+    "noteSave": "Add note",
+    "ledger": "Coin ledger (latest 50)",
+    "noLedger": "No ledger entries.",
+    "when": "When",
+    "type": "Type",
+    "bucket": "Bucket",
+    "claims": "Claims",
+    "tickets": "Support tickets",
+    "notes": "Notes"
+  },
+  "support": {
+    "help": "Help centre",
+    "title": "Support tickets",
+    "emptyHelp": "Help articles will appear here.",
+    "emptyTickets": "You have no support tickets.",
+    "open": "Open a ticket",
+    "subject": "Subject",
+    "topic": "Topic",
+    "message": "Message",
+    "reply": "Reply",
+    "internal": "Internal staff note",
+    "send": "Send reply",
+    "status": "Status",
+    "staff": "Support team",
+    "member": "Member",
+    "notes": "Internal note",
+    "openTicket": "Submit ticket",
+    "queue": "Support queue",
+    "topics": {
+      "claim": "Purchase claim",
+      "redemption": "Reward redemption",
+      "coins": "Coins",
+      "account": "Account",
+      "journal": "Trading journal",
+      "other": "Other"
+    },
+    "statuses": {
+      "open": "Open",
+      "waiting_on_user": "Waiting on member",
+      "resolved": "Resolved"
+    },
+    "none": "No tickets found.",
+    "history": "Your data requests",
+    "emptyRequests": "No data requests yet.",
+    "export": "Export",
+    "delete": "Account deletion",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "manage": "Get help with your data",
+    "draws": "Weekly draws",
+    "emptyDraws": "No draws have been published.",
+    "tickets": "Your tickets",
+    "freeEntry": "Claim free entry",
+    "winner": "Winner",
+    "closed": "Closed",
+    "next": "Older",
+    "previous": "Newer",
+    "due": "Scheduled for {date}",
+    "save": "Save ticket update",
+    "memberTitle": "Get help",
+    "intro": "Tell us what went wrong and we'll reply here and by email, usually within a day. Many answers are already in the",
+    "helpLink": "help centre",
+    "yours": "Your requests",
+    "new": "New request",
+    "link": "Related claim (optional)",
+    "noLink": "None",
+    "claimLink": "Claim {ref}",
+    "messageHint": "Include dates, order references and what you expected to happen. Never send passwords.",
+    "sendRequest": "Send request",
+    "replyLabel": "Your reply",
+    "sendReply": "Send reply",
+    "back": "All requests",
+    "fromSupport": "Support",
+    "fromYou": "You",
+    "memberStatus": {
+      "open": "Open",
+      "waiting_on_user": "Waiting for your reply",
+      "resolved": "Resolved"
+    }
+  },
+  "appeals": {
+    "title": "Claim appeals",
+    "claimsQueue": "Claims queue",
+    "empty": "No appeals await review.",
+    "order": "Order {reference}",
+    "start": "Appeal this decision",
+    "deadline": "You can appeal once. Submit new evidence by {deadline} UTC.",
+    "expired": "The 14-day appeal window has closed.",
+    "submit": "Submit appeal",
+    "evidence": "New evidence (20–4,000 characters)",
+    "submittedEvidence": "Your submitted evidence",
+    "decisionNote": "Reason shown to the member",
+    "rejectionNote": "Original rejection reason",
+    "receipt": "View original receipt",
+    "otherReviewer": "Another reviewer must decide this appeal because you made the original decision.",
+    "decision": "Appeal decision",
+    "choose": "Choose a decision",
+    "uphold": "Keep the rejection",
+    "overturn": "Overturn rejection and approve claim",
+    "save": "Save appeal decision",
+    "newerPage": "Previous page",
+    "olderPage": "Next page",
+    "statuses": {
+      "pending": "Appeal awaiting review",
+      "upheld": "Appeal decided · rejection upheld",
+      "overturned": "Appeal decided · claim approved"
+    }
+  },
+  "campaigns": {
+    "title": "Campaign budgets",
+    "intro": "Every Coin that is not a share of a confirmed commission comes from one of these budgets. Grants stop automatically at the cap.",
+    "usage": "{granted} of {cap} Coins granted",
+    "new": "New campaign budget",
+    "create": "Create budget",
+    "update": "Save budget",
+    "name": "Name",
+    "cap": "Cap (Coins)",
+    "purpose": "Purpose",
+    "ends": "Ends (UTC, optional)",
+    "reason": "Reason (audit log)",
+    "active": "Open for grants"
+  },
+  "help": {
+    "title": "Help centre",
+    "intro": "Answers about claims, Coins, rewards, the journal and your account.",
+    "search": "Search",
+    "searchHint": "Search the help centre",
+    "empty": "No articles match. Try other words, or contact support.",
+    "all": "All help articles",
+    "updated": "Updated {date}",
+    "stillStuck": "Still stuck?",
+    "contact": "Contact support",
+    "categories": {
+      "getting-started": "Getting started",
+      "claims": "Purchase claims",
+      "coins": "Coins",
+      "rewards": "Rewards",
+      "journal": "Trading journal",
+      "account": "Your account"
+    }
+  },
+  "changelog": {
+    "title": "What's new",
+    "empty": "Nothing published yet."
+  },
+  "dataRights": {
+    "title": "Your data",
+    "back": "Profile",
+    "exportTitle": "Download your data",
+    "exportBody": "A ZIP with your profile, Coin history, XP, claims, redemptions, journal, support requests and notifications.",
+    "export": "Download my data",
+    "deleteTitle": "Delete your account",
+    "deleteBody": "We'll email you a link to confirm. Deletion then waits 14 days so you can change your mind. Your profile, journal and screenshots are deleted; accounting records of Coins and claims are kept without your personal details. Any Coins you hold are lost.",
+    "delete": "Email me a deletion link",
+    "cancel": "Cancel deletion",
+    "awaiting": "Check your email for the confirmation link. It works for 24 hours.",
+    "due": "Your account will be deleted on {date}.",
+    "scheduled": "Deletion confirmed. You can cancel it any time before the date shown.",
+    "emailSent": "We sent a confirmation link to your email.",
+    "confirmTitle": "Confirm account deletion",
+    "confirmBody": "Confirming schedules your account for deletion in 14 days. You can cancel from Your data before then.",
+    "confirm": "Confirm deletion",
+    "badLink": "This link is incomplete. Open it again from your email.",
+    "email": {
+      "subject": "Confirm your account deletion",
+      "heading": "Confirm account deletion",
+      "body1": "You asked us to delete your account. Open the link and press Confirm to schedule it.",
+      "body2": "Deletion happens 14 days after you confirm, and you can cancel before then. If you didn't ask for this, ignore this email.",
+      "action": "Review and confirm"
+    }
+  },
+  "spin": {
+    "title": "Daily spin",
+    "intro": "One free spin a day. Prizes are XP, boosters, streak freezes and draw tickets. Spins never give Coins and never need a purchase.",
+    "spin": "Spin",
+    "won": "You won: {prize}",
+    "again": "Come back tomorrow for another free spin.",
+    "odds": "Odds",
+    "fine": "Free to play. Odds are shown in full and every result is recorded.",
+    "draws": "See the weekly draw"
+  },
+  "adminData": {
+    "title": "Data requests",
+    "intro": "Exports are built immediately when a member asks. Deletions run 14 days after the member confirms by email; ledger and claim rows are kept without personal details.",
+    "due": "{n, plural, =0 {No deletions are due.} one {# deletion is due.} other {# deletions are due.}}",
+    "run": "Run due deletions now",
+    "kind": "Type",
+    "member": "Member",
+    "status": "Status",
+    "requested": "Requested",
+    "dueAt": "Due",
+    "erased": "Erased"
+  },
+  "adminContent": {
+    "helpTitle": "Help centre",
+    "changelogTitle": "Changelog",
+    "newArticle": "New article",
+    "newEntry": "New entry",
+    "save": "Save",
+    "titleField": "Title",
+    "slug": "URL slug",
+    "category": "Category",
+    "summary": "Summary",
+    "body": "Body",
+    "bodyHint": "Plain text. A blank line starts a new paragraph; lines starting 1. 2. 3. become a numbered list.",
+    "status": "Status",
+    "statuses": {
+      "draft": "Draft",
+      "published": "Published",
+      "archived": "Archived"
+    }
+  },
+  "adminSpin": {
+    "title": "Spin and draw",
+    "intro": "Chance-based features. Free to enter, never tied to purchases, odds published, and no Coins as prizes. They stay off until the owner enables them per region after legal review.",
+    "flags": "Spins: {spins} · Draws: {draws}.",
+    "on": "on",
+    "off": "off",
+    "flagLink": "Feature flags",
+    "prizesTitle": "Spin prizes and odds",
+    "label": "Label",
+    "kind": "Prize",
+    "value": "Amount",
+    "odds": "Odds (%)",
+    "cap": "Daily cap",
+    "kinds": {
+      "xp": "XP",
+      "xp_boost": "2× XP (hours)",
+      "freeze": "Streak freezes",
+      "ticket": "Draw tickets"
+    },
+    "addRow": "Add a prize",
+    "total": "Total: {total}%",
+    "prizeHint": "Odds must total exactly 100%. When a prize reaches its daily cap, the most likely prize is given instead.",
+    "savePrizes": "Publish prizes and odds",
+    "reason": "Reason (audit log)",
+    "drawsTitle": "Weekly draws",
+    "newDraw": "New draw",
+    "drawTitle": "Title",
+    "maxTickets": "Max tickets per member",
+    "starts": "Starts (UTC)",
+    "ends": "Ends (UTC)",
+    "prize": "Prize (donated by a firm)",
+    "createDraw": "Create draw",
+    "saveDraw": "Save draw",
+    "cancelDraw": "Cancel this draw",
+    "edit": "Edit",
+    "run": "Draw a winner",
+    "result": "Winner: {winner} from {tickets} tickets.",
+    "noEntries": "no entries",
+    "auditTitle": "Latest spins (audit)",
+    "noSpins": "No spins yet."
+  },
+  "consent": {
+    "label": "Cookie choice",
+    "body": "We use essential cookies to keep you signed in. With your OK we also use privacy-friendly analytics to see which features help traders. No ads, no selling data.",
+    "accept": "Accept analytics",
+    "decline": "Essential only",
+    "privacy": "Privacy policy",
+    "settings": "Cookie settings"
   }
 }

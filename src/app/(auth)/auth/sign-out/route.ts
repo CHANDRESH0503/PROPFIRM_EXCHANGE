@@ -8,6 +8,8 @@ export async function POST(request: NextRequest) {
     return new NextResponse(null, { status: 403 });
   }
   const supabase = await createClient();
-  await supabase.auth.signOut({ scope: request.nextUrl.searchParams.get("scope") === "global" ? "global" : "local" });
+  await supabase.auth.signOut({
+    scope: request.nextUrl.searchParams.get("scope") === "global" ? "global" : "local",
+  });
   return NextResponse.redirect(new URL("/", request.nextUrl.origin), 303);
 }

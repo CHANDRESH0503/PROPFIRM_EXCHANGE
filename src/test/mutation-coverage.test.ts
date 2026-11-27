@@ -8,8 +8,10 @@ import { describe, expect, it } from "vitest";
  * (docs/SYSTEM_DESIGN.md §3, task B1). A new endpoint without one fails here.
  */
 const ALLOWLIST: Record<string, string> = {
-  "src/app/(auth)/auth/sign-out/route.ts": "ends the caller's own session; same-origin check; no state to abuse",
-  "src/app/(auth)/sign-in/actions.ts#signInWithGoogle": "redirect to Google only; Supabase rate-limits OAuth starts",
+  "src/app/api/webhooks/resend/route.ts":
+    "Provider signature and timestamp verified before idempotent suppression writes",
+  "src/app/(auth)/auth/sign-out/route.ts":
+    "ends the caller's own session; same-origin check; no state to abuse",
 };
 
 function walk(dir: string): string[] {
@@ -22,8 +24,14 @@ function walk(dir: string): string[] {
 const files = walk("src/app").map((f) => f.split(path.sep).join("/"));
 
 describe("mutation endpoints are rate-limited or allowlisted", () => {
-  const actionFiles = files.filter((f) => /\.(ts|tsx)$/.test(f) && readFileSync(f, "utf8").startsWith('"use server"'));
-  const mutatingRoutes = files.filter((f) => f.endsWith("route.ts") && /export (async )?function (POST|PUT|PATCH|DELETE)/.test(readFileSync(f, "utf8")));
+  const actionFiles = files.filter(
+    (f) => /\.(ts|tsx)$/.test(f) && readFileSync(f, "utf8").startsWith('"use server"'),
+  );
+  const mutatingRoutes = files.filter(
+    (f) =>
+      f.endsWith("route.ts") &&
+      /export (async )?function (POST|PUT|PATCH|DELETE)/.test(readFileSync(f, "utf8")),
+  );
 
   it("finds the endpoints", () => {
     expect(actionFiles.length).toBeGreaterThan(0);

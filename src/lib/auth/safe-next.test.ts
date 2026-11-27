@@ -8,12 +8,18 @@ describe("safeNext (open-redirect guard)", () => {
     expect(safeNext(p)).toBe(p);
   });
 
-  it.each([null, undefined, "", "https://evil.com", "//evil.com", "/\\evil.com", "javascript:alert(1)", "today"])(
-    "falls back for %s",
-    (p) => {
-      expect(safeNext(p)).toBe("/today");
-    },
-  );
+  it.each([
+    null,
+    undefined,
+    "",
+    "https://evil.com",
+    "//evil.com",
+    "/\\evil.com",
+    "javascript:alert(1)",
+    "today",
+  ])("falls back for %s", (p) => {
+    expect(safeNext(p)).toBe("/today");
+  });
 });
 
 describe("hasRole", () => {

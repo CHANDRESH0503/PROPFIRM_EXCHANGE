@@ -35,6 +35,8 @@ fundback.example {
 			request>headers>Cf-Connecting-Ip delete
 			request>uri query {
 				delete token
+				delete token_hash
+				delete code
 			}
 		}
 	}

@@ -2,6 +2,8 @@
 
 Part of the project brief. The rules in `/CLAUDE.md` §2 override anything here.
 
+**Implementation status, 22 November 2026.** The three purchase examples, held credits, release, reversal, redemption, restock and refund have PostgreSQL regression coverage. Members can set reward goals and reveal assigned vouchers. Owners can change rates and Founding Season settings with an audited reason. Members receive redemption status updates in their inbox. Campaign funding, inactivity expiry and transactional email remain open.
+
 
 All numbers here are defaults stored in a versioned `economy_config`. Each ledger entry records the config version it used.
 

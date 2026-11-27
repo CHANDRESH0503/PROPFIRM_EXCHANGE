@@ -26,7 +26,12 @@ export function CoinAmount({
       className={cn(
         "inline-flex items-baseline gap-1.5 font-mono tabular",
         status === "available" ? "text-gold" : "text-muted-foreground",
-        { sm: "text-sm", md: "text-base", lg: "text-2xl font-semibold", xl: "text-4xl font-semibold tracking-tight" }[size],
+        {
+          sm: "text-sm",
+          md: "text-base",
+          lg: "text-2xl font-semibold",
+          xl: "text-4xl font-semibold tracking-tight",
+        }[size],
         className,
       )}
     >
@@ -43,7 +48,15 @@ export function CoinGlyph({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 20 20" className={cn("shrink-0 self-center", className)} aria-hidden="true">
       <circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="10" cy="10" r="5.25" fill="currentColor" fillOpacity="0.22" stroke="currentColor" strokeWidth="1.25" />
+      <circle
+        cx="10"
+        cy="10"
+        r="5.25"
+        fill="currentColor"
+        fillOpacity="0.22"
+        stroke="currentColor"
+        strokeWidth="1.25"
+      />
       <path d="M10 7.2v5.6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );

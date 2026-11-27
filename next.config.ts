@@ -4,6 +4,10 @@ import createNextIntlPlugin from "next-intl/plugin";
 const isDev = process.env.NODE_ENV === "development";
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const supabaseWs = supabase.replace(/^https:/, "wss:");
+// Analytics endpoint, only when a key is configured (loaded after consent; no remote scripts).
+const posthog = process.env.NEXT_PUBLIC_POSTHOG_KEY
+  ? process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://eu.i.posthog.com"
+  : "";
 
 /**
  * Full policy, sent report-only first (docs/SYSTEM_DESIGN.md §7, task B4). The directives that
@@ -15,7 +19,7 @@ const fullPolicy = [
   "style-src 'self' 'unsafe-inline'",
   `img-src 'self' blob: data: ${supabase}`.trim(),
   "font-src 'self'",
-  `connect-src 'self' ${supabase} ${supabaseWs} https://challenges.cloudflare.com https://*.ingest.sentry.io https://*.ingest.de.sentry.io`.trim(),
+  `connect-src 'self' ${supabase} ${supabaseWs} https://challenges.cloudflare.com https://*.ingest.sentry.io https://*.ingest.de.sentry.io ${posthog}`.trim(),
   "frame-src https://challenges.cloudflare.com",
   `form-action 'self' ${supabase} https://accounts.google.com`.trim(),
   "object-src 'none'",
@@ -58,6 +62,7 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["172.20.10.*", "192.168.*.*", "10.*.*.*"],
   experimental: {
     authInterrupts: true,
+    serverActions: { bodySizeLimit: "5mb" },
   },
   turbopack: {
     rules: {

@@ -1,5 +1,8 @@
 "use server";
 
+import { track } from "@/lib/analytics/server";
+import { cookies } from "next/headers";
+import { readInvite, applySignupInvite, RETRY_COOKIE } from "@/lib/auth/signup-referral";
 import { redirect } from "next/navigation";
 import { requireUser, safeNext } from "@/lib/auth/session";
 import { rateLimit } from "@/lib/http/rate-limit";
@@ -26,7 +29,10 @@ export type OnboardingState =
       code?: "rate_limited" | "unavailable";
     };
 
-export async function completeOnboarding(_prev: OnboardingState, formData: FormData): Promise<OnboardingState> {
+export async function completeOnboarding(
+  _prev: OnboardingState,
+  formData: FormData,
+): Promise<OnboardingState> {
   const user = await requireUser("/onboarding");
   const values: OnboardingValues = {
     country: String(formData.get("country") ?? "").slice(0, 2),
@@ -43,8 +49,19 @@ export async function completeOnboarding(_prev: OnboardingState, formData: FormD
     return { status: "error", values, fieldErrors };
   }
 
-  if (!(await rateLimit("onboarding", user.id))) return { status: "error", values, fieldErrors: {}, code: "rate_limited" };
+  if (!(await rateLimit("onboarding", user.id)))
+    return { status: "error", values, fieldErrors: {}, code: "rate_limited" };
 
+  const jar = await cookies();
+  const retry = readInvite(jar.get(RETRY_COOKIE)?.value);
+  if (retry?.recipient === user.id) {
+    try {
+      await applySignupInvite(retry, user.id);
+    } catch {
+      return { status: "error", values, fieldErrors: {}, code: "unavailable" };
+    }
+  }
+  if (jar.has(RETRY_COOKIE)) jar.set(RETRY_COOKIE, "", { path: "/onboarding", maxAge: 0 });
   const supabase = await createClient();
   const { error } = await supabase.rpc("complete_onboarding", {
     p_country: parsed.data.country,
@@ -56,5 +73,6 @@ export async function completeOnboarding(_prev: OnboardingState, formData: FormD
     log("error", "onboarding.failed", { userId: user.id, code: error.code });
     return { status: "error", values, fieldErrors: {}, code: "unavailable" };
   }
+  if (!error) await track("signup", user.id, { consent: "request" });
   redirect(safeNext(parsed.data.next));
 }

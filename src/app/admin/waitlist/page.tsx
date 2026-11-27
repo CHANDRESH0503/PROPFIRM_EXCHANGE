@@ -26,10 +26,14 @@ const when = new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeZone: "
 /** Cursor pagination on `seq` (newest first), never offset (18-data-and-operations.md §3). */
 async function Waitlist({ searchParams }: Pick<PageProps<"/admin/waitlist">, "searchParams">) {
   await requireStaff("support");
-  const [t, nav] = await Promise.all([getTranslations("admin.waitlist"), getTranslations("admin.nav")]);
+  const [t, nav] = await Promise.all([
+    getTranslations("admin.waitlist"),
+    getTranslations("admin.nav"),
+  ]);
   const params = await searchParams;
   const q = typeof params.q === "string" ? params.q.trim().toLowerCase().slice(0, 100) : "";
-  const before = typeof params.before === "string" && /^\d+$/.test(params.before) ? Number(params.before) : null;
+  const before =
+    typeof params.before === "string" && /^\d+$/.test(params.before) ? Number(params.before) : null;
 
   let query = createAdminClient()
     .from("waitlist_signups")
@@ -43,14 +47,18 @@ async function Waitlist({ searchParams }: Pick<PageProps<"/admin/waitlist">, "se
 
   const rows = data.slice(0, PAGE);
   const nextCursor = data.length > PAGE ? rows.at(-1)?.seq : null;
-  const qs = (extra: Record<string, string>) => new URLSearchParams({ ...(q ? { q } : {}), ...extra }).toString();
+  const qs = (extra: Record<string, string>) =>
+    new URLSearchParams({ ...(q ? { q } : {}), ...extra }).toString();
   const cols = ["email", "status", "referrals", "source", "country", "joined"] as const;
 
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <h1 className="text-2xl font-bold">{nav("waitlist")}</h1>
-        <a href={`/admin/waitlist/export${q ? `?${qs({})}` : ""}`} className={buttonVariants({ variant: "secondary" })}>
+        <a
+          href={`/admin/waitlist/export${q ? `?${qs({})}` : ""}`}
+          className={buttonVariants({ variant: "secondary" })}
+        >
           {t("export")}
         </a>
       </div>
@@ -59,7 +67,14 @@ async function Waitlist({ searchParams }: Pick<PageProps<"/admin/waitlist">, "se
         <label htmlFor="q" className="sr-only">
           {t("search")}
         </label>
-        <Input id="q" name="q" type="search" defaultValue={q} placeholder={t("search")} autoComplete="off" />
+        <Input
+          id="q"
+          name="q"
+          type="search"
+          defaultValue={q}
+          placeholder={t("search")}
+          autoComplete="off"
+        />
       </form>
 
       <div className="overflow-x-auto rounded-xl border border-hairline">
@@ -85,12 +100,21 @@ async function Waitlist({ searchParams }: Pick<PageProps<"/admin/waitlist">, "se
                 <tr key={r.seq}>
                   <td className="px-4 py-3">{r.email}</td>
                   <td className="px-4 py-3">
-                    <span className={cn("text-xs font-medium", r.status === "confirmed" ? "text-positive" : "text-muted-foreground")}>{r.status}</span>
+                    <span
+                      className={cn(
+                        "text-xs font-medium",
+                        r.status === "confirmed" ? "text-positive" : "text-muted-foreground",
+                      )}
+                    >
+                      {r.status}
+                    </span>
                   </td>
                   <td className="px-4 py-3 font-mono tabular">{r.confirmed_referrals}</td>
                   <td className="px-4 py-3 text-text-soft">{r.source ?? "—"}</td>
                   <td className="px-4 py-3 text-text-soft">{r.country_code ?? "—"}</td>
-                  <td className="px-4 py-3 whitespace-nowrap text-text-soft">{when.format(new Date(r.created_at))}</td>
+                  <td className="px-4 py-3 whitespace-nowrap text-text-soft">
+                    {when.format(new Date(r.created_at))}
+                  </td>
                 </tr>
               ))
             )}
@@ -100,12 +124,18 @@ async function Waitlist({ searchParams }: Pick<PageProps<"/admin/waitlist">, "se
 
       <div className="flex gap-3">
         {before ? (
-          <Link href={`/admin/waitlist${q ? `?${qs({})}` : ""}` as Route} className={buttonVariants({ variant: "ghost" })}>
+          <Link
+            href={`/admin/waitlist${q ? `?${qs({})}` : ""}` as Route}
+            className={buttonVariants({ variant: "ghost" })}
+          >
             {t("first")}
           </Link>
         ) : null}
         {nextCursor ? (
-          <Link href={`/admin/waitlist?${qs({ before: String(nextCursor) })}` as Route} className={buttonVariants({ variant: "secondary" })}>
+          <Link
+            href={`/admin/waitlist?${qs({ before: String(nextCursor) })}` as Route}
+            className={buttonVariants({ variant: "secondary" })}
+          >
             {t("next")}
           </Link>
         ) : null}

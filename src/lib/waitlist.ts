@@ -1,4 +1,5 @@
 import "server-only";
+import { connection } from "next/server";
 import { cookies } from "next/headers";
 import { sha256Hex } from "@/lib/crypto";
 import { log } from "@/lib/log";
@@ -26,9 +27,12 @@ export interface WaitlistMember {
 
 /** The member identified by the waitlist cookie, or null. */
 export async function currentWaitlistMember(): Promise<WaitlistMember | null> {
+  await connection();
   const token = (await cookies()).get(WAITLIST_COOKIE)?.value;
   if (!token || !/^[A-Za-z0-9_-]{43}$/.test(token)) return null;
-  const { data, error } = await createAdminClient().rpc("waitlist_open", { p_token_hash: sha256Hex(token) });
+  const { data, error } = await createAdminClient().rpc("waitlist_open", {
+    p_token_hash: sha256Hex(token),
+  });
   if (error) {
     log("error", "waitlist.view_failed", { code: error.code });
     throw new Error("waitlist unavailable");

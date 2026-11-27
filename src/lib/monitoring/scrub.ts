@@ -10,7 +10,10 @@ const TOKENISH = /\b(?:token|token_hash|code|ref|access_token|refresh_token)=[^&
 const JWT = /eyJ[\w-]+\.[\w-]+\.[\w-]+/g;
 
 export function scrubText(value: string): string {
-  return value.replace(JWT, "[jwt]").replace(EMAIL, "[email]").replace(TOKENISH, (m) => `${m.split("=")[0]}=[redacted]`);
+  return value
+    .replace(JWT, "[jwt]")
+    .replace(EMAIL, "[email]")
+    .replace(TOKENISH, (m) => `${m.split("=")[0]}=[redacted]`);
 }
 
 function stripQuery(url: string): string {

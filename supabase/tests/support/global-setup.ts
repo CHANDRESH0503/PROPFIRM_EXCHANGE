@@ -22,12 +22,23 @@ function startEphemeralCluster(): string {
   const data = path.join(dir, "data");
   const port = String(55000 + Math.floor(Math.random() * 4000));
   try {
-    execFileSync("initdb", ["-D", data, "-U", "postgres", "--auth=trust", "-E", "UTF8", "--no-locale"], {
-      stdio: "ignore",
-    });
+    execFileSync(
+      "initdb",
+      ["-D", data, "-U", "postgres", "--auth=trust", "-E", "UTF8", "--no-locale"],
+      {
+        stdio: "ignore",
+      },
+    );
     execFileSync(
       "pg_ctl",
-      ["-D", data, "-o", `-p ${port} -k ${dir} -c listen_addresses='' -c fsync=off -c full_page_writes=off`, "-w", "start"],
+      [
+        "-D",
+        data,
+        "-o",
+        `-p ${port} -k ${dir} -c listen_addresses='' -c fsync=off -c full_page_writes=off`,
+        "-w",
+        "start",
+      ],
       { stdio: "ignore" },
     );
   } catch (error) {
@@ -68,7 +79,9 @@ export default async function setup(project: TestProject) {
     const shim = readFileSync(path.join(root, "supabase/tests/support/auth-shim.sql"), "utf8");
     await tpl.query(shim);
     const dir = path.join(root, "supabase/migrations");
-    for (const file of readdirSync(dir).filter((f) => f.endsWith(".sql")).sort()) {
+    for (const file of readdirSync(dir)
+      .filter((f) => f.endsWith(".sql"))
+      .sort()) {
       try {
         await tpl.query(readFileSync(path.join(dir, file), "utf8"));
       } catch (error) {

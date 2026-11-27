@@ -6,7 +6,7 @@ import { Check, Copy, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 /** Referral link with copy and native share (share only where the device supports it). */
-export function ShareLink({ url, text }: { url: string; text: string }) {
+export function ShareLink({ url, text, label }: { url: string; text: string; label?: string }) {
   const t = useTranslations("waitlist.me");
   const [copied, setCopied] = useState(false);
   // False on the server and during hydration, so both render the same markup first.
@@ -31,9 +31,9 @@ export function ShareLink({ url, text }: { url: string; text: string }) {
       <input
         readOnly
         value={url}
-        aria-label={t("shareHeading")}
+        aria-label={label ?? t("shareHeading")}
         onFocus={(e) => e.currentTarget.select()}
-        className="h-12 w-full rounded-lg border border-hairline bg-surface px-4 font-mono text-sm text-text-soft"
+        className="h-12 w-full rounded-xl border border-hairline bg-ink-deep/60 px-4 font-mono text-sm text-text-soft"
       />
       <div className="flex gap-2.5">
         <Button type="button" variant="secondary" onClick={copy} aria-live="polite">
@@ -41,7 +41,11 @@ export function ShareLink({ url, text }: { url: string; text: string }) {
           {copied ? t("copied") : t("copy")}
         </Button>
         {canShare ? (
-          <Button type="button" variant="secondary" onClick={() => navigator.share({ url, text }).catch(() => {})}>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => navigator.share({ url, text }).catch(() => {})}
+          >
             <Share2 aria-hidden="true" />
             {t("share")}
           </Button>

@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-22T05:02:29.978Z",
+        "reason": "Project design system: DESIGN.md records Inter as the body face (with Sora headings); the email template mirrors it"
+      }
+    ]
+  }
+}

@@ -2,6 +2,8 @@
 
 Part of the project brief. The rules in `/CLAUDE.md` §2 override anything here.
 
+**Implementation status, 22 November 2026.** Staff tools cover catalogue edits, claim decisions, commission import, the redemption queue and encrypted stock uploads. Finance staff can see low stock. Owners can version economy settings. Update, 23 November 2026: owner alerts (liability ratio, claims waiting over 24 hours, overdue redemptions, low voucher stock) go to Telegram when they open and clear. The dashboard shows the queues, Coin liability, failed jobs and open alerts. Commissions can be marked paid, with a reconciliation report. The remaining site controls are open.
+
 **Goal:** the owner runs the whole website from the admin panel without touching code: brand, look, content, firms, offers, rewards, users, Coins and alerts. If something on the public site can change over time, it must be editable here.
 
 ---

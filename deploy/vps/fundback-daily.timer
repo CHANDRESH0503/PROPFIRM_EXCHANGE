@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Fundback daily housekeeping at 03:15 UTC
+
+[Timer]
+OnCalendar=*-*-* 03:15:00 UTC
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

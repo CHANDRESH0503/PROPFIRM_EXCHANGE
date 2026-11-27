@@ -1,15 +1,15 @@
 "use server";
 
+import { randomUUID } from "node:crypto";
 import { after } from "next/server";
 import { env } from "@/lib/env";
-import { hashIp, newToken, sha256Hex } from "@/lib/crypto";
+import { hashIp, waitlistToken, sha256Hex } from "@/lib/crypto";
 import { isEnabled } from "@/lib/flags";
 import { rateLimit } from "@/lib/http/rate-limit";
 import { requestMeta } from "@/lib/http/request";
 import { verifyTurnstile } from "@/lib/http/turnstile";
 import { log } from "@/lib/log";
-import { sendEmail } from "@/lib/notifications/email";
-import { waitlistConfirmEmail } from "@/lib/notifications/templates";
+import { drainEmailOutbox } from "@/lib/notifications/outbox";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { nullableArg } from "@/lib/supabase/args";
 import { waitlistJoinSchema } from "@/lib/validation/schemas";
@@ -17,13 +17,19 @@ import { waitlistJoinSchema } from "@/lib/validation/schemas";
 export type WaitlistState =
   | { status: "idle" }
   | { status: "sent"; email: string }
-  | { status: "error"; code: "invalid_email" | "closed" | "rate_limited" | "captcha" | "unavailable" };
+  | {
+      status: "error";
+      code: "invalid_email" | "closed" | "rate_limited" | "captcha" | "unavailable";
+    };
 
 /**
  * Join the waitlist. The response is the same whether the email is new or already listed,
  * so the form cannot be used to discover who has signed up.
  */
-export async function joinWaitlist(_prev: WaitlistState, formData: FormData): Promise<WaitlistState> {
+export async function joinWaitlist(
+  _prev: WaitlistState,
+  formData: FormData,
+): Promise<WaitlistState> {
   const parsed = waitlistJoinSchema.safeParse({
     email: formData.get("email"),
     ref: formData.get("ref") || undefined,
@@ -36,7 +42,7 @@ export async function joinWaitlist(_prev: WaitlistState, formData: FormData): Pr
   if (!(await isEnabled("waitlist_open"))) return { status: "error", code: "closed" };
 
   const meta = await requestMeta();
-  const { IP_HASH_SALT, NEXT_PUBLIC_SITE_URL } = env();
+  const { IP_HASH_SALT } = env();
   const ipHash = meta.ip ? hashIp(meta.ip, IP_HASH_SALT) : null;
 
   const [ipOk, emailOk] = await Promise.all([
@@ -46,10 +52,13 @@ export async function joinWaitlist(_prev: WaitlistState, formData: FormData): Pr
   if (!ipOk || !emailOk) return { status: "error", code: "rate_limited" };
 
   const captcha = await verifyTurnstile(turnstileToken, meta.ip, "waitlist");
-  if (captcha !== "ok") return { status: "error", code: captcha === "failed" ? "captcha" : "unavailable" };
+  if (captcha !== "ok")
+    return { status: "error", code: captcha === "failed" ? "captcha" : "unavailable" };
 
-  const token = newToken();
-  const { data, error } = await createAdminClient().rpc("waitlist_join", {
+  const nonce = randomUUID();
+  const token = waitlistToken(nonce, IP_HASH_SALT);
+  const { data, error } = await createAdminClient().rpc("waitlist_enqueue", {
+    p_nonce: nonce,
     p_email: email,
     p_referral_code: nullableArg(ref),
     p_token_hash: sha256Hex(token),
@@ -62,20 +71,15 @@ export async function joinWaitlist(_prev: WaitlistState, formData: FormData): Pr
     return { status: "error", code: "unavailable" };
   }
   const signup = data[0];
-  log("info", "waitlist.joined", { requestId: meta.requestId, signupId: signup.signup_id, isNew: signup.is_new });
+  log("info", "waitlist.joined", {
+    requestId: meta.requestId,
+    signupId: signup.signup_id,
+    isNew: signup.is_new,
+  });
 
-  const url = new URL("/waitlist/open", NEXT_PUBLIC_SITE_URL);
-  url.searchParams.set("token", token);
-  const message = waitlistConfirmEmail(url.toString());
-
-  // Send after the response so the form answers fast; the member can resubmit to get a new link.
+  // Best-effort fast delivery. The host timer picks up the durable intent after a crash.
   after(async () => {
-    await sendEmail({
-      to: email,
-      ...message,
-      template: "waitlist_confirm",
-      idempotencyKey: `waitlist:${signup.signup_id}:${sha256Hex(token).slice(0, 16)}`,
-    });
+    await drainEmailOutbox(nonce);
   });
 
   return { status: "sent", email };

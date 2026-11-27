@@ -35,7 +35,11 @@ export function Field({
           {hint}
         </p>
       ) : null}
-      <p id={ids.error} aria-live="polite" className={cn("text-sm text-danger", !error && "sr-only")}>
+      <p
+        id={ids.error}
+        aria-live="polite"
+        className={cn("text-sm text-danger", !error && "sr-only")}
+      >
         {error ?? ""}
       </p>
     </div>

@@ -38,13 +38,23 @@ export function MfaForm() {
       const verified = data.totp.find((f) => f.status === "verified");
       if (verified) return setPhase({ kind: "verify", factorId: verified.id });
       // Clear abandoned enrolments so a fresh QR code can be issued.
-      for (const f of data.all.filter((f) => f.factor_type === "totp" && f.status === "unverified")) {
+      for (const f of data.all.filter(
+        (f) => f.factor_type === "totp" && f.status === "unverified",
+      )) {
         await supabase.auth.mfa.unenroll({ factorId: f.id });
       }
-      const { data: enrolled, error: enrollError } = await supabase.auth.mfa.enroll({ factorType: "totp", friendlyName: "Admin" });
+      const { data: enrolled, error: enrollError } = await supabase.auth.mfa.enroll({
+        factorType: "totp",
+        friendlyName: "Admin",
+      });
       if (cancelled) return;
       if (enrollError || !enrolled) return setPhase({ kind: "error" });
-      setPhase({ kind: "enroll", factorId: enrolled.id, qr: enrolled.totp.qr_code, secret: enrolled.totp.secret });
+      setPhase({
+        kind: "enroll",
+        factorId: enrolled.id,
+        qr: enrolled.totp.qr_code,
+        secret: enrolled.totp.secret,
+      });
     })();
     return () => {
       cancelled = true;
@@ -57,7 +67,10 @@ export function MfaForm() {
     setPending(true);
     setError(null);
     const supabase = createClient();
-    const { error: verifyError } = await supabase.auth.mfa.challengeAndVerify({ factorId: phase.factorId, code });
+    const { error: verifyError } = await supabase.auth.mfa.challengeAndVerify({
+      factorId: phase.factorId,
+      code,
+    });
     setPending(false);
     if (verifyError) {
       setError(t("invalid"));
@@ -69,19 +82,34 @@ export function MfaForm() {
   }
 
   if (phase.kind === "loading") return <Skeleton className="h-72 w-full rounded-xl" />;
-  if (phase.kind === "error") return <p role="alert" className="text-danger">{t("error")}</p>;
+  if (phase.kind === "error")
+    return (
+      <p role="alert" className="text-danger">
+        {t("error")}
+      </p>
+    );
 
   return (
     <form onSubmit={submit} className="space-y-5">
-      <p className="text-text-soft">{phase.kind === "enroll" ? t("enrollBody") : t("verifyBody")}</p>
+      <p className="text-text-soft">
+        {phase.kind === "enroll" ? t("enrollBody") : t("verifyBody")}
+      </p>
       {phase.kind === "enroll" ? (
         <div className="space-y-3">
           {/* Supabase returns the QR code as an SVG data URL. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={phase.qr} alt={t("qrAlt")} width={192} height={192} className="rounded-lg bg-white p-2" />
+          <img
+            src={phase.qr}
+            alt={t("qrAlt")}
+            width={192}
+            height={192}
+            className="rounded-lg bg-white p-2"
+          />
           <details className="text-sm">
             <summary className="cursor-pointer text-muted-foreground">{t("secret")}</summary>
-            <code className="mt-2 block font-mono text-sm break-all text-foreground select-all">{phase.secret}</code>
+            <code className="mt-2 block font-mono text-sm break-all text-foreground select-all">
+              {phase.secret}
+            </code>
           </details>
         </div>
       ) : null}

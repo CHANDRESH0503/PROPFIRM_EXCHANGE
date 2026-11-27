@@ -19,7 +19,9 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(target, 303);
   }
 
-  const { data, error } = await createAdminClient().rpc("waitlist_open", { p_token_hash: sha256Hex(token) });
+  const { data, error } = await createAdminClient().rpc("waitlist_open", {
+    p_token_hash: sha256Hex(token),
+  });
   if (error) {
     log("error", "waitlist.open_failed", { code: error.code });
     target.pathname = "/";

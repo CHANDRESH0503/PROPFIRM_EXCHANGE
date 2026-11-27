@@ -48,8 +48,21 @@ export function ProgressRing({
       className={cn("relative inline-grid shrink-0 place-items-center", className)}
       style={{ width: size, height: size }}
     >
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90" aria-hidden="true">
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--hairline)" strokeWidth={stroke} />
+      <svg
+        width={size}
+        height={size}
+        viewBox={`0 0 ${size} ${size}`}
+        className="-rotate-90"
+        aria-hidden="true"
+      >
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={r}
+          fill="none"
+          stroke="var(--hairline)"
+          strokeWidth={stroke}
+        />
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -65,7 +78,9 @@ export function ProgressRing({
           opacity={ratio === 0 ? 0 : 1}
         />
       </svg>
-      {children ? <div className="absolute inset-0 grid place-items-center text-center">{children}</div> : null}
+      {children ? (
+        <div className="absolute inset-0 grid place-items-center text-center">{children}</div>
+      ) : null}
     </div>
   );
 }

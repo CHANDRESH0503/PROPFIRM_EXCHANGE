@@ -25,6 +25,7 @@ create table auth.users (
   id uuid primary key default gen_random_uuid(),
   email text unique,
   raw_user_meta_data jsonb not null default '{}'::jsonb,
+  last_sign_in_at timestamptz,
   created_at timestamptz not null default now()
 );
 
@@ -53,3 +54,10 @@ as $$
 $$;
 
 grant execute on function auth.uid(), auth.role(), auth.jwt() to anon, authenticated, service_role;
+
+-- Schema fields used by storage-bucket migrations. File delivery runs through Supabase Storage.
+create schema storage;
+create table storage.buckets (
+  id text primary key, name text unique not null, public boolean default false,
+  file_size_limit bigint, allowed_mime_types text[]
+);

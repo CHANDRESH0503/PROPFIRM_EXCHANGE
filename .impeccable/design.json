@@ -1,265 +1,539 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T15:05:01.599758+00:00",
+  "generatedAt": "2026-11-23T03:10:27.397382+00:00",
   "title": "Design System: Fundback",
   "extensions": {
     "colorMeta": {
       "ink": {
         "role": "neutral",
-        "displayName": "Ink",
-        "canonical": "oklch(15.8% 0.007 258)",
+        "displayName": "Indigo Night",
+        "canonical": "oklch(19.1% 0.072 285)",
         "cssVar": "--ink",
         "tonalRamp": [
-          "oklch(15% 0.007 258)",
-          "oklch(25% 0.007 258)",
-          "oklch(35% 0.007 258)",
-          "oklch(45% 0.007 258)",
-          "oklch(60% 0.007 258)",
-          "oklch(72% 0.007 258)",
-          "oklch(84% 0.007 258)",
-          "oklch(95% 0.007 258)"
+          "oklch(15% 0.011 285)",
+          "oklch(25% 0.027 285)",
+          "oklch(35% 0.045 285)",
+          "oklch(45% 0.063 285)",
+          "oklch(60% 0.072 285)",
+          "oklch(72% 0.067 285)",
+          "oklch(84% 0.038 285)",
+          "oklch(95% 0.012 285)"
+        ]
+      },
+      "ink-deep": {
+        "role": "neutral",
+        "displayName": "Deep Night",
+        "canonical": "oklch(17.0% 0.063 283)",
+        "cssVar": "--ink-deep",
+        "tonalRamp": [
+          "oklch(15% 0.009 283)",
+          "oklch(25% 0.024 283)",
+          "oklch(35% 0.039 283)",
+          "oklch(45% 0.055 283)",
+          "oklch(60% 0.063 283)",
+          "oklch(72% 0.059 283)",
+          "oklch(84% 0.034 283)",
+          "oklch(95% 0.010 283)"
         ]
       },
       "surface": {
         "role": "neutral",
         "displayName": "Surface",
-        "canonical": "oklch(20.4% 0.011 261)",
+        "canonical": "oklch(24.0% 0.094 284)",
         "cssVar": "--surface",
         "tonalRamp": [
-          "oklch(15% 0.011 261)",
-          "oklch(25% 0.011 261)",
-          "oklch(35% 0.011 261)",
-          "oklch(45% 0.011 261)",
-          "oklch(60% 0.011 261)",
-          "oklch(72% 0.011 261)",
-          "oklch(84% 0.011 261)",
-          "oklch(95% 0.011 261)"
+          "oklch(15% 0.014 284)",
+          "oklch(25% 0.035 284)",
+          "oklch(35% 0.059 284)",
+          "oklch(45% 0.082 284)",
+          "oklch(60% 0.094 284)",
+          "oklch(72% 0.088 284)",
+          "oklch(84% 0.050 284)",
+          "oklch(95% 0.016 284)"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Surface Lift",
+        "canonical": "oklch(26.9% 0.109 284)",
+        "cssVar": "--surface-2",
+        "tonalRamp": [
+          "oklch(15% 0.016 284)",
+          "oklch(25% 0.041 284)",
+          "oklch(35% 0.068 284)",
+          "oklch(45% 0.095 284)",
+          "oklch(60% 0.109 284)",
+          "oklch(72% 0.102 284)",
+          "oklch(84% 0.058 284)",
+          "oklch(95% 0.018 284)"
         ]
       },
       "raised": {
         "role": "neutral",
         "displayName": "Raised",
-        "canonical": "oklch(24.2% 0.013 258)",
+        "canonical": "oklch(30.7% 0.12 284)",
         "cssVar": "--raised",
         "tonalRamp": [
-          "oklch(15% 0.013 258)",
-          "oklch(25% 0.013 258)",
-          "oklch(35% 0.013 258)",
-          "oklch(45% 0.013 258)",
-          "oklch(60% 0.013 258)",
-          "oklch(72% 0.013 258)",
-          "oklch(84% 0.013 258)",
-          "oklch(95% 0.013 258)"
+          "oklch(15% 0.018 284)",
+          "oklch(25% 0.045 284)",
+          "oklch(35% 0.075 284)",
+          "oklch(45% 0.105 284)",
+          "oklch(60% 0.120 284)",
+          "oklch(72% 0.112 284)",
+          "oklch(84% 0.064 284)",
+          "oklch(95% 0.020 284)"
         ]
       },
       "hairline": {
         "role": "neutral",
         "displayName": "Hairline",
-        "canonical": "oklch(30.4% 0.016 260)",
+        "canonical": "oklch(37.7% 0.138 285)",
         "cssVar": "--hairline",
         "tonalRamp": [
-          "oklch(15% 0.016 260)",
-          "oklch(25% 0.016 260)",
-          "oklch(35% 0.016 260)",
-          "oklch(45% 0.016 260)",
-          "oklch(60% 0.016 260)",
-          "oklch(72% 0.016 260)",
-          "oklch(84% 0.016 260)",
-          "oklch(95% 0.016 260)"
+          "oklch(15% 0.021 285)",
+          "oklch(25% 0.052 285)",
+          "oklch(35% 0.086 285)",
+          "oklch(45% 0.121 285)",
+          "oklch(60% 0.138 285)",
+          "oklch(72% 0.129 285)",
+          "oklch(84% 0.074 285)",
+          "oklch(95% 0.023 285)"
         ]
       },
       "text": {
-        "role": "primary",
-        "displayName": "Warm Paper",
-        "canonical": "oklch(95.5% 0.007 89)",
+        "role": "neutral",
+        "displayName": "Star White",
+        "canonical": "oklch(97.5% 0.014 300)",
         "cssVar": "--text",
         "tonalRamp": [
-          "oklch(15% 0.007 89)",
-          "oklch(25% 0.007 89)",
-          "oklch(35% 0.007 89)",
-          "oklch(45% 0.007 89)",
-          "oklch(60% 0.007 89)",
-          "oklch(72% 0.007 89)",
-          "oklch(84% 0.007 89)",
-          "oklch(95% 0.007 89)"
+          "oklch(15% 0.002 300)",
+          "oklch(25% 0.005 300)",
+          "oklch(35% 0.009 300)",
+          "oklch(45% 0.012 300)",
+          "oklch(60% 0.014 300)",
+          "oklch(72% 0.013 300)",
+          "oklch(84% 0.007 300)",
+          "oklch(95% 0.002 300)"
         ]
       },
       "text-soft": {
         "role": "neutral",
-        "displayName": "Soft Paper",
-        "canonical": "oklch(84.7% 0.009 258)",
+        "displayName": "Lilac Mist",
+        "canonical": "oklch(88.1% 0.051 294)",
         "cssVar": "--text-soft",
         "tonalRamp": [
-          "oklch(15% 0.009 258)",
-          "oklch(25% 0.009 258)",
-          "oklch(35% 0.009 258)",
-          "oklch(45% 0.009 258)",
-          "oklch(60% 0.009 258)",
-          "oklch(72% 0.009 258)",
-          "oklch(84% 0.009 258)",
-          "oklch(95% 0.009 258)"
+          "oklch(15% 0.008 294)",
+          "oklch(25% 0.019 294)",
+          "oklch(35% 0.032 294)",
+          "oklch(45% 0.045 294)",
+          "oklch(60% 0.051 294)",
+          "oklch(72% 0.048 294)",
+          "oklch(84% 0.027 294)",
+          "oklch(95% 0.008 294)"
         ]
       },
       "muted": {
         "role": "neutral",
-        "displayName": "Muted Slate",
-        "canonical": "oklch(71.2% 0.020 256)",
+        "displayName": "Dusk Lilac",
+        "canonical": "oklch(74.2% 0.086 292)",
         "cssVar": "--muted",
         "tonalRamp": [
-          "oklch(15% 0.020 256)",
-          "oklch(25% 0.020 256)",
-          "oklch(35% 0.020 256)",
-          "oklch(45% 0.020 256)",
-          "oklch(60% 0.020 256)",
-          "oklch(72% 0.020 256)",
-          "oklch(84% 0.020 256)",
-          "oklch(95% 0.020 256)"
+          "oklch(15% 0.013 292)",
+          "oklch(25% 0.032 292)",
+          "oklch(35% 0.054 292)",
+          "oklch(45% 0.075 292)",
+          "oklch(60% 0.086 292)",
+          "oklch(72% 0.080 292)",
+          "oklch(84% 0.046 292)",
+          "oklch(95% 0.014 292)"
+        ]
+      },
+      "brand": {
+        "role": "primary",
+        "displayName": "Violet Beam",
+        "canonical": "oklch(57.8% 0.247 288)",
+        "cssVar": "--brand",
+        "tonalRamp": [
+          "oklch(15% 0.037 288)",
+          "oklch(25% 0.093 288)",
+          "oklch(35% 0.154 288)",
+          "oklch(45% 0.216 288)",
+          "oklch(60% 0.247 288)",
+          "oklch(72% 0.231 288)",
+          "oklch(84% 0.132 288)",
+          "oklch(95% 0.041 288)"
+        ]
+      },
+      "brand-2": {
+        "role": "primary",
+        "displayName": "Hot Pink Beam",
+        "canonical": "oklch(61.6% 0.22 354)",
+        "cssVar": "--brand-2",
+        "tonalRamp": [
+          "oklch(15% 0.033 354)",
+          "oklch(25% 0.083 354)",
+          "oklch(35% 0.138 354)",
+          "oklch(45% 0.193 354)",
+          "oklch(60% 0.220 354)",
+          "oklch(72% 0.205 354)",
+          "oklch(84% 0.117 354)",
+          "oklch(95% 0.037 354)"
+        ]
+      },
+      "brand-deep": {
+        "role": "primary",
+        "displayName": "Deep Violet Beam",
+        "canonical": "oklch(49.6% 0.247 283)",
+        "cssVar": "--brand-deep",
+        "tonalRamp": [
+          "oklch(15% 0.037 283)",
+          "oklch(25% 0.093 283)",
+          "oklch(35% 0.154 283)",
+          "oklch(45% 0.216 283)",
+          "oklch(60% 0.247 283)",
+          "oklch(72% 0.231 283)",
+          "oklch(84% 0.132 283)",
+          "oklch(95% 0.041 283)"
+        ]
+      },
+      "brand-deep-2": {
+        "role": "primary",
+        "displayName": "Deep Pink Beam",
+        "canonical": "oklch(54.6% 0.204 355)",
+        "cssVar": "--brand-deep-2",
+        "tonalRamp": [
+          "oklch(15% 0.031 355)",
+          "oklch(25% 0.076 355)",
+          "oklch(35% 0.128 355)",
+          "oklch(45% 0.178 355)",
+          "oklch(60% 0.204 355)",
+          "oklch(72% 0.190 355)",
+          "oklch(84% 0.109 355)",
+          "oklch(95% 0.034 355)"
+        ]
+      },
+      "cyan": {
+        "role": "tertiary",
+        "displayName": "Arcade Cyan",
+        "canonical": "oklch(81.3% 0.139 220)",
+        "cssVar": "--cyan",
+        "tonalRamp": [
+          "oklch(15% 0.021 220)",
+          "oklch(25% 0.052 220)",
+          "oklch(35% 0.087 220)",
+          "oklch(45% 0.122 220)",
+          "oklch(60% 0.139 220)",
+          "oklch(72% 0.130 220)",
+          "oklch(84% 0.074 220)",
+          "oklch(95% 0.023 220)"
+        ]
+      },
+      "pink": {
+        "role": "tertiary",
+        "displayName": "Arcade Pink",
+        "canonical": "oklch(71.5% 0.208 353)",
+        "cssVar": "--pink",
+        "tonalRamp": [
+          "oklch(15% 0.031 353)",
+          "oklch(25% 0.078 353)",
+          "oklch(35% 0.130 353)",
+          "oklch(45% 0.182 353)",
+          "oklch(60% 0.208 353)",
+          "oklch(72% 0.194 353)",
+          "oklch(84% 0.111 353)",
+          "oklch(95% 0.035 353)"
         ]
       },
       "gold": {
         "role": "secondary",
-        "displayName": "Struck Gold",
-        "canonical": "oklch(77.2% 0.098 82)",
+        "displayName": "Coin Gold",
+        "canonical": "oklch(86.2% 0.151 85)",
         "cssVar": "--gold",
         "tonalRamp": [
-          "oklch(15% 0.015 82)",
-          "oklch(25% 0.026 82)",
-          "oklch(35% 0.040 82)",
-          "oklch(45% 0.054 82)",
-          "oklch(60% 0.074 82)",
-          "oklch(72% 0.090 82)",
-          "oklch(84% 0.088 82)",
-          "oklch(95% 0.073 82)"
+          "oklch(15% 0.023 85)",
+          "oklch(25% 0.057 85)",
+          "oklch(35% 0.094 85)",
+          "oklch(45% 0.132 85)",
+          "oklch(60% 0.151 85)",
+          "oklch(72% 0.141 85)",
+          "oklch(84% 0.081 85)",
+          "oklch(95% 0.025 85)"
+        ]
+      },
+      "gold-2": {
+        "role": "secondary",
+        "displayName": "Ember Orange",
+        "canonical": "oklch(78.0% 0.163 63)",
+        "cssVar": "--gold-2",
+        "tonalRamp": [
+          "oklch(15% 0.024 63)",
+          "oklch(25% 0.061 63)",
+          "oklch(35% 0.102 63)",
+          "oklch(45% 0.143 63)",
+          "oklch(60% 0.163 63)",
+          "oklch(72% 0.152 63)",
+          "oklch(84% 0.087 63)",
+          "oklch(95% 0.027 63)"
         ]
       },
       "gold-soft": {
         "role": "secondary",
         "displayName": "Gold Wash",
-        "canonical": "oklch(77.2% 0.098 82 / 0.15)",
+        "canonical": "oklch(86.2% 0.151 85 / 0.14)",
         "cssVar": "--gold-soft",
         "tonalRamp": [
-          "oklch(15% 0.015 82)",
-          "oklch(25% 0.026 82)",
-          "oklch(35% 0.040 82)",
-          "oklch(45% 0.054 82)",
-          "oklch(60% 0.074 82)",
-          "oklch(72% 0.090 82)",
-          "oklch(84% 0.088 82)",
-          "oklch(95% 0.073 82)"
+          "oklch(15% 0.023 85)",
+          "oklch(25% 0.057 85)",
+          "oklch(35% 0.094 85)",
+          "oklch(45% 0.132 85)",
+          "oklch(60% 0.151 85)",
+          "oklch(72% 0.141 85)",
+          "oklch(84% 0.081 85)",
+          "oklch(95% 0.025 85)"
+        ]
+      },
+      "common": {
+        "role": "tertiary",
+        "displayName": "Common Pewter",
+        "canonical": "oklch(75.6% 0.049 280)",
+        "cssVar": "--common",
+        "tonalRamp": [
+          "oklch(15% 0.007 280)",
+          "oklch(25% 0.018 280)",
+          "oklch(35% 0.031 280)",
+          "oklch(45% 0.043 280)",
+          "oklch(60% 0.049 280)",
+          "oklch(72% 0.046 280)",
+          "oklch(84% 0.026 280)",
+          "oklch(95% 0.008 280)"
+        ]
+      },
+      "rare": {
+        "role": "tertiary",
+        "displayName": "Rare Blue",
+        "canonical": "oklch(71.6% 0.153 250)",
+        "cssVar": "--rare",
+        "tonalRamp": [
+          "oklch(15% 0.023 250)",
+          "oklch(25% 0.057 250)",
+          "oklch(35% 0.096 250)",
+          "oklch(45% 0.134 250)",
+          "oklch(60% 0.153 250)",
+          "oklch(72% 0.143 250)",
+          "oklch(84% 0.082 250)",
+          "oklch(95% 0.025 250)"
+        ]
+      },
+      "epic": {
+        "role": "tertiary",
+        "displayName": "Epic Orchid",
+        "canonical": "oklch(72.3% 0.18 305)",
+        "cssVar": "--epic",
+        "tonalRamp": [
+          "oklch(15% 0.027 305)",
+          "oklch(25% 0.068 305)",
+          "oklch(35% 0.112 305)",
+          "oklch(45% 0.158 305)",
+          "oklch(60% 0.180 305)",
+          "oklch(72% 0.168 305)",
+          "oklch(84% 0.096 305)",
+          "oklch(95% 0.030 305)"
+        ]
+      },
+      "legendary": {
+        "role": "tertiary",
+        "displayName": "Legendary Flame",
+        "canonical": "oklch(77.6% 0.159 59)",
+        "cssVar": "--legendary",
+        "tonalRamp": [
+          "oklch(15% 0.024 59)",
+          "oklch(25% 0.060 59)",
+          "oklch(35% 0.099 59)",
+          "oklch(45% 0.139 59)",
+          "oklch(60% 0.159 59)",
+          "oklch(72% 0.148 59)",
+          "oklch(84% 0.085 59)",
+          "oklch(95% 0.026 59)"
+        ]
+      },
+      "xp": {
+        "role": "tertiary",
+        "displayName": "XP Violet",
+        "canonical": "oklch(61.2% 0.229 291)",
+        "cssVar": "--xp",
+        "tonalRamp": [
+          "oklch(15% 0.034 291)",
+          "oklch(25% 0.086 291)",
+          "oklch(35% 0.143 291)",
+          "oklch(45% 0.200 291)",
+          "oklch(60% 0.229 291)",
+          "oklch(72% 0.214 291)",
+          "oklch(84% 0.122 291)",
+          "oklch(95% 0.038 291)"
+        ]
+      },
+      "xp-2": {
+        "role": "tertiary",
+        "displayName": "XP Cyan",
+        "canonical": "oklch(81.3% 0.139 220)",
+        "cssVar": "--xp-2",
+        "tonalRamp": [
+          "oklch(15% 0.021 220)",
+          "oklch(25% 0.052 220)",
+          "oklch(35% 0.087 220)",
+          "oklch(45% 0.122 220)",
+          "oklch(60% 0.139 220)",
+          "oklch(72% 0.130 220)",
+          "oklch(84% 0.074 220)",
+          "oklch(95% 0.023 220)"
         ]
       },
       "positive": {
-        "role": "tertiary",
-        "displayName": "Safe Green",
-        "canonical": "oklch(75.2% 0.151 160)",
+        "role": "state",
+        "displayName": "Mint",
+        "canonical": "oklch(85.2% 0.168 164)",
         "cssVar": "--positive",
         "tonalRamp": [
-          "oklch(15% 0.024 160)",
-          "oklch(25% 0.045 160)",
-          "oklch(35% 0.066 160)",
-          "oklch(45% 0.087 160)",
-          "oklch(60% 0.119 160)",
-          "oklch(72% 0.144 160)",
-          "oklch(84% 0.132 160)",
-          "oklch(95% 0.109 160)"
+          "oklch(15% 0.025 164)",
+          "oklch(25% 0.063 164)",
+          "oklch(35% 0.105 164)",
+          "oklch(45% 0.147 164)",
+          "oklch(60% 0.168 164)",
+          "oklch(72% 0.157 164)",
+          "oklch(84% 0.090 164)",
+          "oklch(95% 0.028 164)"
         ]
       },
       "caution": {
-        "role": "tertiary",
-        "displayName": "Signal Amber",
-        "canonical": "oklch(81.0% 0.144 79)",
+        "role": "state",
+        "displayName": "Amber",
+        "canonical": "oklch(84.9% 0.149 81)",
         "cssVar": "--caution",
         "tonalRamp": [
-          "oklch(15% 0.022 79)",
-          "oklch(25% 0.031 79)",
-          "oklch(35% 0.051 79)",
-          "oklch(45% 0.071 79)",
-          "oklch(60% 0.101 79)",
-          "oklch(72% 0.125 79)",
-          "oklch(84% 0.138 79)",
-          "oklch(95% 0.115 79)"
+          "oklch(15% 0.022 81)",
+          "oklch(25% 0.056 81)",
+          "oklch(35% 0.093 81)",
+          "oklch(45% 0.130 81)",
+          "oklch(60% 0.149 81)",
+          "oklch(72% 0.139 81)",
+          "oklch(84% 0.079 81)",
+          "oklch(95% 0.025 81)"
         ]
       },
       "danger": {
-        "role": "tertiary",
+        "role": "state",
         "displayName": "Breach Red",
-        "canonical": "oklch(66.4% 0.189 16)",
+        "canonical": "oklch(69.7% 0.198 13)",
         "cssVar": "--danger",
         "tonalRamp": [
-          "oklch(15% 0.053 16)",
-          "oklch(25% 0.079 16)",
-          "oklch(35% 0.106 16)",
-          "oklch(45% 0.132 16)",
-          "oklch(60% 0.172 16)",
-          "oklch(72% 0.174 16)",
-          "oklch(84% 0.142 16)",
-          "oklch(95% 0.113 16)"
+          "oklch(15% 0.030 13)",
+          "oklch(25% 0.074 13)",
+          "oklch(35% 0.124 13)",
+          "oklch(45% 0.173 13)",
+          "oklch(60% 0.198 13)",
+          "oklch(72% 0.185 13)",
+          "oklch(84% 0.106 13)",
+          "oklch(95% 0.033 13)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The one page headline; Sora 700, 2.125rem phone, 3rem sm, 3.5rem lg."
+        "purpose": "Landing headline only; Archivo 800 at wdth 112, key figure in gold Mono."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headings on public pages (1.5rem to 1.75rem)."
+        "purpose": "Directory page titles and public section headings."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Panel and list-item titles, Sora 600."
+        "purpose": "App section headings and panel headings."
+      },
+      "item-title": {
+        "displayName": "Item Title",
+        "purpose": "Firm name on an item card, wdth 108."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Reading text in Soft Paper at a 62-68ch measure."
+        "purpose": "Reading text in Lilac Mist at 60-65ch."
       },
       "body-small": {
         "displayName": "Body Small",
-        "purpose": "Hints, captions, empty-state bodies in Muted Slate."
+        "purpose": "Hints, subtitles, empty-state bodies."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Field labels, button and tab text."
+        "purpose": "Button text (700); chips and tabs at 600."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Rarity tab, loot-card tab and DONE stamp only."
       },
       "figure": {
         "displayName": "Figure",
-        "purpose": "Every amount, XP count, rate and code: JetBrains Mono, tabular, slashed zero."
+        "purpose": "Every price, Coin amount, XP count, rate and code; JetBrains Mono tabular, slashed zero."
       }
     },
     "shadows": [
       {
+        "name": "panel",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.06), 0 10px 30px -14px rgb(5 2 20 / 0.8)",
+        "cssVar": "--shadow-panel",
+        "purpose": "Every panel and card: top-edge light plus a soft dark drop."
+      },
+      {
         "name": "overlay",
-        "value": "0 12px 32px -8px rgb(0 0 0 / 0.6), 0 2px 6px rgb(0 0 0 / 0.4)",
+        "value": "0 16px 40px -10px rgb(5 2 20 / 0.75), 0 2px 8px rgb(5 2 20 / 0.5)",
         "cssVar": "--shadow-overlay",
-        "purpose": "The single elevation: floating overlays (sheet) only. Page surfaces are flat."
+        "purpose": "Sheets and floating layers."
+      },
+      {
+        "name": "frame-brand-glow",
+        "value": "0 18px 44px -18px rgb(224 51 143 / 0.55)",
+        "purpose": "Under the brand frame."
+      },
+      {
+        "name": "frame-gold-glow",
+        "value": "0 18px 44px -18px rgb(255 157 46 / 0.5)",
+        "purpose": "Under the gold (Coins) frame."
+      },
+      {
+        "name": "rarity-glow",
+        "value": "0 14px 34px -18px color-mix(in oklab, var(--r) 70%, transparent)",
+        "purpose": "Under an item card in its rarity hue; 0 20px 44px -16px at 90% on hover."
+      },
+      {
+        "name": "beam-button",
+        "value": "0 8px 22px -8px rgb(194 34 119 / 0.75), inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 -2px 0 rgb(0 0 0 / 0.18)",
+        "purpose": "Primary button at rest; tightens on press."
       }
     ],
     "motion": [
       {
         "name": "ease-out-expo",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Default easing for control state changes and ring fills."
+        "purpose": "All state transitions and fills."
       },
       {
         "name": "duration-control",
         "value": "150ms",
-        "purpose": "Buttons, inputs, tabs."
+        "purpose": "Buttons, inputs, chips, tabs."
       },
       {
-        "name": "duration-overlay",
+        "name": "duration-lift",
         "value": "200ms",
-        "purpose": "Sheet open and close."
+        "purpose": "Item card and tile lift on hover/focus."
       },
       {
-        "name": "duration-ring",
+        "name": "duration-fill",
         "value": "700ms",
-        "purpose": "Progress ring fill on mount."
+        "purpose": "XP and gold bar fills."
       },
       {
         "name": "reduced-motion",
         "value": "0.01ms",
-        "purpose": "All animation and transition durations under prefers-reduced-motion."
+        "purpose": "All durations under prefers-reduced-motion."
       }
     ],
     "breakpoints": [
@@ -274,21 +548,44 @@
       {
         "name": "lg",
         "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
       }
     ],
+    "atmosphere": {
+      "ground": "body: var(--ink) with linear-gradient(180deg, var(--ink), #160e3c 50%, var(--ink))",
+      "aurora": "body::before, fixed: radial violet 42% at 12% -6%, cyan 20% at 92% 4%, pink 26% at 70% 108%, mint 10% at -4% 92%",
+      "grid": "body::after, fixed: 1px white 3.5% lines every 44px, masked by an ellipse fading from the top"
+    },
+    "gradients": {
+      "bg-beam": "linear-gradient(135deg, var(--brand-deep), var(--brand-deep-2))",
+      "bg-gold-beam": "linear-gradient(135deg, var(--gold), var(--gold-2))",
+      "bg-xp-beam": "linear-gradient(90deg, var(--xp), var(--xp-2))",
+      "frame-brand-border": "linear-gradient(135deg, var(--brand), var(--brand-2) 55%, var(--gold-2))",
+      "frame-gold-border": "linear-gradient(135deg, var(--gold), var(--gold-2) 60%, var(--pink))"
+    },
+    "areaHues": {
+      "today": "var(--xp)",
+      "deals": "var(--pink)",
+      "rewards": "var(--gold)",
+      "accounts": "var(--cyan)",
+      "profile": "var(--positive)"
+    },
     "theming": {
       "mode": "dark-only",
       "source": "src/app/globals.css :root custom properties",
-      "runtimeOverride": "Admin-saved themes (09-admin.md §2) override the :root variables; components must read variables, never literals.",
-      "radiusRoot": "--radius: 0.75rem (sm 0.5x, md 0.75x, lg 1x, xl 1.33x, 2xl 1.66x)"
+      "runtimeOverride": "Admin-saved themes (09-admin.md §2) override the :root variables; components read variables, never literals.",
+      "radiusRoot": "--radius: 0.875rem (sm 0.5x, md 0.75x, lg 1x, xl 1.33x, 2xl 1.66x); rounded-3xl stays 1.5rem"
     },
     "focus": {
-      "value": "2px solid color-mix(in oklab, var(--text) 70%, transparent)",
+      "value": "2px solid var(--cyan)",
       "offset": "2px"
     },
     "selection": {
-      "background": "color-mix(in oklab, var(--text) 24%, transparent)",
-      "caret": "var(--text)"
+      "background": "color-mix(in oklab, var(--brand) 55%, transparent)",
+      "caret": "var(--cyan)"
     }
   },
   "components": [
@@ -296,139 +593,159 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Paper on ink; the one main action on a screen.",
-      "html": "<button class=\"ds-btn-primary\">Reserve my place</button>",
-      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; font-weight:500; border:0; cursor:pointer; transition: background-color 150ms cubic-bezier(0.16,1,0.3,1), color 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); background: var(--text, #f2f0eb); color: var(--ink, #0b0d10); } .ds-btn-primary:hover { background: color-mix(in oklab, var(--text, #f2f0eb) 88%, var(--ink, #0b0d10)); } .ds-btn-primary:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink, #0b0d10), 0 0 0 4px color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); } .ds-btn-primary:active { transform: translateY(1px); }"
+      "description": "The brand beam pill; the one main action on a screen.",
+      "html": "<button class=\"ds-btn-primary\">Join the waitlist</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:9999px; font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; font-size:0.9375rem; font-weight:700; border:0; cursor:pointer; transition: filter 150ms cubic-bezier(0.16,1,0.3,1), box-shadow 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); color:#fff; background-image: linear-gradient(135deg, var(--brand-deep,#5a33e6), var(--brand-deep-2,#c22277)); box-shadow: 0 8px 22px -8px rgb(194 34 119 / 0.75), inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 -2px 0 rgb(0 0 0 / 0.18); } .ds-btn-primary:hover { filter: brightness(1.1); box-shadow: 0 12px 28px -8px rgb(194 34 119 / 0.85), inset 0 1px 0 rgb(255 255 255 / 0.22), inset 0 -2px 0 rgb(0 0 0 / 0.18); } .ds-btn-primary:active { transform: translateY(1px); box-shadow: 0 2px 8px -2px rgb(194 34 119 / 0.7), inset 0 1px 0 rgb(0 0 0 / 0.18); } .ds-btn-primary:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink,#120c32), 0 0 0 4px var(--cyan,#2fd6ff); }"
+    },
+    {
+      "name": "Gold Button",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "Gold beam pill; only for Coins actions (redeem, claim, spend, browse rewards).",
+      "html": "<button class=\"ds-btn-gold\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"7.25\" fill=\"#ffc94a\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"none\" stroke=\"#8c6a1f\" stroke-width=\"1.2\"/><path d=\"M8 4.8v6.4M6.4 6.4h3.2\" stroke=\"#735618\" stroke-width=\"1.3\" stroke-linecap=\"round\"/></svg>Browse rewards</button>",
+      "css": ".ds-btn-gold { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:9999px; font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; font-size:0.9375rem; font-weight:700; border:0; cursor:pointer; transition: filter 150ms cubic-bezier(0.16,1,0.3,1), box-shadow 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); color: var(--ink,#120c32); background-image: linear-gradient(135deg, var(--gold,#ffc94a), var(--gold-2,#ff9d2e)); box-shadow: 0 8px 22px -8px rgb(255 157 46 / 0.7), inset 0 1px 0 rgb(255 255 255 / 0.4), inset 0 -2px 0 rgb(0 0 0 / 0.15); } .ds-btn-gold:hover { filter: brightness(1.05); } .ds-btn-gold:active { transform: translateY(1px); box-shadow: 0 2px 8px -2px rgb(255 157 46 / 0.6); } .ds-btn-gold:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink,#120c32), 0 0 0 4px var(--cyan,#2fd6ff); }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Surface fill with a hairline border; supporting actions.",
-      "html": "<button class=\"ds-btn-secondary\">Check in</button>",
-      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; font-weight:500; border:0; cursor:pointer; transition: background-color 150ms cubic-bezier(0.16,1,0.3,1), color 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); background: var(--surface, #14171c); color: var(--text, #f2f0eb); border: 1px solid var(--hairline, #2a2f37); } .ds-btn-secondary:hover { background: var(--raised, #1c2026); } .ds-btn-secondary:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink, #0b0d10), 0 0 0 4px color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); } .ds-btn-secondary:active { transform: translateY(1px); }"
-    },
-    {
-      "name": "Ghost Button",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Soft paper text, raised fill on hover; tertiary actions.",
-      "html": "<button class=\"ds-btn-ghost\">Cancel</button>",
-      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:12px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; font-weight:500; border:0; cursor:pointer; transition: background-color 150ms cubic-bezier(0.16,1,0.3,1), color 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); background: transparent; color: var(--text-soft, #c9cdd3); } .ds-btn-ghost:hover { background: var(--raised, #1c2026); color: var(--text, #f2f0eb); } .ds-btn-ghost:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink, #0b0d10), 0 0 0 4px color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); }"
+      "description": "Violet-tinted pill with a violet border; supporting actions.",
+      "html": "<button class=\"ds-btn-secondary\">Compare programs</button>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 16px; border-radius:9999px; font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; font-size:0.9375rem; font-weight:700; border:0; cursor:pointer; transition: filter 150ms cubic-bezier(0.16,1,0.3,1), box-shadow 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); color: var(--text,#f8f5ff); background: color-mix(in oklab, var(--brand,#7b4dff) 12%, transparent); border:1px solid color-mix(in oklab, var(--brand,#7b4dff) 45%, transparent); } .ds-btn-secondary:hover { background: color-mix(in oklab, var(--brand,#7b4dff) 22%, transparent); border-color: color-mix(in oklab, var(--brand,#7b4dff) 80%, transparent); } .ds-btn-secondary:active { transform: translateY(1px); } .ds-btn-secondary:focus-visible { outline:none; box-shadow: 0 0 0 2px var(--ink,#120c32), 0 0 0 4px var(--cyan,#2fd6ff); }"
     },
     {
       "name": "Text Field",
       "kind": "input",
       "refersTo": "input",
-      "description": "48px field with label above and hint below.",
-      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-email\">Email</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\" placeholder=\"you@email.com\"><p class=\"ds-field-hint\">One email to confirm.</p></div>",
-      "css": ".ds-field { display:grid; gap:8px; max-width:360px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; } .ds-field-label { font-size:0.875rem; font-weight:500; color: var(--text-soft, #c9cdd3); } .ds-field-hint { margin:0; font-size:0.75rem; line-height:1.6; color: var(--muted, #9aa3af); } .ds-input { height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--hairline, #2a2f37); background: var(--surface, #14171c); color: var(--text, #f2f0eb); font-size:1rem; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; outline:none; transition: border-color 150ms, box-shadow 150ms; } .ds-input::placeholder { color: var(--muted, #9aa3af); } .ds-input:hover { border-color: color-mix(in oklab, var(--hairline, #2a2f37) 60%, var(--text, #f2f0eb)); } .ds-input:focus-visible { border-color: color-mix(in oklab, var(--hairline, #2a2f37) 30%, var(--text, #f2f0eb)); box-shadow: 0 0 0 2px color-mix(in oklab, var(--text, #f2f0eb) 28%, transparent); }"
+      "description": "48px field on Deep Night; violet on hover, cyan on focus.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-email\">Email</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\" placeholder=\"you@email.com\"></div>",
+      "css": ".ds-field { display:grid; gap:8px; max-width:360px; font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; } .ds-label { font-size:0.875rem; font-weight:500; color: var(--text-soft,#d9d2f7); } .ds-input { height:48px; padding:0 16px; border-radius:18.6px; border:1px solid var(--hairline,#3d3086); background: color-mix(in oklab, var(--ink-deep,#0d0929) 60%, transparent); color: var(--text,#f8f5ff); font-size:1rem; font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; outline:none; transition: border-color 150ms, box-shadow 150ms; } .ds-input::placeholder { color: var(--muted,#aca2de); } .ds-input:hover { border-color: color-mix(in oklab, var(--brand,#7b4dff) 60%, transparent); } .ds-input:focus-visible { border-color: color-mix(in oklab, var(--cyan,#2fd6ff) 70%, transparent); box-shadow: 0 0 0 2px color-mix(in oklab, var(--cyan,#2fd6ff) 40%, transparent); }"
     },
     {
-      "name": "Checkbox Row",
-      "kind": "input",
-      "refersTo": "",
-      "description": "Native checkbox themed with appearance:none inside a 48px+ label row; the whole row is the target.",
-      "html": "<label class=\"ds-check-row\"><input class=\"ds-check\" type=\"checkbox\" checked><span><span class=\"ds-check-title\">I am 18 or older</span><span class=\"ds-check-hint\">Required to join.</span></span></label>",
-      "css": ".ds-check-row { display:flex; align-items:flex-start; gap:12px; min-height:48px; max-width:360px; padding:12px 16px; border-radius:12px; border:1px solid var(--hairline, #2a2f37); background: var(--surface, #14171c); cursor:pointer; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; } .ds-check { appearance:none; margin:2px 0 0; display:grid; place-content:center; width:20px; height:20px; flex-shrink:0; border-radius:5px; border:1px solid color-mix(in oklab, var(--hairline, #2a2f37) 40%, var(--text, #f2f0eb)); background: var(--ink, #0b0d10); cursor:pointer; transition: background-color 150ms, border-color 150ms; } .ds-check::before { content:''; width:10px; height:10px; background: var(--ink, #0b0d10); transform:scale(0); transition: transform 150ms; clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); } .ds-check:checked { background: var(--text, #f2f0eb); border-color: var(--text, #f2f0eb); } .ds-check:checked::before { transform:scale(1); } .ds-check:focus-visible { outline:2px solid color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); outline-offset:2px; } .ds-check-title { display:block; font-weight:500; color: var(--text, #f2f0eb); } .ds-check-hint { display:block; font-size:0.875rem; color: var(--muted, #9aa3af); }"
+      "name": "Filter Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "44px pills; the active chip takes the brand beam.",
+      "html": "<div class=\"ds-chips\"><a class=\"ds-chip ds-chip-on\" href=\"#\">Any</a><a class=\"ds-chip\" href=\"#\">Forex</a><a class=\"ds-chip\" href=\"#\">Futures</a></div>",
+      "css": ".ds-chips { display:flex; gap:8px; flex-wrap:wrap; } .ds-chip { display:inline-flex; align-items:center; min-height:44px; padding:0 16px; border-radius:9999px; border:1px solid var(--hairline,#3d3086); background: color-mix(in oklab, var(--surface,#1c1449) 70%, transparent); color: var(--text-soft,#d9d2f7); font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; font-size:0.875rem; font-weight:600; text-decoration:none; transition: border-color 150ms, color 150ms; } .ds-chip:hover { border-color: color-mix(in oklab, var(--brand,#7b4dff) 60%, transparent); color: var(--text,#f8f5ff); } .ds-chip-on, .ds-chip-on:hover { border-color: transparent; color:#fff; background-image: linear-gradient(135deg, var(--brand-deep,#5a33e6), var(--brand-deep-2,#c22277)); box-shadow: 0 6px 16px -6px rgb(194 34 119 / 0.8); } .ds-chip:focus-visible { outline:2px solid var(--cyan,#2fd6ff); outline-offset:2px; }"
     },
     {
-      "name": "Coin Amount",
-      "kind": "custom",
-      "refersTo": "coin-amount",
-      "description": "The only source of gold text: glyph, mono tabular figure, unit. Pending renders muted.",
-      "html": "<div class=\"ds-coins-row\"><span class=\"ds-coin\"><svg viewBox=\"0 0 20 20\" width=\"18\" height=\"18\" aria-hidden=\"true\" style=\"align-self:center\"><circle cx=\"10\" cy=\"10\" r=\"8.75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"10\" cy=\"10\" r=\"5.25\" fill=\"currentColor\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.25\"/><path d=\"M10 7.2v5.6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg><span>2,025</span><span class=\"ds-coin-unit\">Coins</span></span><span class=\"ds-coin ds-coin-pending\"><svg viewBox=\"0 0 20 20\" width=\"18\" height=\"18\" aria-hidden=\"true\" style=\"align-self:center\"><circle cx=\"10\" cy=\"10\" r=\"8.75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"10\" cy=\"10\" r=\"5.25\" fill=\"currentColor\" fill-opacity=\"0.22\" stroke=\"currentColor\" stroke-width=\"1.25\"/><path d=\"M10 7.2v5.6\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg><span>150</span><span class=\"ds-coin-unit\">Coins pending</span></span></div>",
-      "css": ".ds-coins-row { display:flex; gap:20px; align-items:baseline; flex-wrap:wrap; } .ds-coin { display:inline-flex; align-items:baseline; gap:6px; font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings: 'tnum','zero'; font-size:1.5rem; font-weight:600; color: var(--gold, #d4af6a); } .ds-coin-unit { font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.75em; font-weight:500; } .ds-coin-pending { color: var(--muted, #9aa3af); font-size:0.875rem; font-weight:400; }"
-    },
-    {
-      "name": "Stat Panel",
+      "name": "Item Card",
       "kind": "card",
-      "refersTo": "panel",
-      "description": "One bordered panel split into cells by 1px hairline gaps; never cards in cards.",
-      "html": "<section class=\"ds-panel\"><div class=\"ds-cell\"><p class=\"ds-cell-title\">Daily check-in</p><p class=\"ds-cell-body\">Opens with missions.</p></div><div class=\"ds-cell\"><p class=\"ds-cell-title ds-gold\">Bronze</p><p class=\"ds-cell-fig\">0 / 1,000 XP</p></div></section>",
-      "css": ".ds-panel { display:grid; grid-template-columns:1fr 1fr; gap:1px; overflow:hidden; border-radius:16px; border:1px solid var(--hairline, #2a2f37); background: var(--hairline, #2a2f37); max-width:520px; } .ds-cell { background: var(--surface, #14171c); padding:20px; } .ds-cell-title { margin:0; font-family: var(--font-sora), Sora, sans-serif; font-weight:600; font-size:1rem; letter-spacing:-0.02em; color: var(--text, #f2f0eb); } .ds-gold { color: var(--gold, #d4af6a); font-size:1.125rem; } .ds-cell-body { margin:4px 0 0; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.875rem; line-height:1.6; color: var(--muted, #9aa3af); } .ds-cell-fig { margin:4px 0 0; font-family: var(--font-jetbrains), 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; font-size:0.75rem; color: var(--text-soft, #c9cdd3); }"
+      "refersTo": "item-card",
+      "description": "A challenge as an item: rarity frame by account size, rarity tab, hued stat block, Mono prices, Coin pill.",
+      "html": "<article class=\"ds-item\"><span class=\"ds-tab\"><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M6 .8 11.2 4.4 6 11.2.8 4.4Z\" fill=\"currentColor\" fill-opacity=\"0.9\"/><path d=\"M.8 4.4h10.4M6 .8 4 4.4l2 6.8 2-6.8Z\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\"0.55\" stroke-width=\"0.8\"/></svg>Rare · 50K</span><div class=\"ds-item-head\"><div><p class=\"ds-item-title\">Paper Kite (sample)</p><p class=\"ds-item-sub\">Sample evaluation · 1 step · Static</p></div><span class=\"ds-affix\">-10% code</span></div><dl class=\"ds-stats\"><div style=\"--h:var(--cyan,#2fd6ff)\"><dt>Target</dt><dd>8%</dd></div><div style=\"--h:var(--pink,#ff5fae)\"><dt>Daily</dt><dd>4%</dd></div><div style=\"--h:var(--epic,#c084ff)\"><dt>Max</dt><dd>8%</dd></div><div style=\"--h:var(--positive,#3ef0b0)\"><dt>Split</dt><dd>80%</dd></div></dl><p class=\"ds-price\"><s>USD 150.00</s> USD 135.00</p><p class=\"ds-coins\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"7.25\" fill=\"#ffc94a\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"none\" stroke=\"#8c6a1f\" stroke-width=\"1.2\"/><path d=\"M8 4.8v6.4M6.4 6.4h3.2\" stroke=\"#735618\" stroke-width=\"1.3\" stroke-linecap=\"round\"/></svg>Earn about 1,215 Coins back on a confirmed purchase</p></article>",
+      "css": ".ds-item { --r: var(--rare,#4fa8ff); position:relative; max-width:360px; margin-top:16px; padding:24px 16px 16px; border-radius:23px; border:2px solid var(--r); background: radial-gradient(120% 60% at 50% 0%, color-mix(in oklab, var(--r) 24%, transparent), transparent 70%), linear-gradient(180deg, var(--surface-2,#231858), var(--surface,#1c1449)); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 14px 34px -18px color-mix(in oklab, var(--r) 70%, transparent); color: var(--text,#f8f5ff); font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; transition: transform 200ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms cubic-bezier(0.16,1,0.3,1); display:grid; gap:12px; } .ds-item:hover, .ds-item:focus-within { transform: translateY(-4px); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 20px 44px -16px color-mix(in oklab, var(--r) 90%, transparent); } .ds-tab { position:absolute; top:-12px; left:12px; display:inline-flex; align-items:center; gap:4px; padding:4px 10px; border-radius:9999px; background-image: linear-gradient(90deg, var(--rare,#4fa8ff), var(--cyan,#2fd6ff)); color: var(--ink,#120c32); font-size:0.625rem; font-weight:900; letter-spacing:0.14em; text-transform:uppercase; box-shadow: 0 4px 12px -4px rgb(5 2 20 / 0.8); } .ds-item-head { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; } .ds-item-title { margin:0; font-size:1.125rem; font-weight:800; font-stretch:108%; } .ds-item-sub { margin:2px 0 0; font-size:0.875rem; color: var(--text-soft,#d9d2f7); } .ds-affix { transform: rotate(-3deg); padding:4px 8px; border-radius:10px; border:1px dashed color-mix(in oklab, var(--pink,#ff5fae) 70%, transparent); background: color-mix(in oklab, var(--pink,#ff5fae) 15%, transparent); color: var(--pink,#ff5fae); font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings:'tnum','zero'; font-size:0.75rem; font-weight:900; white-space:nowrap; } .ds-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin:0; } .ds-stats div { border-radius:18.6px; padding:6px 8px; border:1px solid color-mix(in oklab, var(--h) 35%, transparent); background: color-mix(in oklab, var(--h) 10%, var(--ink,#120c32)); } .ds-stats dt { font-size:0.625rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color: var(--h); } .ds-stats dd { margin:0; font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings:'tnum','zero'; font-size:0.875rem; font-weight:600; } .ds-price { margin:0; font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings:'tnum','zero'; font-size:1.65rem; font-weight:900; letter-spacing:-0.02em; } .ds-price s { font-size:0.875rem; font-weight:400; color: var(--muted,#aca2de); margin-right:8px; } .ds-coins { justify-self:start; display:inline-flex; align-items:center; gap:6px; margin:0; padding:4px 10px; border-radius:9999px; border:1px solid color-mix(in oklab, var(--gold,#ffc94a) 40%, transparent); background: var(--gold-soft,#ffc94a24); color: var(--gold,#ffc94a); font-size:0.75rem; font-weight:600; }"
     },
     {
-      "name": "Ledger Statement",
+      "name": "Player Card",
       "kind": "custom",
       "refersTo": "",
-      "description": "A worked calculation as a ruled statement: strong top rule, hairline rows, double rule above the total.",
-      "html": "<div class=\"ds-ledger\"><dl><div class=\"ds-lrow\"><dt>List price</dt><dd>$150.00</dd></div><div class=\"ds-lrow\"><dt>Commission (15%)</dt><dd>$22.50</dd></div><div class=\"ds-lrow ds-lmuted\"><dt>What we keep</dt><dd>$2.25</dd></div></dl><div class=\"ds-ltotal\"><span>Back to you (90%)</span><span class=\"ds-ltotal-fig\">2,025 <small>Coins</small></span></div></div>",
-      "css": ".ds-ledger { max-width:380px; border-top:1px solid color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.9375rem; } .ds-ledger dl { margin:0; } .ds-lrow { display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--hairline, #2a2f37); color: var(--text-soft, #c9cdd3); } .ds-lrow dd { margin:0; font-family: var(--font-jetbrains), 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; color: var(--text, #f2f0eb); } .ds-lmuted, .ds-lmuted dd { color: var(--muted, #9aa3af); } .ds-ltotal { display:flex; justify-content:space-between; align-items:baseline; padding:16px 0; border-top:3px double color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); color: var(--text, #f2f0eb); font-weight:500; } .ds-ltotal-fig { font-family: var(--font-jetbrains), 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; font-size:1.5rem; font-weight:700; color: var(--gold, #d4af6a); } .ds-ltotal-fig small { font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.875rem; font-weight:500; }"
+      "description": "Today's brand-framed player card: hex level badge, XP beam, and the gold Coin tile.",
+      "html": "<section class=\"ds-player\"><div class=\"ds-player-main\"><span class=\"ds-hex\">1</span><div class=\"ds-player-xp\"><p class=\"ds-level\">Bronze <span>50 / 1,000 XP</span></p><div class=\"ds-track\"><div class=\"ds-fill\" style=\"width:5%\"></div></div></div></div><a class=\"ds-wallet\" href=\"#\"><span class=\"ds-coin-fig\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"7.25\" fill=\"#ffc94a\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"none\" stroke=\"#8c6a1f\" stroke-width=\"1.2\"/><path d=\"M8 4.8v6.4M6.4 6.4h3.2\" stroke=\"#735618\" stroke-width=\"1.3\" stroke-linecap=\"round\"/></svg>0</span><span class=\"ds-pending\">+0 pending</span></a></section>",
+      "css": ".ds-player { display:grid; grid-template-columns: 1.4fr 1fr; align-items:center; max-width:640px; border-radius:24px; border:1.5px solid transparent; background: linear-gradient(180deg, var(--surface-2,#231858), var(--surface,#1c1449)) padding-box, linear-gradient(135deg, var(--brand,#7b4dff), var(--brand-2,#e0338f) 55%, var(--gold-2,#ff9d2e)) border-box; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), 0 18px 44px -18px rgb(224 51 143 / 0.55); font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; color: var(--text,#f8f5ff); } .ds-player-main { display:flex; align-items:center; gap:16px; padding:20px; } .ds-hex { display:grid; place-items:center; width:64px; height:64px; flex-shrink:0; background: linear-gradient(160deg, #fff1b8 0%, var(--gold,#ffc94a) 38%, var(--gold-2,#ff9d2e) 100%); clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); color: var(--ink,#120c32); font-weight:900; font-size:1.5rem; filter: drop-shadow(0 4px 10px rgb(255 157 46 / 0.55)); } .ds-player-xp { flex:1; display:grid; gap:8px; } .ds-level { margin:0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:1.25rem; font-weight:800; font-stretch:112%; color: var(--gold,#ffc94a); } .ds-level span { font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings:'tnum','zero'; font-size:0.75rem; font-weight:400; font-stretch:100%; color: var(--text-soft,#d9d2f7); } .ds-track { height:14px; border-radius:9999px; overflow:hidden; background: color-mix(in oklab, var(--ink-deep,#0d0929) 80%, transparent); box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.6), 0 0 0 1px var(--hairline,#3d3086); } .ds-fill { height:100%; border-radius:9999px; background-image: linear-gradient(180deg, rgb(255 255 255 / 0.35), transparent 55%), linear-gradient(90deg, var(--xp,#8b5cff), var(--xp-2,#2fd6ff)); box-shadow: 0 2px 8px -2px rgb(47 214 255 / 0.7); transition: width 700ms cubic-bezier(0.16,1,0.3,1); } .ds-wallet { margin:12px 12px 12px 0; display:grid; gap:4px; padding:16px; border-radius:23px; border:1px solid color-mix(in oklab, var(--gold,#ffc94a) 40%, transparent); background: linear-gradient(135deg, rgb(255 201 74 / 0.16), rgb(255 157 46 / 0.06)); text-decoration:none; transition: border-color 150ms; } .ds-wallet:hover { border-color: color-mix(in oklab, var(--gold,#ffc94a) 70%, transparent); } .ds-wallet:focus-visible { outline:2px solid var(--cyan,#2fd6ff); outline-offset:2px; } .ds-coin-fig { display:inline-flex; align-items:center; gap:6px; font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings:'tnum','zero'; font-size:1.875rem; font-weight:700; color: var(--gold,#ffc94a); } .ds-pending { font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings:'tnum','zero'; font-size:0.75rem; color: var(--muted,#aca2de); }"
+    },
+    {
+      "name": "Quest Row",
+      "kind": "custom",
+      "refersTo": "xp-pill",
+      "description": "A daily mission: hued icon tile, title, XP pill; cleared quests turn mint with a printed DONE stamp.",
+      "html": "<ul class=\"ds-quests\"><li class=\"ds-quest\" style=\"--h:var(--cyan,#2fd6ff)\"><span class=\"ds-qtile\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"4\" y=\"2\" width=\"16\" height=\"20\" rx=\"2\"/><path d=\"M8 6h8M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01\"/></svg></span><span class=\"ds-qtitle\">Use a calculator</span><span class=\"ds-xp\">+20 XP</span></li><li class=\"ds-quest ds-done\" style=\"--h:var(--positive,#3ef0b0)\"><span class=\"ds-qtile\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"ds-qtitle\">Compare two programs</span><span class=\"ds-stamp\">Done</span></li></ul>",
+      "css": ".ds-quests { list-style:none; margin:0; padding:0; display:grid; gap:10px; max-width:480px; font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; } .ds-quest { display:flex; align-items:center; gap:12px; min-height:64px; padding:12px 14px; border-radius:23px; border:1px solid var(--hairline,#3d3086); background: linear-gradient(180deg, var(--surface-2,#231858), var(--surface,#1c1449)); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), 0 10px 30px -14px rgb(5 2 20 / 0.8); color: var(--text,#f8f5ff); transition: transform 200ms cubic-bezier(0.16,1,0.3,1), border-color 200ms; } .ds-quest:hover { transform: translateY(-2px); border-color: color-mix(in oklab, var(--h) 60%, transparent); } .ds-qtile { display:grid; place-items:center; width:40px; height:40px; flex-shrink:0; border-radius:18.6px; border:1px solid color-mix(in oklab, var(--h) 50%, transparent); background: color-mix(in oklab, var(--h) 18%, var(--ink,#120c32)); color: var(--h); box-shadow: 0 6px 16px -8px var(--h); } .ds-qtitle { flex:1; font-weight:600; } .ds-xp { padding:4px 10px; border-radius:9999px; background-image: linear-gradient(90deg, var(--xp,#8b5cff), var(--xp-2,#2fd6ff)); color: var(--ink,#120c32); font-family: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-feature-settings:'tnum','zero'; font-size:0.75rem; font-weight:900; box-shadow: 0 4px 12px -4px rgb(47 214 255 / 0.7); } .ds-done { border-color: color-mix(in oklab, var(--positive,#3ef0b0) 30%, transparent); background: color-mix(in oklab, var(--positive,#3ef0b0) 6%, transparent); box-shadow:none; } .ds-done .ds-qtitle { color: var(--muted,#aca2de); text-decoration: line-through; } .ds-stamp { transform: rotate(-6deg); padding:2px 8px; border-radius:7px; border:2px solid color-mix(in oklab, var(--positive,#3ef0b0) 80%, transparent); background: color-mix(in oklab, var(--positive,#3ef0b0) 10%, transparent); color: var(--positive,#3ef0b0); font-size:0.625rem; font-weight:900; letter-spacing:0.14em; text-transform:uppercase; }"
     },
     {
       "name": "Bottom Tab Bar",
       "kind": "nav",
       "refersTo": "tab-bar-item",
-      "description": "Phone navigation: five 56px targets on ink with a top hairline; active is paper.",
-      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tab ds-tab-active\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4\"/></svg>Today</a><a class=\"ds-tab\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"/><path d=\"M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"/></svg>Rewards</a><a class=\"ds-tab\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><circle cx=\"12\" cy=\"8\" r=\"5\"/><path d=\"M20 21a8 8 0 0 0-16 0\"/></svg>Profile</a></nav>",
-      "css": ".ds-tabs { display:grid; grid-template-columns:repeat(3,1fr); max-width:390px; border-top:1px solid var(--hairline, #2a2f37); background: color-mix(in oklab, var(--ink, #0b0d10) 95%, transparent); } .ds-tab { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; min-height:56px; font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif; font-size:0.6875rem; font-weight:500; color: var(--muted, #9aa3af); text-decoration:none; transition: color 150ms; } .ds-tab:hover { color: var(--text-soft, #c9cdd3); } .ds-tab-active, .ds-tab-active:hover { color: var(--text, #f2f0eb); } .ds-tab:focus-visible { outline:2px solid color-mix(in oklab, var(--text, #f2f0eb) 70%, transparent); outline-offset:-2px; }"
+      "description": "Phone navigation; each tab owns an area hue, the active tab turns that hue with a glowing pill behind its icon.",
+      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tabi ds-on\" style=\"--h:var(--xp,#8b5cff)\" href=\"#\"><span class=\"ds-ic\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4\"/></svg></span>Today</a><a class=\"ds-tabi\" style=\"--h:var(--pink,#ff5fae)\" href=\"#\"><span class=\"ds-ic\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><path d=\"M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z\"/><circle cx=\"7.5\" cy=\"7.5\" r=\".5\"/></svg></span>Deals</a><a class=\"ds-tabi\" style=\"--h:var(--gold,#ffc94a)\" href=\"#\"><span class=\"ds-ic\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"/><path d=\"M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"/></svg></span>Rewards</a><a class=\"ds-tabi\" style=\"--h:var(--cyan,#2fd6ff)\" href=\"#\"><span class=\"ds-ic\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><path d=\"M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z\"/><path d=\"m9 12 2 2 4-4\"/></svg></span>Accounts</a><a class=\"ds-tabi\" style=\"--h:var(--positive,#3ef0b0)\" href=\"#\"><span class=\"ds-ic\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><circle cx=\"12\" cy=\"8\" r=\"5\"/><path d=\"M20 21a8 8 0 0 0-16 0\"/></svg></span>Profile</a></nav>",
+      "css": ".ds-tabs { display:grid; grid-template-columns:repeat(5,1fr); max-width:420px; border-top:1px solid var(--hairline,#3d3086); background: color-mix(in oklab, var(--ink-deep,#0d0929) 95%, transparent); box-shadow: 0 -12px 30px -12px rgb(5 2 20 / 0.9); } .ds-tabi { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; min-height:56px; font-family: var(--font-archivo), Archivo, ui-sans-serif, sans-serif; font-size:0.6875rem; font-weight:600; color: var(--muted,#aca2de); text-decoration:none; transition: color 150ms; } .ds-tabi:hover { color: var(--text-soft,#d9d2f7); } .ds-ic { display:grid; place-items:center; width:48px; height:28px; border-radius:9999px; transition: background-color 150ms, box-shadow 150ms; } .ds-on, .ds-on:hover { color: var(--h); } .ds-on .ds-ic { background: color-mix(in oklab, var(--h) 22%, transparent); box-shadow: 0 4px 14px -4px var(--h); } .ds-tabi:focus-visible { outline:2px solid var(--cyan,#2fd6ff); outline-offset:-2px; }"
     }
   ],
   "narrative": {
-    "northStar": "The Signed Ledger",
-    "overview": "Fundback reads like a statement from a private bank that happens to keep score. The ground is near-black ink, the text is warm paper, and structure comes from one-pixel hairlines rather than boxes, shadows or colour fills. Numbers are the content: every amount, rate and count is set in JetBrains Mono with tabular figures, so columns align and nothing reads as decoration. The game layer (Coins, the streak flame, the level ring) sits inside this calm frame and is the only place colour carries excitement.\n\nThe system is dark-only (the root element carries `dark`; there is no light theme). It is a default theme, not a fixed one: every component reads CSS custom properties from `:root` in `src/app/globals.css`, so a theme the owner saves in admin (09-admin.md §2) restyles the product by overriding those variables, with no rebuild. Never hard-code a palette value in a component.\n\nDensity is phone-first and moderate: 20px gutters, 20px panel padding, 16–20px list rows, 44px minimum touch targets everywhere a finger lands. Desktop widens the container but keeps reading text at a measure.",
+    "northStar": "Arcade Night",
+    "overview": "Fundback is a game hall at night that keeps honest books. The ground is an indigo night, never black, lit from behind by a fixed aurora (violet top left, cyan top right, pink bottom right, a faint mint bottom left) over a faint 44px chart grid that fades out down the page. On that night sit lit panels and item cards: every challenge is an item with a rarity frame and a stat block, every deal is a drop with a stamped discount affix, Coins are gold loot, and progress is an XP beam beside a hexagonal level badge. Colour is plentiful, but every colour has a job: the violet-to-pink beam means \"the main thing to do\", gold means Coins, rarity means account size, each area of the product owns one hue, and green, amber and red mean state.\n\nThis record replaces the \"Signed Ledger\" world (ink #0b0d10, Sora and Inter, paper-on-ink buttons, gold-only colour, flat and gradient-free). It was replaced first by \"Item Cards\" (22 Nov 2026) and then, on 23 Nov 2026, the owner asked for a much more colourful, gamified UI with no plain black background, taking craft cues from prop-firm sites (propfirmmatch.com, FTMO, FundingPips, FundedNext, E8, The5ers, Alpha Capital). Arcade Night is that evolution of Item Cards; the item card, rarity, stat block and stamp devices carry over, the palette, type and buttons do not.\n\nThe system is dark-only and themeable by variable: every component reads the CSS custom properties on `:root` in `src/app/globals.css`, so a theme saved in admin (09-admin.md §2) restyles the product with no rebuild. Density is phone-first: 20px gutters, 44px minimum touch targets, 48px inputs, 56px bottom tabs.",
     "keyCharacteristics": [
-      "Ink ground, paper text, hairline rules; flat at rest.",
-      "Gold means Coins, levels and rewards, and nothing else.",
-      "Positive, caution and danger mean state, and nothing else.",
-      "Primary action is paper on ink: the brightest thing on screen without a brand colour.",
-      "Every figure is mono and tabular.",
-      "Themeable by variable; dark-only."
+      "Indigo night with an aurora and a faint grid behind every page; never plain black.",
+      "The brand beam (violet into hot pink) marks the primary action, the active chip and the brand mark.",
+      "Gold means Coins, levels and rewards; the gold button is only for Coins actions.",
+      "Rarity frames are fixed by account size, never by commission or sponsorship.",
+      "Each area owns a hue: Today violet, Deals pink, Rewards gold, Accounts cyan, Profile mint.",
+      "Archivo at a wide stretch for display, Archivo for body, JetBrains Mono tabular for every figure.",
+      "Lit panels with soft, coloured glows; no gradient text, no fake counts or presence."
     ],
     "rules": [
       {
-        "name": "The Gold Means Coins Rule",
-        "body": "Gold appears only on Coins, levels and rewards. All gold text comes through the Coin amount component or a level/reward figure. Never use gold for links, buttons, headings or emphasis.",
+        "name": "The Never Black Rule",
+        "body": "The ground is Indigo Night with the aurora and grid behind it. No page, section or panel sits on #000 or a neutral grey.",
         "section": "colors"
       },
       {
-        "name": "The State Only Rule",
-        "body": "Green, amber and red describe the state of something (safe, caution, breach, error, success). They are never decoration, brand colour or a call to action.",
+        "name": "The Gold Means Coins Rule",
+        "body": "Gold appears only on Coins, levels and rewards. The gold button is only for Coins actions (redeem, claim, spend, browse rewards). Never gold for links, headings, navigation or general emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rarity Is Size Rule",
+        "body": "An item's rarity frame and tab come from its account size alone (`rarityFor(account_size)`), never from commission rate, sponsorship or any paid placement (CLAUDE.md §2.7). A rarity frame is never used on anything that is not an item.",
+        "section": "colors"
+      },
+      {
+        "name": "The Area Hue Rule",
+        "body": "Each area owns one hue, carried by its tab and its title tile: Today violet (xp), Deals pink, Rewards gold, Accounts cyan, Profile mint (positive). Within lists, icon tiles cycle hues so neighbours never match; gold is left out of every cycle.",
+        "section": "colors"
+      },
+      {
+        "name": "The State Rule",
+        "body": "Green, amber and red describe the state of something. Mint's one second job is Profile's area hue; red and amber have none.",
         "section": "colors"
       },
       {
         "name": "The Variables Only Rule",
-        "body": "Components read `var(--ink)`, `var(--gold)` and the rest, or their Tailwind mappings (`bg-surface`, `text-gold`, `border-hairline`). Literal hex lives only in `globals.css`, plus the places that cannot read CSS (the `themeColor` meta, the global error fallback, email templates).",
+        "body": "Components read `var(--brand)`, `var(--gold)` and the rest, or their Tailwind mappings. Literal hex lives in `globals.css` and in the few places that cannot read CSS (the `themeColor` meta, the global error fallback, email templates).",
         "section": "colors"
       },
       {
         "name": "The Every Figure Is Mono Rule",
-        "body": "Money, Coins, XP, percentages and codes are set in JetBrains Mono with the `tabular` utility. A number in Inter is a bug.",
+        "body": "Money, Coins, XP, percentages and codes are JetBrains Mono with the `tabular` utility. A figure in Archivo is a bug.",
         "section": "typography"
       },
       {
-        "name": "The Tight Heading Rule",
-        "body": "Headings h1–h4 are Sora with -0.02em tracking and balanced wrapping; paragraphs use pretty wrapping.",
+        "name": "The Solid Type Rule",
+        "body": "Text is filled with a solid colour. Gradients fill buttons, bars, badges and frames, never letters.",
         "section": "typography"
       },
       {
-        "name": "The Hairline Not Box Rule",
-        "body": "Group related figures into one bordered panel split by 1px hairline gaps (a grid with a 1px gap over a hairline fill), or into a ruled list (`divide-y` with a top and bottom rule). Never put a card inside a card, and never stack empty boxes.",
+        "name": "The Glow Means Something Rule",
+        "body": "Coloured light comes from meaning: the brand action, Coins, an item's rarity, an area's hue. Neutral panels cast only the dark panel shadow.",
         "section": "elevation"
       },
       {
-        "name": "The Ledger Rule",
-        "body": "A worked calculation is a ruled statement: a strong top rule (paper at 70%), hairline rows, and a double rule above the total.",
+        "name": "The Frames Are Few Rule",
+        "body": "Brand and gold frames mark a screen's key surfaces (Today: the player card and the reward goal; landing: the waitlist form, the loot card, the drops and the closing reply). Everything else is a plain panel.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** read every colour, radius and font from the CSS variables in `globals.css`, so an admin theme applies everywhere.",
+      "**Do** keep the night indigo with the aurora and grid layers behind it, on every page.",
+      "**Do** use the brand beam for the one main action, and the gold button only for Coins actions.",
+      "**Do** derive rarity from account size only, and show it with the frame, tab and gem.",
+      "**Do** give each area its hue on its tab and title tile, and cycle hues across list tiles, leaving gold out.",
       "**Do** set every figure in JetBrains Mono with the `tabular` utility.",
+      "**Do** print status as a stamp or word as well as a colour.",
       "**Do** keep touch targets at 44px or larger (inputs 48px, bottom tabs 56px).",
-      "**Do** separate content with hairlines: one bordered panel with hairline gaps, or a ruled list.",
-      "**Do** design the empty, loading (skeleton in Raised) and error state of every screen.",
-      "**Do** keep motion to 150–300ms on the expo ease-out for controls; ring fills and count-ups may run longer, and all of it collapses under `prefers-reduced-motion`."
+      "**Do** keep control motion to 150–200ms on the expo ease-out; bar fills run 700ms; all of it collapses under `prefers-reduced-motion`.",
+      "**Do** read every colour, radius and font from the variables in `globals.css`."
     ],
     "donts": [
+      "**Don't** use plain black or neutral grey grounds.",
       "**Don't** use gold for anything except Coins, levels and rewards.",
-      "**Don't** use green, amber or red as decoration or as a call to action.",
-      "**Don't** fill the primary button with a colour; it is paper on ink.",
-      "**Don't** nest cards or give page surfaces drop shadows; the overlay shadow is for floating layers only.",
-      "**Don't** add a light theme or light sections; the product is dark-only.",
-      "**Don't** hard-code hex values in components.",
-      "**Don't** build custom dropdowns or checkboxes; theme the native controls."
+      "**Don't** let commission, sponsorship or paid placement change a rarity, frame, glow or order.",
+      "**Don't** fill text with a gradient.",
+      "**Don't** show invented counts, live presence, \"someone just bought\" activity or resetting timers; the only live activity is the member's own.",
+      "**Don't** use green, amber or red as decoration or a call to action.",
+      "**Don't** frame ordinary panels; frames are for the key brand and Coins surfaces.",
+      "**Don't** hard-code hex values in components."
     ]
   }
 }

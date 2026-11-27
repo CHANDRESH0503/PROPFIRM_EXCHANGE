@@ -1,5 +1,5 @@
 import "server-only";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { Resend } from "resend";
 import { env } from "@/lib/env";
@@ -41,7 +41,13 @@ export async function sendEmail(message: EmailMessage): Promise<SendResult> {
 
   resend ??= new Resend(RESEND_API_KEY);
   const { error } = await resend.emails.send(
-    { from: EMAIL_FROM, to: message.to, subject: message.subject, html: message.html, text: message.text },
+    {
+      from: EMAIL_FROM,
+      to: message.to,
+      subject: message.subject,
+      html: message.html,
+      text: message.text,
+    },
     message.idempotencyKey ? { idempotencyKey: message.idempotencyKey } : undefined,
   );
   if (error) {
@@ -58,5 +64,11 @@ async function writeDevMail(message: EmailMessage) {
   if (!dir) return;
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, `${Date.now()}-${message.template}.json`);
-  await writeFile(file, JSON.stringify({ to: message.to, subject: message.subject, text: message.text }, null, 2));
+  // Write then rename, so a reader never sees a half-written file.
+  const partial = `${file}.${process.pid}.tmp`;
+  await writeFile(
+    partial,
+    JSON.stringify({ to: message.to, subject: message.subject, text: message.text }, null, 2),
+  );
+  await rename(partial, file);
 }

@@ -18,7 +18,15 @@ interface Flag {
 const initial: FlagActionState = { status: "idle" };
 
 /** One flag. Changing it asks for a reason inline (no modal), which goes to the audit log. */
-export function FlagRow({ flag, canEdit, chance }: { flag: Flag; canEdit: boolean; chance: boolean }) {
+export function FlagRow({
+  flag,
+  canEdit,
+  chance,
+}: {
+  flag: Flag;
+  canEdit: boolean;
+  chance: boolean;
+}) {
   const t = useTranslations("admin.flags");
   const [state, action, pending] = useActionState(setFeatureFlag, initial);
   // Open until the next successful save: `openedWith` is the result current when it was opened.
@@ -44,11 +52,22 @@ export function FlagRow({ flag, canEdit, chance }: { flag: Flag; canEdit: boolea
           ) : null}
         </div>
         <div className="flex items-center gap-3">
-          <span className={cn("text-sm font-medium", flag.enabled ? "text-positive" : "text-muted-foreground")}>
+          <span
+            className={cn(
+              "text-sm font-medium",
+              flag.enabled ? "text-positive" : "text-muted-foreground",
+            )}
+          >
             {flag.enabled ? t("on") : t("off")}
           </span>
           {canEdit && !open ? (
-            <Button variant="secondary" size="sm" onClick={() => setOpenedWith(state)} aria-expanded={open} aria-controls={reasonId}>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => setOpenedWith(state)}
+              aria-expanded={open}
+              aria-controls={reasonId}
+            >
               {flag.enabled ? t("turnOff") : t("turnOn")}
             </Button>
           ) : null}
@@ -56,7 +75,11 @@ export function FlagRow({ flag, canEdit, chance }: { flag: Flag; canEdit: boolea
       </div>
 
       {canEdit && open ? (
-        <form action={action} className="flex flex-col gap-2.5 sm:flex-row sm:items-start" id={reasonId}>
+        <form
+          action={action}
+          className="flex flex-col gap-2.5 sm:flex-row sm:items-start"
+          id={reasonId}
+        >
           <input type="hidden" name="key" value={flag.key} />
           <input type="hidden" name="enabled" value={String(!flag.enabled)} />
           <label htmlFor={`${reasonId}-input`} className="sr-only">
@@ -78,7 +101,13 @@ export function FlagRow({ flag, canEdit, chance }: { flag: Flag; canEdit: boolea
             <Button type="submit" pending={pending} variant={flag.enabled ? "danger" : "primary"}>
               {flag.enabled ? t("turnOff") : t("turnOn")}
             </Button>
-            <Button type="button" variant="ghost" size="icon" onClick={() => setOpenedWith(null)} aria-label={t("cancel")}>
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              onClick={() => setOpenedWith(null)}
+              aria-label={t("cancel")}
+            >
               <X aria-hidden="true" />
             </Button>
           </div>

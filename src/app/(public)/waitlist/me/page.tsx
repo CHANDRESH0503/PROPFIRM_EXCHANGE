@@ -26,7 +26,11 @@ export default async function WaitlistMePage() {
 }
 
 async function boost(): Promise<number> {
-  const { data } = await createAdminClient().from("site_settings").select("value").eq("key", "waitlist.referral_boost").maybeSingle();
+  const { data } = await createAdminClient()
+    .from("site_settings")
+    .select("value")
+    .eq("key", "waitlist.referral_boost")
+    .maybeSingle();
   return typeof data?.value === "number" ? data.value : 5;
 }
 
@@ -53,7 +57,9 @@ async function Member() {
   const places = await boost();
   const link = new URL("/", publicEnv.siteUrl);
   link.searchParams.set("ref", member.referralCode);
-  const digits = String(member.position ?? 0).padStart(4, "0").split("");
+  const digits = String(member.position ?? 0)
+    .padStart(4, "0")
+    .split("");
 
   return (
     <div className="mt-6 space-y-10">
@@ -62,7 +68,7 @@ async function Member() {
         <span>{t("confirmed")}</span>
       </p>
 
-      <section aria-labelledby="place" className="rounded-xl border border-hairline bg-surface p-5 sm:p-6">
+      <section aria-labelledby="place" className="rounded-2xl p-5 panel sm:p-6">
         <h2 id="place" className="text-sm font-medium text-muted-foreground">
           {t("position")}
         </h2>
@@ -78,9 +84,13 @@ async function Member() {
               </span>
             ))}
           </span>
-          <span className="pb-1 text-sm text-muted-foreground">{t("of", { total: fmt.format(member.totalConfirmed) })}</span>
+          <span className="pb-1 text-sm text-muted-foreground">
+            {t("of", { total: fmt.format(member.totalConfirmed) })}
+          </span>
         </p>
-        <p className="mt-5 text-text-soft">{t("referrals", { count: member.confirmedReferrals })}</p>
+        <p className="mt-5 text-text-soft">
+          {t("referrals", { count: member.confirmedReferrals })}
+        </p>
         <p className="mt-1 text-sm text-muted-foreground">{t("boost", { boost: places })}</p>
       </section>
 

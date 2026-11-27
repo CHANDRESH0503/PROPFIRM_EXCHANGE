@@ -20,8 +20,14 @@ export default function SettingsPage() {
 
 async function Settings() {
   const { roles } = await requireStaff();
-  const [t, nav] = await Promise.all([getTranslations("admin.flags"), getTranslations("admin.nav")]);
-  const { data, error } = await createAdminClient().from("feature_flags").select("key, enabled, description, updated_at").order("key");
+  const [t, nav] = await Promise.all([
+    getTranslations("admin.flags"),
+    getTranslations("admin.nav"),
+  ]);
+  const { data, error } = await createAdminClient()
+    .from("feature_flags")
+    .select("key, enabled, description, updated_at")
+    .order("key");
   if (error) throw new Error(`feature_flags: ${error.code}`);
   const canEdit = hasRole(roles, "owner");
 
@@ -29,11 +35,18 @@ async function Settings() {
     <div className="space-y-6">
       <div className="space-y-2">
         <h1 className="text-2xl font-bold">{nav("flags")}</h1>
-        <p className="measure text-sm text-muted-foreground">{canEdit ? t("intro") : t("ownerOnly")}</p>
+        <p className="measure text-sm text-muted-foreground">
+          {canEdit ? t("intro") : t("ownerOnly")}
+        </p>
       </div>
-      <ul className="divide-y divide-hairline rounded-xl border border-hairline bg-surface">
+      <ul className="divide-y divide-hairline rounded-2xl panel">
         {data.map((flag) => (
-          <FlagRow key={flag.key} flag={flag} canEdit={canEdit} chance={CHANCE_FLAGS.has(flag.key)} />
+          <FlagRow
+            key={flag.key}
+            flag={flag}
+            canEdit={canEdit}
+            chance={CHANCE_FLAGS.has(flag.key)}
+          />
         ))}
       </ul>
     </div>

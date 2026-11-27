@@ -1,10 +1,26 @@
-import type { EmailOtpType } from "@supabase/supabase-js";
+import type { EmailOtpType, User } from "@supabase/supabase-js";
 import { type NextRequest, NextResponse } from "next/server";
 import { safeNext } from "@/lib/auth/session";
 import { log } from "@/lib/log";
 import { createClient } from "@/lib/supabase/server";
 
-const OTP_TYPES = new Set<EmailOtpType>(["email", "magiclink", "signup", "invite", "recovery", "email_change"]);
+import {
+  applySignupInvite,
+  bindGoogleInvite,
+  sealInvite,
+  INVITE_COOKIE,
+  RETRY_COOKIE,
+  RETRY_SECONDS,
+} from "@/lib/auth/signup-referral";
+
+const OTP_TYPES = new Set<EmailOtpType>([
+  "email",
+  "magiclink",
+  "signup",
+  "invite",
+  "recovery",
+  "email_change",
+]);
 
 /**
  * Finishes every sign-in:
@@ -28,12 +44,14 @@ export async function GET(request: NextRequest) {
 
   const supabase = await createClient();
 
+  let oauthUser: User | null = null;
   if (code) {
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code);
     if (error) {
       log("info", "auth.code_exchange_failed", { code: error.code });
       return fail("link");
     }
+    oauthUser = data.user;
   } else if (tokenHash && type && OTP_TYPES.has(type)) {
     const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type });
     if (error) {
@@ -50,9 +68,40 @@ export async function GET(request: NextRequest) {
   const userId = data?.claims?.sub;
   if (!userId) return fail("link");
 
-  const { data: profile } = await supabase.from("profiles").select("onboarded_at").eq("id", userId).maybeSingle();
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("onboarded_at")
+    .eq("id", userId)
+    .maybeSingle();
   const destination = profile?.onboarded_at ? next : `/onboarding?next=${encodeURIComponent(next)}`;
   const response = NextResponse.redirect(new URL(destination, request.nextUrl.origin), 303);
+  const cookieOptions = {
+    httpOnly: true,
+    secure: request.nextUrl.protocol === "https:",
+    sameSite: "lax" as const,
+  };
+  const rawInvite = request.cookies.get(INVITE_COOKIE)?.value;
+  if (rawInvite) {
+    response.cookies.set(INVITE_COOKIE, "", {
+      ...cookieOptions,
+      path: "/auth/callback",
+      maxAge: 0,
+    });
+    const invite = oauthUser?.id === userId ? bindGoogleInvite(rawInvite, oauthUser) : null;
+    if (invite) {
+      try {
+        await applySignupInvite(invite, userId);
+      } catch {
+        // Keep the verified, recipient-bound invite for the onboarding retry.
+        response.cookies.set(RETRY_COOKIE, sealInvite(invite), {
+          ...cookieOptions,
+          path: "/onboarding",
+          maxAge: RETRY_SECONDS,
+        });
+        log("warn", "auth.referral_deferred");
+      }
+    }
+  }
   response.headers.set("Cache-Control", "no-store");
   return response;
 }

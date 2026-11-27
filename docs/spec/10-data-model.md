@@ -2,6 +2,8 @@
 
 Part of the project brief. The rules in `/CLAUDE.md` §2 override anything here.
 
+**Implementation status, 22 November 2026.** Staging includes the versioned economy configuration, wallet and ledger, catalogue, claims, commissions, rewards, encrypted voucher inventory, check-ins, missions, notifications and in-app preferences. The implementation matrix in [PROGRESS.md](../PROGRESS.md) tracks remaining tables by feature.
+
 
 A starting point. Refine names and columns as you design, and keep to `/CLAUDE.md` §2 (rules) and §4 (conventions).
 

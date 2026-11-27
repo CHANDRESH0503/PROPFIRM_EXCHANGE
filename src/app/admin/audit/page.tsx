@@ -17,7 +17,10 @@ export default function AuditPage() {
 
 async function Audit() {
   await requireStaff();
-  const [nav, t] = await Promise.all([getTranslations("admin.nav"), getTranslations("admin.audit")]);
+  const [nav, t] = await Promise.all([
+    getTranslations("admin.nav"),
+    getTranslations("admin.audit"),
+  ]);
   const { data, error } = await createAdminClient()
     .from("audit_log")
     .select("id, actor_id, action, entity_type, entity_id, reason, created_at")
@@ -27,7 +30,11 @@ async function Audit() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">{nav("audit")}</h1>
-      {data.length ? <AuditTable rows={data} /> : <p className="text-sm text-muted-foreground">{t("empty")}</p>}
+      {data.length ? (
+        <AuditTable rows={data} />
+      ) : (
+        <p className="text-sm text-muted-foreground">{t("empty")}</p>
+      )}
     </div>
   );
 }

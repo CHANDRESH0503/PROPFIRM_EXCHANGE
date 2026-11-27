@@ -6,7 +6,8 @@
 export const BPS = 10_000;
 
 export function assertInt(name: string, value: number) {
-  if (!Number.isSafeInteger(value) || value < 0) throw new RangeError(`${name} must be a non-negative integer`);
+  if (!Number.isSafeInteger(value) || value < 0)
+    throw new RangeError(`${name} must be a non-negative integer`);
 }
 
 /** commission = floor(price × commission_bps / 10000), in cents. */

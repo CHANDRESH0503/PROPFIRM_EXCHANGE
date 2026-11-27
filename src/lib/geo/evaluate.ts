@@ -26,10 +26,19 @@ export type GeoDecision =
  * country blocks any of its asset classes (CLAUDE.md §2.10). With no country known at all,
  * nothing is blocked here; callers that need a country (outbound links) require onboarding.
  */
-export function evaluateGeo(rules: readonly GeoRule[], ctx: GeoContext, assetClasses: readonly AssetClass[]): GeoDecision {
-  const countries = [...new Set([ctx.profileCountry, ctx.ipCountry].filter((c): c is string => Boolean(c)))];
+export function evaluateGeo(
+  rules: readonly GeoRule[],
+  ctx: GeoContext,
+  assetClasses: readonly AssetClass[],
+): GeoDecision {
+  const countries = [
+    ...new Set([ctx.profileCountry, ctx.ipCountry].filter((c): c is string => Boolean(c))),
+  ];
   for (const country of countries) {
-    const hits = rules.filter((r) => r.country_code === country && r.action === "block" && assetClasses.includes(r.asset_class));
+    const hits = rules.filter(
+      (r) =>
+        r.country_code === country && r.action === "block" && assetClasses.includes(r.asset_class),
+    );
     if (hits.length > 0) {
       return {
         allowed: false,

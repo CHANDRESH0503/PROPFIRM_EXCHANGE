@@ -17,7 +17,9 @@ export async function getFlags(): Promise<Record<string, Flag>> {
   "use cache";
   cacheTag(FLAGS_TAG);
   cacheLife("minutes");
-  const { data, error } = await createAdminClient().from("feature_flags").select("key, enabled, excluded_countries");
+  const { data, error } = await createAdminClient()
+    .from("feature_flags")
+    .select("key, enabled, excluded_countries");
   if (error) throw new Error(`feature_flags unavailable: ${error.code}`);
   return Object.fromEntries(data.map((f) => [f.key, f]));
 }

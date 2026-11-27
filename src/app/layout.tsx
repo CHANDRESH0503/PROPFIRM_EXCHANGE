@@ -1,16 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Sora } from "next/font/google";
+import { Archivo, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Toaster } from "@/components/ui/sonner";
+import { AnalyticsProvider } from "@/components/analytics/analytics";
 import { brand } from "@/config/brand";
 import { publicEnv } from "@/lib/public-env";
 import "./globals.css";
 
-const sora = Sora({ subsets: ["latin"], variable: "--font-sora", display: "swap" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+// One family for display and body: the width axis gives the wide display voice.
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap",
+  axes: ["wdth"],
+});
 // Figures only: not preloaded, so it never competes with the text faces for the first paint.
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap", preload: false });
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+  preload: false,
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("meta");
@@ -25,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0b0d10",
+  themeColor: "#120c32",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -34,7 +45,7 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const t = await getTranslations("nav");
   return (
-    <html lang="en" className={`dark ${sora.variable} ${inter.variable} ${mono.variable}`}>
+    <html lang="en" className={`dark ${archivo.variable} ${mono.variable}`}>
       <body className="min-h-dvh">
         <a
           href="#main"
@@ -42,7 +53,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           {t("skip")}
         </a>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <AnalyticsProvider>{children}</AnalyticsProvider>
+        </NextIntlClientProvider>
         <Toaster />
       </body>
     </html>

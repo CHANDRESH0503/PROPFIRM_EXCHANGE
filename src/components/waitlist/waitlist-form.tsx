@@ -17,7 +17,15 @@ const initial: WaitlistState = { status: "idle" };
  * Server Action); with JavaScript it shows pending state, blocks double submits and keeps the
  * email when an error comes back. Referral (?ref=) and source (?utm_source=) come from the URL.
  */
-export function WaitlistForm({ id, className, showFine = true }: { id: string; className?: string; showFine?: boolean }) {
+export function WaitlistForm({
+  id,
+  className,
+  showFine = true,
+}: {
+  id: string;
+  className?: string;
+  showFine?: boolean;
+}) {
   const t = useTranslations("waitlist");
   const params = useSearchParams();
   const [state, action, pending] = useActionState(joinWaitlist, initial);
@@ -32,12 +40,14 @@ export function WaitlistForm({ id, className, showFine = true }: { id: string; c
 
   if (state.status === "sent" && dismissed !== state) {
     return (
-      <div role="status" className={cn("rounded-xl border border-hairline bg-surface p-5", className)}>
+      <div role="status" className={cn("rounded-2xl p-5 panel", className)}>
         <div className="flex items-start gap-3">
           <MailCheck className="mt-0.5 size-5 shrink-0 text-positive" aria-hidden="true" />
           <div className="space-y-1.5">
             <p className="font-heading text-base font-semibold">{t("sentTitle")}</p>
-            <p className="text-sm leading-relaxed text-text-soft">{t("sentBody", { email: state.email })}</p>
+            <p className="text-sm leading-relaxed text-text-soft">
+              {t("sentBody", { email: state.email })}
+            </p>
             <button
               type="button"
               onClick={() => setDismissed(state)}
@@ -52,7 +62,11 @@ export function WaitlistForm({ id, className, showFine = true }: { id: string; c
   }
 
   const errorCode = state.status === "error" ? state.code : null;
-  const errorText = errorCode ? t(`errors.${errorCode}`) : linkError === "invalid" || linkError === "unavailable" ? t(`link.${linkError}`) : null;
+  const errorText = errorCode
+    ? t(`errors.${errorCode}`)
+    : linkError === "invalid" || linkError === "unavailable"
+      ? t(`link.${linkError}`)
+      : null;
   const errorId = `${id}-error`;
 
   return (
@@ -84,10 +98,17 @@ export function WaitlistForm({ id, className, showFine = true }: { id: string; c
         </Button>
       </div>
       <Turnstile action="waitlist" resetKey={state} />
-      <p id={errorId} aria-live="polite" className={cn("text-sm text-danger", !errorText && "sr-only")}>
+      <p
+        id={errorId}
+        aria-live="polite"
+        className={cn("text-sm text-danger", !errorText && "sr-only")}
+      >
         {errorText ?? ""}
       </p>
-      <p id={`${id}-fine`} className={cn("text-sm leading-relaxed text-muted-foreground", !showFine && "sr-only")}>
+      <p
+        id={`${id}-fine`}
+        className={cn("text-sm leading-relaxed text-muted-foreground", !showFine && "sr-only")}
+      >
         {t("fine")}
       </p>
     </form>

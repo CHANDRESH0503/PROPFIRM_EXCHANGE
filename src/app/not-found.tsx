@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { HomeLink } from "@/components/layout/session-links";
 import { buttonVariants } from "@/components/ui/button";
 
 export default async function NotFound() {
@@ -9,9 +9,7 @@ export default async function NotFound() {
       <p className="font-mono text-sm text-muted-foreground">404</p>
       <h1 className="mt-2 text-2xl font-bold">{t("notFoundTitle")}</h1>
       <p className="mt-3 text-text-soft">{t("notFoundBody")}</p>
-      <Link href="/" className={buttonVariants({ className: "mt-6" })}>
-        {t("home")}
-      </Link>
+      <HomeLink home={t("home")} app={t("app")} className={buttonVariants({ className: "mt-6" })} />
     </main>
   );
 }

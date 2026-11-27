@@ -10,21 +10,46 @@
  * Dark first; there is no light theme at launch.
  */
 :root {
-  --ink: #0b0d10;
-  --surface: #14171c;
-  --raised: #1c2026;
-  --hairline: #2a2f37;
-  --text: #f2f0eb;
-  --text-soft: #c9cdd3;
-  --muted: #9aa3af;
-  --gold: #d4af6a;
-  --gold-soft: #d4af6a26;
-  --positive: #3ccb8d;
-  --caution: #f2b544;
-  --danger: #f0566b;
-  --radius: 0.75rem;
-  /* One elevation, for overlays only (sheets, toasts): offset and soft blur, never a glow. */
-  --shadow-overlay: 0 12px 32px -8px rgb(0 0 0 / 0.6), 0 2px 6px rgb(0 0 0 / 0.4);
+  /* Arcade Night world (DESIGN.md): an indigo night lit by aurora, never plain black. */
+  --ink: #120c32;
+  --ink-deep: #0d0929;
+  --surface: #1c1449;
+  --surface-2: #231858;
+  --raised: #2c2068;
+  --hairline: #3d3086;
+  --text: #f8f5ff;
+  --text-soft: #d9d2f7;
+  --muted: #aca2de;
+  /* Brand beam: violet into hot pink. Buttons, active tabs, the primary frame. */
+  --brand: #7b4dff;
+  --brand-2: #e0338f;
+  --brand-deep: #5a33e6;
+  --brand-deep-2: #c22277;
+  /* Accent hues: each family of the product owns one. */
+  --cyan: #2fd6ff;
+  --pink: #ff5fae;
+  --lime: #c6f432;
+  /* Violet for text and icons on the night (the XP violet is too dark for small text). */
+  --violet: #b094ff;
+  /* Gold is Coins and levels. */
+  --gold: #ffc94a;
+  --gold-2: #ff9d2e;
+  --gold-soft: #ffc94a24;
+  /* Rarity frames, fixed by account size (never by commission or sponsorship). */
+  --common: #a9adcf;
+  --rare: #4fa8ff;
+  --epic: #c084ff;
+  --legendary: #ff9a3c;
+  /* Progress: XP bars and level fills, violet into cyan. */
+  --xp: #8b5cff;
+  --xp-2: #2fd6ff;
+  /* State: safe, caution, breach. */
+  --positive: #3ef0b0;
+  --caution: #ffc24a;
+  --danger: #ff5c7a;
+  --radius: 0.875rem;
+  --shadow-overlay: 0 16px 40px -10px rgb(5 2 20 / 0.75), 0 2px 8px rgb(5 2 20 / 0.5);
+  --shadow-panel: 0 10px 30px -14px rgb(5 2 20 / 0.8);
 
   /* shadcn/ui token names, mapped onto the palette above. */
   --background: var(--ink);
@@ -33,8 +58,8 @@
   --card-foreground: var(--text);
   --popover: var(--raised);
   --popover-foreground: var(--text);
-  --primary: var(--text);
-  --primary-foreground: var(--ink);
+  --primary: var(--brand);
+  --primary-foreground: #ffffff;
   --secondary: var(--raised);
   --secondary-foreground: var(--text);
   --muted-foreground: var(--muted);
@@ -43,14 +68,14 @@
   --destructive: var(--danger);
   --border: var(--hairline);
   --input: var(--hairline);
-  --ring: color-mix(in oklab, var(--text) 70%, transparent);
+  --ring: var(--cyan);
 
   color-scheme: dark;
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-sora), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-archivo), ui-sans-serif, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   --color-ink: var(--ink);
@@ -64,6 +89,21 @@
   --color-positive: var(--positive);
   --color-caution: var(--caution);
   --color-danger: var(--danger);
+  --color-common: var(--common);
+  --color-rare: var(--rare);
+  --color-epic: var(--epic);
+  --color-legendary: var(--legendary);
+  --color-xp: var(--xp);
+  --color-xp-2: var(--xp-2);
+  --color-ink-deep: var(--ink-deep);
+  --color-surface-2: var(--surface-2);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-cyan: var(--cyan);
+  --color-pink: var(--pink);
+  --color-lime: var(--lime);
+  --color-violet: var(--violet);
+  --color-gold-2: var(--gold-2);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -104,32 +144,64 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply font-sans text-foreground antialiased;
     font-feature-settings: "cv11", "ss01";
+    background-color: var(--ink);
+    background-image: linear-gradient(180deg, var(--ink) 0%, #160e3c 50%, var(--ink) 100%);
+    isolation: isolate;
   }
 
+  /* The aurora: three coloured light sources and a faint chart grid, fixed behind every page.
+     A fixed layer (not background-attachment) so phones do not repaint it on scroll. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(60rem 36rem at 12% -6%, rgb(123 77 255 / 0.42), transparent 62%),
+      radial-gradient(48rem 30rem at 92% 4%, rgb(47 214 255 / 0.2), transparent 60%),
+      radial-gradient(56rem 34rem at 70% 108%, rgb(224 51 143 / 0.26), transparent 62%),
+      radial-gradient(40rem 28rem at -4% 92%, rgb(62 240 176 / 0.1), transparent 60%);
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 85%);
+  }
+
+  /* Display voice: Archivo at a wide stretch, heavy, tight. */
   h1,
   h2,
   h3,
   h4 {
     @apply font-heading;
+    font-stretch: 112%;
+    font-weight: 800;
     text-wrap: balance;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 
   p {
     text-wrap: pretty;
   }
 
-  /* Neutral, from the text colour: gold stays reserved for Coins, levels and rewards. */
   ::selection {
-    background: color-mix(in oklab, var(--text) 24%, transparent);
-    color: var(--text);
+    background: color-mix(in oklab, var(--brand) 55%, transparent);
+    color: #fff;
   }
 
   input,
   textarea {
-    caret-color: var(--text);
+    caret-color: var(--cyan);
   }
 
   :focus-visible {
@@ -144,7 +216,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--hairline) transparent;
+    scrollbar-color: var(--raised) transparent;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -166,4 +238,55 @@
 
 @utility measure {
   max-width: 65ch;
+}
+
+/* Phones: keep focused and scrolled-to elements clear of the fixed bottom tab bar (WCAG 2.2 focus
+   not obscured). The bar is hidden from md up. */
+@media (width < 48rem) {
+  html:has(nav[aria-label="App"]) {
+    scroll-padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* A raised panel: lit from the top edge, sitting on the night with a soft offset shadow. */
+@utility panel {
+  border: 1px solid var(--hairline);
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    var(--shadow-panel);
+}
+
+/* The brand frame: a violet-to-pink gradient border around a panel. */
+@utility frame-brand {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(180deg, var(--surface-2), var(--surface)) padding-box,
+    linear-gradient(135deg, var(--brand), var(--brand-2) 55%, var(--gold-2)) border-box;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    0 18px 44px -18px rgb(224 51 143 / 0.55);
+}
+
+/* The Coins frame: gold into orange, for loot and rewards. */
+@utility frame-gold {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(180deg, #2a1d4f, var(--surface)) padding-box,
+    linear-gradient(135deg, var(--gold), var(--gold-2) 60%, var(--pink)) border-box;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    0 18px 44px -18px rgb(255 157 46 / 0.5);
+}
+
+/* The brand beam fill, for primary actions and the active tab. */
+@utility bg-beam {
+  background-image: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand-deep-2) 100%);
+}
+@utility bg-gold-beam {
+  background-image: linear-gradient(135deg, var(--gold) 0%, var(--gold-2) 100%);
+}
+/* XP chips carry ink text, so they start at the readable violet rather than the XP fill. */
+@utility bg-xp-beam {
+  background-image: linear-gradient(90deg, var(--violet) 0%, var(--xp-2) 100%);
 }

@@ -48,7 +48,10 @@ describe("waitlist", () => {
   it("gives no position until the email is confirmed, then counts confirmed members", async () => {
     const a = await join("pos-a@example.com");
     const b = await join("pos-b@example.com");
-    const before = await db.as(service, "select count(*)::int as n from public.waitlist_signups where status = 'confirmed'");
+    const before = await db.as(
+      service,
+      "select count(*)::int as n from public.waitlist_signups where status = 'confirmed'",
+    );
 
     const memberA = await open(a.token);
     expect(memberA).toMatchObject({ status: "confirmed" });
@@ -58,7 +61,10 @@ describe("waitlist", () => {
   });
 
   it("moves a member up for each confirmed referral, by the configured boost", async () => {
-    await db.as(superuser, "update public.site_settings set value = '2'::jsonb where key = 'waitlist.referral_boost'");
+    await db.as(
+      superuser,
+      "update public.site_settings set value = '2'::jsonb where key = 'waitlist.referral_boost'",
+    );
     const referrer = await join("boost-ref@example.com");
     const referrerView = (await open(referrer.token))!;
     const others = [];
@@ -74,7 +80,10 @@ describe("waitlist", () => {
     const after = (await open(referrer.token))!;
     expect(after.confirmed_referrals).toBe(1);
     expect(Number(after.position)).toBe(start - 2);
-    await db.as(superuser, "update public.site_settings set value = '5'::jsonb where key = 'waitlist.referral_boost'");
+    await db.as(
+      superuser,
+      "update public.site_settings set value = '5'::jsonb where key = 'waitlist.referral_boost'",
+    );
   });
 
   it("counts a referral once, even if the friend opens the link many times", async () => {
@@ -98,7 +107,11 @@ describe("waitlist", () => {
 
   it("ignores unknown referral codes", async () => {
     const a = await join("unknown-ref@example.com", { ref: "ZZZZZZZZ" });
-    const { rows } = await db.as(service, "select referred_by from public.waitlist_signups where id = $1", [a.signup_id]);
+    const { rows } = await db.as(
+      service,
+      "select referred_by from public.waitlist_signups where id = $1",
+      [a.signup_id],
+    );
     expect(rows[0]!.referred_by).toBeNull();
   });
 
@@ -108,19 +121,36 @@ describe("waitlist", () => {
 
   it("is invisible to clients and only callable by the server", async () => {
     const a = await db.createUser();
-    expect((await pgError(db.as(anon, "select * from public.waitlist_signups"))).code).toBe("42501");
+    expect((await pgError(db.as(anon, "select * from public.waitlist_signups"))).code).toBe(
+      "42501",
+    );
     expect((await db.as(user(a), "select * from public.waitlist_signups")).rows).toEqual([]);
     expect(
-      (await pgError(db.as(anon, "select * from public.waitlist_join('x@y.co', null, $1, null, null, null)", [newToken()]))).code,
+      (
+        await pgError(
+          db.as(anon, "select * from public.waitlist_join('x@y.co', null, $1, null, null, null)", [
+            newToken(),
+          ]),
+        )
+      ).code,
     ).toBe("42501");
-    expect((await pgError(db.as(anon, "select public.waitlist_open($1)", [newToken()]))).code).toBe("42501");
+    expect((await pgError(db.as(anon, "select public.waitlist_open($1)", [newToken()]))).code).toBe(
+      "42501",
+    );
   });
 
   it("lets support staff read the list", async () => {
     const staff = await db.createUser();
-    await db.as(superuser, "insert into public.admin_roles (user_id, role) values ($1, 'support')", [staff]);
+    await db.as(
+      superuser,
+      "insert into public.admin_roles (user_id, role) values ($1, 'support')",
+      [staff],
+    );
     await join("staff-visible@example.com");
-    const { rows } = await db.as(user(staff), "select email from public.waitlist_signups where email = 'staff-visible@example.com'");
+    const { rows } = await db.as(
+      user(staff),
+      "select email from public.waitlist_signups where email = 'staff-visible@example.com'",
+    );
     expect(rows).toHaveLength(1);
   });
 });

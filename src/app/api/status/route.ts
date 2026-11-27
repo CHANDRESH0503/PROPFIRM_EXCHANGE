@@ -9,7 +9,10 @@ import { createAdminClient } from "@/lib/supabase/admin";
 export async function GET() {
   await connection();
   const started = Date.now();
-  const { error } = await createAdminClient().from("feature_flags").select("key", { head: true, count: "exact" }).limit(1);
+  const { error } = await createAdminClient()
+    .from("feature_flags")
+    .select("key", { head: true, count: "exact" })
+    .limit(1);
   if (error) {
     log("error", "status.db_unreachable", { code: error.code });
     return Response.json({ ok: false }, { status: 503, headers: { "Cache-Control": "no-store" } });

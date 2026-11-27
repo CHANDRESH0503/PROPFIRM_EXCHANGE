@@ -1,0 +1,8 @@
+[Unit]
+Description=Fundback daily housekeeping (Coin expiry, due deletions)
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/docker exec fundback-web node -e "fetch('http://127.0.0.1:3000/api/jobs/daily',{method:'POST',headers:{authorization:'Bearer '+process.env.CRON_SECRET},signal:AbortSignal.timeout(280000)}).then(r=>{if(!r.ok)process.exitCode=1}).catch(()=>{process.exitCode=1})"
+TimeoutStartSec=300

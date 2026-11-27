@@ -67,7 +67,8 @@ export function Turnstile({ action, resetKey }: { action: string; resetKey?: unk
   }, [siteKey, action]);
 
   useEffect(() => {
-    if (resetKey !== undefined && widgetId.current && window.turnstile) window.turnstile.reset(widgetId.current);
+    if (resetKey !== undefined && widgetId.current && window.turnstile)
+      window.turnstile.reset(widgetId.current);
   }, [resetKey]);
 
   if (!siteKey) return null;

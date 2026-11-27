@@ -66,21 +66,49 @@ export const getRoles = cache(async (): Promise<AdminRole[]> => {
 
 export function safeNext(next: string | null | undefined, fallback: Route = "/today"): Route {
   // Only same-site absolute paths; rejects "//evil.com" and "/\evil.com".
-  if (!next || !next.startsWith("/") || next.startsWith("//") || next.startsWith("/\\")) return fallback;
+  if (!next || !next.startsWith("/") || next.startsWith("//") || next.startsWith("/\\"))
+    return fallback;
   return next as Route;
 }
+
+export type Restriction = {
+  level: "frozen" | "suspended" | "banned";
+  member_message: string | null;
+};
+
+/** The member's own restriction, if any (RLS: own row, without the internal reason). */
+export const getRestriction = cache(async (): Promise<Restriction | null> => {
+  const user = await getSessionUser();
+  if (!user) return null;
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("member_restrictions")
+    .select("level, member_message")
+    .eq("user_id", user.id)
+    .maybeSingle();
+  if (error) throw new Error("restriction_unavailable");
+  if (!data) return null;
+  const level = data.level === "suspended" || data.level === "banned" ? data.level : "frozen";
+  return { level, member_message: data.member_message };
+});
 
 export async function requireUser(next?: string): Promise<SessionUser> {
   const user = await getSessionUser();
   if (!user) redirect(`/sign-in${next ? `?next=${encodeURIComponent(next)}` : ""}` as Route);
+  // Suspended and banned members cannot use the signed-in app (09-admin.md §9).
+  const restriction = await getRestriction();
+  if (restriction && restriction.level !== "frozen") redirect("/restricted");
   return user;
 }
 
 /** Signed in and onboarded (country, timezone, 18+). */
-export async function requireOnboarded(next?: string): Promise<{ user: SessionUser; profile: Profile }> {
+export async function requireOnboarded(
+  next?: string,
+): Promise<{ user: SessionUser; profile: Profile }> {
   const user = await requireUser(next);
   const profile = await getProfile();
-  if (!profile?.onboarded_at) redirect(`/onboarding${next ? `?next=${encodeURIComponent(next)}` : ""}` as Route);
+  if (!profile?.onboarded_at)
+    redirect(`/onboarding${next ? `?next=${encodeURIComponent(next)}` : ""}` as Route);
   return { user, profile };
 }
 
@@ -93,7 +121,9 @@ export function hasRole(roles: readonly AdminRole[], role?: AdminRole): boolean 
  * Staff gate for /admin. Non-staff get a 403, staff without MFA on this session are sent
  * to set it up or verify it (09-admin.md: admin sessions require two-factor authentication).
  */
-export async function requireStaff(role?: AdminRole): Promise<{ user: SessionUser; roles: AdminRole[] }> {
+export async function requireStaff(
+  role?: AdminRole,
+): Promise<{ user: SessionUser; roles: AdminRole[] }> {
   const user = await requireUser("/admin");
   const roles = await getRoles();
   if (!hasRole(roles, role)) forbidden();

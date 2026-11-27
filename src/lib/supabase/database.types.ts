@@ -83,6 +83,647 @@ export type Database = {
         }
         Relationships: []
       }
+      calendar_digests: {
+        Row: {
+          active: boolean
+          currencies: string[]
+          last_sent_day: string | null
+          send_hour: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          active?: boolean
+          currencies: string[]
+          last_sent_day?: string | null
+          send_hour?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          active?: boolean
+          currencies?: string[]
+          last_sent_day?: string | null
+          send_hour?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "calendar_digests_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      campaign_budgets: {
+        Row: {
+          active: boolean
+          cap_coins: number
+          created_at: string
+          created_by: string | null
+          ends_at: string | null
+          id: string
+          name: string
+          purpose: string
+          starts_at: string
+        }
+        Insert: {
+          active?: boolean
+          cap_coins: number
+          created_at?: string
+          created_by?: string | null
+          ends_at?: string | null
+          id?: string
+          name: string
+          purpose: string
+          starts_at?: string
+        }
+        Update: {
+          active?: boolean
+          cap_coins?: number
+          created_at?: string
+          created_by?: string | null
+          ends_at?: string | null
+          id?: string
+          name?: string
+          purpose?: string
+          starts_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "campaign_budgets_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      changelog_entries: {
+        Row: {
+          body: string
+          created_at: string
+          id: string
+          published_at: string | null
+          status: string
+          title: string
+          updated_by: string | null
+        }
+        Insert: {
+          body: string
+          created_at?: string
+          id?: string
+          published_at?: string | null
+          status?: string
+          title: string
+          updated_by?: string | null
+        }
+        Update: {
+          body?: string
+          created_at?: string
+          id?: string
+          published_at?: string | null
+          status?: string
+          title?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "changelog_entries_updated_by_fkey"
+            columns: ["updated_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      checkins: {
+        Row: {
+          awarded_xp: number
+          created_at: string
+          freezes_used: number
+          local_day: string
+          streak: number
+          user_id: string
+        }
+        Insert: {
+          awarded_xp: number
+          created_at?: string
+          freezes_used?: number
+          local_day: string
+          streak: number
+          user_id: string
+        }
+        Update: {
+          awarded_xp?: number
+          created_at?: string
+          freezes_used?: number
+          local_day?: string
+          streak?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "checkins_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      claim_appeals: {
+        Row: {
+          claim_id: string
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          evidence: string
+          first_reviewer: string | null
+          id: string
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          claim_id: string
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          evidence: string
+          first_reviewer?: string | null
+          id?: string
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          claim_id?: string
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          evidence?: string
+          first_reviewer?: string | null
+          id?: string
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "claim_appeals_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: true
+            referencedRelation: "commission_matches"
+            referencedColumns: ["candidate_id"]
+          },
+          {
+            foreignKeyName: "claim_appeals_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: true
+            referencedRelation: "purchase_claims"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "claim_appeals_decided_by_fkey"
+            columns: ["decided_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "claim_appeals_first_reviewer_fkey"
+            columns: ["first_reviewer"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "claim_appeals_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      clicks: {
+        Row: {
+          checkout_cents: number
+          click_id: string
+          country_code: string
+          created_at: string
+          currency: string
+          firm_id: string
+          offer_id: string | null
+          program_id: string
+          source: string
+          user_id: string | null
+        }
+        Insert: {
+          checkout_cents: number
+          click_id?: string
+          country_code: string
+          created_at?: string
+          currency: string
+          firm_id: string
+          offer_id?: string | null
+          program_id: string
+          source: string
+          user_id?: string | null
+        }
+        Update: {
+          checkout_cents?: number
+          click_id?: string
+          country_code?: string
+          created_at?: string
+          currency?: string
+          firm_id?: string
+          offer_id?: string | null
+          program_id?: string
+          source?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "clicks_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "clicks_offer_id_fkey"
+            columns: ["offer_id"]
+            isOneToOne: false
+            referencedRelation: "offers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "clicks_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "firm_programs"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "clicks_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      commission_import_batches: {
+        Row: {
+          actor_id: string | null
+          created_at: string
+          fingerprint: string
+          firm_id: string
+          id: string
+          mapping: Json
+          row_count: number
+        }
+        Insert: {
+          actor_id?: string | null
+          created_at?: string
+          fingerprint: string
+          firm_id: string
+          id?: string
+          mapping: Json
+          row_count: number
+        }
+        Update: {
+          actor_id?: string | null
+          created_at?: string
+          fingerprint?: string
+          firm_id?: string
+          id?: string
+          mapping?: Json
+          row_count?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "commission_import_batches_actor_id_fkey"
+            columns: ["actor_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "commission_import_batches_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      commissions: {
+        Row: {
+          amount_cents: number
+          claim_id: string | null
+          config_version: number | null
+          confirmed_at: string | null
+          created_at: string
+          currency: string
+          external_ref: string
+          firm_id: string
+          id: string
+          order_ref: string
+          paid_at: string | null
+          paid_by: string | null
+          paid_reference: string | null
+          release_at: string | null
+          status: string
+        }
+        Insert: {
+          amount_cents: number
+          claim_id?: string | null
+          config_version?: number | null
+          confirmed_at?: string | null
+          created_at?: string
+          currency?: string
+          external_ref: string
+          firm_id: string
+          id?: string
+          order_ref: string
+          paid_at?: string | null
+          paid_by?: string | null
+          paid_reference?: string | null
+          release_at?: string | null
+          status?: string
+        }
+        Update: {
+          amount_cents?: number
+          claim_id?: string | null
+          config_version?: number | null
+          confirmed_at?: string | null
+          created_at?: string
+          currency?: string
+          external_ref?: string
+          firm_id?: string
+          id?: string
+          order_ref?: string
+          paid_at?: string | null
+          paid_by?: string | null
+          paid_reference?: string | null
+          release_at?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "commissions_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: true
+            referencedRelation: "commission_matches"
+            referencedColumns: ["candidate_id"]
+          },
+          {
+            foreignKeyName: "commissions_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: true
+            referencedRelation: "purchase_claims"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "commissions_config_version_fkey"
+            columns: ["config_version"]
+            isOneToOne: false
+            referencedRelation: "economy_config"
+            referencedColumns: ["version"]
+          },
+          {
+            foreignKeyName: "commissions_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      data_requests: {
+        Row: {
+          completed_at: string | null
+          completed_by: string | null
+          confirm_hash: string | null
+          confirmed_at: string | null
+          due_at: string | null
+          id: string
+          kind: string
+          requested_at: string
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          completed_at?: string | null
+          completed_by?: string | null
+          confirm_hash?: string | null
+          confirmed_at?: string | null
+          due_at?: string | null
+          id?: string
+          kind: string
+          requested_at?: string
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          completed_at?: string | null
+          completed_by?: string | null
+          confirm_hash?: string | null
+          confirmed_at?: string | null
+          due_at?: string | null
+          id?: string
+          kind?: string
+          requested_at?: string
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "data_requests_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      draw_entries: {
+        Row: {
+          draw_id: string
+          free_entry: boolean
+          tickets: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          draw_id: string
+          free_entry?: boolean
+          tickets: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          draw_id?: string
+          free_entry?: boolean
+          tickets?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "draw_entries_draw_id_fkey"
+            columns: ["draw_id"]
+            isOneToOne: false
+            referencedRelation: "draws"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "draw_entries_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      draws: {
+        Row: {
+          created_at: string
+          drawn_at: string | null
+          drawn_by: string | null
+          ends_at: string
+          id: string
+          max_tickets_per_user: number
+          prize: string
+          rng: string | null
+          starts_at: string
+          status: string
+          tickets_total: number | null
+          title: string
+          winner_label: string | null
+          winner_user: string | null
+        }
+        Insert: {
+          created_at?: string
+          drawn_at?: string | null
+          drawn_by?: string | null
+          ends_at: string
+          id?: string
+          max_tickets_per_user?: number
+          prize: string
+          rng?: string | null
+          starts_at: string
+          status?: string
+          tickets_total?: number | null
+          title: string
+          winner_label?: string | null
+          winner_user?: string | null
+        }
+        Update: {
+          created_at?: string
+          drawn_at?: string | null
+          drawn_by?: string | null
+          ends_at?: string
+          id?: string
+          max_tickets_per_user?: number
+          prize?: string
+          rng?: string | null
+          starts_at?: string
+          status?: string
+          tickets_total?: number | null
+          title?: string
+          winner_label?: string | null
+          winner_user?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "draws_drawn_by_fkey"
+            columns: ["drawn_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "draws_winner_user_fkey"
+            columns: ["winner_user"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      economy_config: {
+        Row: {
+          effective_at: string
+          founding_buyers: number
+          founding_days: number
+          founding_share_bps: number
+          founding_starts_at: string | null
+          hold_days: number
+          level_share_bps: number[]
+          max_total_giveback_bps: number
+          monthly_cap: number
+          referral_bps: number
+          version: number
+        }
+        Insert: {
+          effective_at: string
+          founding_buyers?: number
+          founding_days?: number
+          founding_share_bps: number
+          founding_starts_at?: string | null
+          hold_days: number
+          level_share_bps: number[]
+          max_total_giveback_bps: number
+          monthly_cap?: number
+          referral_bps: number
+          version?: never
+        }
+        Update: {
+          effective_at?: string
+          founding_buyers?: number
+          founding_days?: number
+          founding_share_bps?: number
+          founding_starts_at?: string | null
+          hold_days?: number
+          level_share_bps?: number[]
+          max_total_giveback_bps?: number
+          monthly_cap?: number
+          referral_bps?: number
+          version?: never
+        }
+        Relationships: []
+      }
+      engagement_config: {
+        Row: {
+          checkin_xp: number
+          daily_cap: number
+          daily_set_bonus: number
+          id: boolean
+          mission_xp: number
+        }
+        Insert: {
+          checkin_xp: number
+          daily_cap: number
+          daily_set_bonus: number
+          id?: boolean
+          mission_xp: number
+        }
+        Update: {
+          checkin_xp?: number
+          daily_cap?: number
+          daily_set_bonus?: number
+          id?: boolean
+          mission_xp?: number
+        }
+        Relationships: []
+      }
       feature_flags: {
         Row: {
           description: string
@@ -110,6 +751,189 @@ export type Database = {
           key?: string
           updated_at?: string
           updated_by?: string | null
+        }
+        Relationships: []
+      }
+      firm_agreements: {
+        Row: {
+          commission_bps: number
+          evidence_url: string | null
+          firm_id: string
+          promo_code: string | null
+          rebate_permission: boolean
+          tracking_url: string | null
+        }
+        Insert: {
+          commission_bps?: number
+          evidence_url?: string | null
+          firm_id: string
+          promo_code?: string | null
+          rebate_permission?: boolean
+          tracking_url?: string | null
+        }
+        Update: {
+          commission_bps?: number
+          evidence_url?: string | null
+          firm_id?: string
+          promo_code?: string | null
+          rebate_permission?: boolean
+          tracking_url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "firm_agreements_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: true
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      firm_changes: {
+        Row: {
+          firm_id: string
+          id: string
+          published_at: string
+          source_url: string
+          summary: string
+        }
+        Insert: {
+          firm_id: string
+          id?: string
+          published_at: string
+          source_url: string
+          summary: string
+        }
+        Update: {
+          firm_id?: string
+          id?: string
+          published_at?: string
+          source_url?: string
+          summary?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "firm_changes_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      firm_programs: {
+        Row: {
+          account_size: number
+          created_at: string
+          currency: string
+          daily_loss_bps: number | null
+          drawdown_type: string
+          firm_id: string
+          id: string
+          list_price_cents: number
+          max_loss_bps: number | null
+          name: string
+          payout_frequency: string
+          profit_split_bps: number | null
+          profit_target_bps: number | null
+          published_at: string | null
+          revision: number
+          rules: Json
+          steps: number
+        }
+        Insert: {
+          account_size: number
+          created_at?: string
+          currency?: string
+          daily_loss_bps?: number | null
+          drawdown_type: string
+          firm_id: string
+          id?: string
+          list_price_cents: number
+          max_loss_bps?: number | null
+          name: string
+          payout_frequency: string
+          profit_split_bps?: number | null
+          profit_target_bps?: number | null
+          published_at?: string | null
+          revision?: number
+          rules?: Json
+          steps: number
+        }
+        Update: {
+          account_size?: number
+          created_at?: string
+          currency?: string
+          daily_loss_bps?: number | null
+          drawdown_type?: string
+          firm_id?: string
+          id?: string
+          list_price_cents?: number
+          max_loss_bps?: number | null
+          name?: string
+          payout_frequency?: string
+          profit_split_bps?: number | null
+          profit_target_bps?: number | null
+          published_at?: string | null
+          revision?: number
+          rules?: Json
+          steps?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "firm_programs_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      firms: {
+        Row: {
+          asset_classes: Database["public"]["Enums"]["asset_class"][]
+          created_at: string
+          description: string
+          id: string
+          is_sample: boolean
+          logo_url: string | null
+          name: string
+          platforms: string[]
+          published_at: string | null
+          revision: number
+          slug: string
+          status: string
+          status_note: string
+        }
+        Insert: {
+          asset_classes: Database["public"]["Enums"]["asset_class"][]
+          created_at?: string
+          description?: string
+          id?: string
+          is_sample?: boolean
+          logo_url?: string | null
+          name: string
+          platforms?: string[]
+          published_at?: string | null
+          revision?: number
+          slug: string
+          status?: string
+          status_note?: string
+        }
+        Update: {
+          asset_classes?: Database["public"]["Enums"]["asset_class"][]
+          created_at?: string
+          description?: string
+          id?: string
+          is_sample?: boolean
+          logo_url?: string | null
+          name?: string
+          platforms?: string[]
+          published_at?: string | null
+          revision?: number
+          slug?: string
+          status?: string
+          status_note?: string
         }
         Relationships: []
       }
@@ -146,13 +970,1014 @@ export type Database = {
         }
         Relationships: []
       }
+      help_articles: {
+        Row: {
+          body: string
+          category: string
+          id: string
+          slug: string
+          status: string
+          summary: string
+          title: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          body: string
+          category: string
+          id?: string
+          slug: string
+          status?: string
+          summary: string
+          title: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          body?: string
+          category?: string
+          id?: string
+          slug?: string
+          status?: string
+          summary?: string
+          title?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "help_articles_updated_by_fkey"
+            columns: ["updated_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      job_runs: {
+        Row: {
+          error_code: string | null
+          finished_at: string | null
+          id: string
+          name: string
+          started_at: string
+          status: string
+        }
+        Insert: {
+          error_code?: string | null
+          finished_at?: string | null
+          id?: string
+          name: string
+          started_at?: string
+          status?: string
+        }
+        Update: {
+          error_code?: string | null
+          finished_at?: string | null
+          id?: string
+          name?: string
+          started_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
+      journal_daily_stats: {
+        Row: {
+          best_cents: number
+          currency: string
+          local_day: string
+          losses: number
+          net_cents: number
+          r_sum: number
+          trades: number
+          user_id: string
+          wins: number
+          worst_cents: number
+        }
+        Insert: {
+          best_cents: number
+          currency: string
+          local_day: string
+          losses: number
+          net_cents: number
+          r_sum: number
+          trades: number
+          user_id: string
+          wins: number
+          worst_cents: number
+        }
+        Update: {
+          best_cents?: number
+          currency?: string
+          local_day?: string
+          losses?: number
+          net_cents?: number
+          r_sum?: number
+          trades?: number
+          user_id?: string
+          wins?: number
+          worst_cents?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_daily_stats_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journal_days: {
+        Row: {
+          created_at: string
+          local_day: string
+          reason: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          local_day: string
+          reason: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          local_day?: string
+          reason?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_days_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journal_reviews: {
+        Row: {
+          completed_at: string
+          costly_mistake: string
+          feeling: number
+          followed_plan: string
+          next_rule: string | null
+          previous_rule_kept: boolean | null
+          updated_at: string
+          user_id: string
+          week_start: string
+          what_didnt: string
+          what_worked: string
+        }
+        Insert: {
+          completed_at?: string
+          costly_mistake?: string
+          feeling: number
+          followed_plan: string
+          next_rule?: string | null
+          previous_rule_kept?: boolean | null
+          updated_at?: string
+          user_id: string
+          week_start: string
+          what_didnt?: string
+          what_worked?: string
+        }
+        Update: {
+          completed_at?: string
+          costly_mistake?: string
+          feeling?: number
+          followed_plan?: string
+          next_rule?: string | null
+          previous_rule_kept?: boolean | null
+          updated_at?: string
+          user_id?: string
+          week_start?: string
+          what_didnt?: string
+          what_worked?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_reviews_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journal_screenshots: {
+        Row: {
+          bytes: number
+          created_at: string
+          id: string
+          path: string
+          trade_id: string
+          user_id: string
+        }
+        Insert: {
+          bytes: number
+          created_at?: string
+          id?: string
+          path: string
+          trade_id: string
+          user_id: string
+        }
+        Update: {
+          bytes?: number
+          created_at?: string
+          id?: string
+          path?: string
+          trade_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_screenshots_user_id_trade_id_fkey"
+            columns: ["user_id", "trade_id"]
+            isOneToOne: false
+            referencedRelation: "journal_trades"
+            referencedColumns: ["user_id", "id"]
+          },
+        ]
+      }
+      journal_strategies: {
+        Row: {
+          archived_at: string | null
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          user_id: string
+        }
+        Insert: {
+          archived_at?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          user_id: string
+        }
+        Update: {
+          archived_at?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_strategies_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journal_strategy_rules: {
+        Row: {
+          body: string
+          id: string
+          position: number
+          strategy_id: string
+          user_id: string
+        }
+        Insert: {
+          body: string
+          id?: string
+          position: number
+          strategy_id: string
+          user_id: string
+        }
+        Update: {
+          body?: string
+          id?: string
+          position?: number
+          strategy_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_strategy_rules_user_id_strategy_id_fkey"
+            columns: ["user_id", "strategy_id"]
+            isOneToOne: false
+            referencedRelation: "journal_strategies"
+            referencedColumns: ["user_id", "id"]
+          },
+        ]
+      }
+      journal_streaks: {
+        Row: {
+          current_streak: number
+          last_day: string
+          last_weekly_freeze: string | null
+          longest: number
+          user_id: string
+        }
+        Insert: {
+          current_streak: number
+          last_day: string
+          last_weekly_freeze?: string | null
+          longest: number
+          user_id: string
+        }
+        Update: {
+          current_streak?: number
+          last_day?: string
+          last_weekly_freeze?: string | null
+          longest?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_streaks_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journal_tags: {
+        Row: {
+          created_at: string
+          id: string
+          kind: string
+          name: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind: string
+          name: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: string
+          name?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_tags_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journal_trade_rule_checks: {
+        Row: {
+          followed: boolean
+          rule_id: string
+          trade_id: string
+          user_id: string
+        }
+        Insert: {
+          followed: boolean
+          rule_id: string
+          trade_id: string
+          user_id: string
+        }
+        Update: {
+          followed?: boolean
+          rule_id?: string
+          trade_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_trade_rule_checks_user_id_rule_id_fkey"
+            columns: ["user_id", "rule_id"]
+            isOneToOne: false
+            referencedRelation: "journal_strategy_rules"
+            referencedColumns: ["user_id", "id"]
+          },
+          {
+            foreignKeyName: "journal_trade_rule_checks_user_id_trade_id_fkey"
+            columns: ["user_id", "trade_id"]
+            isOneToOne: false
+            referencedRelation: "journal_trades"
+            referencedColumns: ["user_id", "id"]
+          },
+        ]
+      }
+      journal_trade_tags: {
+        Row: {
+          tag_id: string
+          trade_id: string
+          user_id: string
+        }
+        Insert: {
+          tag_id: string
+          trade_id: string
+          user_id: string
+        }
+        Update: {
+          tag_id?: string
+          trade_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_trade_tags_tag_id_fkey"
+            columns: ["tag_id"]
+            isOneToOne: false
+            referencedRelation: "journal_tags"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "journal_trade_tags_user_id_trade_id_fkey"
+            columns: ["user_id", "trade_id"]
+            isOneToOne: false
+            referencedRelation: "journal_trades"
+            referencedColumns: ["user_id", "id"]
+          },
+        ]
+      }
+      journal_trades: {
+        Row: {
+          closed_at: string
+          commission_cents: number
+          confidence: number | null
+          created_at: string
+          currency: string
+          direction: string
+          emotion_after: number | null
+          emotion_before: number | null
+          entry: number | null
+          exit: number | null
+          external_ticket: string | null
+          id: string
+          local_day: string
+          lots: number | null
+          net_cents: number | null
+          notes: string | null
+          opened_at: string | null
+          pips: number | null
+          r_multiple: number | null
+          result_cents: number
+          session: string | null
+          source: string
+          stop_loss: number | null
+          strategy_id: string | null
+          swap_cents: number
+          symbol: string
+          take_profit: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          closed_at: string
+          commission_cents?: number
+          confidence?: number | null
+          created_at?: string
+          currency: string
+          direction: string
+          emotion_after?: number | null
+          emotion_before?: number | null
+          entry?: number | null
+          exit?: number | null
+          external_ticket?: string | null
+          id?: string
+          local_day: string
+          lots?: number | null
+          net_cents?: number | null
+          notes?: string | null
+          opened_at?: string | null
+          pips?: number | null
+          r_multiple?: number | null
+          result_cents: number
+          session?: string | null
+          source?: string
+          stop_loss?: number | null
+          strategy_id?: string | null
+          swap_cents?: number
+          symbol: string
+          take_profit?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          closed_at?: string
+          commission_cents?: number
+          confidence?: number | null
+          created_at?: string
+          currency?: string
+          direction?: string
+          emotion_after?: number | null
+          emotion_before?: number | null
+          entry?: number | null
+          exit?: number | null
+          external_ticket?: string | null
+          id?: string
+          local_day?: string
+          lots?: number | null
+          net_cents?: number | null
+          notes?: string | null
+          opened_at?: string | null
+          pips?: number | null
+          r_multiple?: number | null
+          result_cents?: number
+          session?: string | null
+          source?: string
+          stop_loss?: number | null
+          strategy_id?: string | null
+          swap_cents?: number
+          symbol?: string
+          take_profit?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journal_trades_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "journal_trades_user_id_strategy_id_fkey"
+            columns: ["user_id", "strategy_id"]
+            isOneToOne: false
+            referencedRelation: "journal_strategies"
+            referencedColumns: ["user_id", "id"]
+          },
+        ]
+      }
+      ledger_entries: {
+        Row: {
+          amount: number
+          bucket: string
+          config_version: number
+          created_at: string
+          created_by: string | null
+          id: number
+          idempotency_key: string
+          ref_id: string
+          ref_type: string
+          type: string
+          wallet_id: string
+        }
+        Insert: {
+          amount: number
+          bucket: string
+          config_version: number
+          created_at?: string
+          created_by?: string | null
+          id?: never
+          idempotency_key: string
+          ref_id: string
+          ref_type: string
+          type: string
+          wallet_id: string
+        }
+        Update: {
+          amount?: number
+          bucket?: string
+          config_version?: number
+          created_at?: string
+          created_by?: string | null
+          id?: never
+          idempotency_key?: string
+          ref_id?: string
+          ref_type?: string
+          type?: string
+          wallet_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ledger_entries_config_version_fkey"
+            columns: ["config_version"]
+            isOneToOne: false
+            referencedRelation: "economy_config"
+            referencedColumns: ["version"]
+          },
+          {
+            foreignKeyName: "ledger_entries_wallet_id_fkey"
+            columns: ["wallet_id"]
+            isOneToOne: false
+            referencedRelation: "wallet_accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      levels: {
+        Row: {
+          min_purchases: number
+          min_xp: number
+          name: string
+          tier: number
+        }
+        Insert: {
+          min_purchases: number
+          min_xp: number
+          name: string
+          tier: number
+        }
+        Update: {
+          min_purchases?: number
+          min_xp?: number
+          name?: string
+          tier?: number
+        }
+        Relationships: []
+      }
+      member_notes: {
+        Row: {
+          author: string | null
+          body: string
+          created_at: string
+          id: number
+          user_id: string
+        }
+        Insert: {
+          author?: string | null
+          body: string
+          created_at?: string
+          id?: never
+          user_id: string
+        }
+        Update: {
+          author?: string | null
+          body?: string
+          created_at?: string
+          id?: never
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "member_notes_author_fkey"
+            columns: ["author"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "member_notes_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      member_restrictions: {
+        Row: {
+          level: string
+          member_message: string | null
+          reason: string
+          set_at: string
+          set_by: string | null
+          user_id: string
+        }
+        Insert: {
+          level: string
+          member_message?: string | null
+          reason: string
+          set_at?: string
+          set_by?: string | null
+          user_id: string
+        }
+        Update: {
+          level?: string
+          member_message?: string | null
+          reason?: string
+          set_at?: string
+          set_by?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "member_restrictions_set_by_fkey"
+            columns: ["set_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "member_restrictions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mission_progress: {
+        Row: {
+          awarded_xp: number
+          completed_at: string
+          mission: string
+          period_key: string
+          user_id: string
+        }
+        Insert: {
+          awarded_xp: number
+          completed_at?: string
+          mission: string
+          period_key: string
+          user_id: string
+        }
+        Update: {
+          awarded_xp?: number
+          completed_at?: string
+          mission?: string
+          period_key?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mission_progress_mission_fkey"
+            columns: ["mission"]
+            isOneToOne: false
+            referencedRelation: "missions"
+            referencedColumns: ["key"]
+          },
+          {
+            foreignKeyName: "mission_progress_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      missions: {
+        Row: {
+          criteria: Json
+          enabled: boolean
+          key: string
+          period: string
+          title: string
+          xp: number
+        }
+        Insert: {
+          criteria: Json
+          enabled?: boolean
+          key: string
+          period: string
+          title: string
+          xp: number
+        }
+        Update: {
+          criteria?: Json
+          enabled?: boolean
+          key?: string
+          period?: string
+          title?: string
+          xp?: number
+        }
+        Relationships: []
+      }
+      notification_prefs: {
+        Row: {
+          claim_status: boolean
+          coins_released: boolean
+          daily_cap: number | null
+          journal_review: boolean
+          quiet_end: number | null
+          quiet_start: number | null
+          redemption_status: boolean
+          user_id: string
+        }
+        Insert: {
+          claim_status?: boolean
+          coins_released?: boolean
+          daily_cap?: number | null
+          journal_review?: boolean
+          quiet_end?: number | null
+          quiet_start?: number | null
+          redemption_status?: boolean
+          user_id: string
+        }
+        Update: {
+          claim_status?: boolean
+          coins_released?: boolean
+          daily_cap?: number | null
+          journal_review?: boolean
+          quiet_end?: number | null
+          quiet_start?: number | null
+          redemption_status?: boolean
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notification_prefs_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      notifications: {
+        Row: {
+          created_at: string
+          detail: string
+          dispatched_at: string | null
+          event_key: string
+          external_suppressed: boolean
+          id: number
+          kind: string
+          read_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          detail: string
+          dispatched_at?: string | null
+          event_key: string
+          external_suppressed?: boolean
+          id?: never
+          kind: string
+          read_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          detail?: string
+          dispatched_at?: string | null
+          event_key?: string
+          external_suppressed?: boolean
+          id?: never
+          kind?: string
+          read_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notifications_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      offer_programs: {
+        Row: {
+          firm_id: string
+          offer_id: string
+          program_id: string
+        }
+        Insert: {
+          firm_id: string
+          offer_id: string
+          program_id: string
+        }
+        Update: {
+          firm_id?: string
+          offer_id?: string
+          program_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "offer_programs_firm_id_offer_id_fkey"
+            columns: ["firm_id", "offer_id"]
+            isOneToOne: false
+            referencedRelation: "offers"
+            referencedColumns: ["firm_id", "id"]
+          },
+          {
+            foreignKeyName: "offer_programs_firm_id_program_id_fkey"
+            columns: ["firm_id", "program_id"]
+            isOneToOne: false
+            referencedRelation: "firm_programs"
+            referencedColumns: ["firm_id", "id"]
+          },
+        ]
+      }
+      offers: {
+        Row: {
+          code: string
+          discount_bps: number
+          ends_at: string
+          exclusive: boolean
+          firm_id: string
+          id: string
+          published: boolean
+          revision: number
+          starts_at: string
+          terms: string
+          title: string
+        }
+        Insert: {
+          code: string
+          discount_bps: number
+          ends_at: string
+          exclusive?: boolean
+          firm_id: string
+          id?: string
+          published?: boolean
+          revision?: number
+          starts_at: string
+          terms: string
+          title: string
+        }
+        Update: {
+          code?: string
+          discount_bps?: number
+          ends_at?: string
+          exclusive?: boolean
+          firm_id?: string
+          id?: string
+          published?: boolean
+          revision?: number
+          starts_at?: string
+          terms?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "offers_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      ops_alerts: {
+        Row: {
+          active: boolean
+          detail: Json
+          key: string
+          kind: string
+          opened_at: string
+          resolved_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          active: boolean
+          detail?: Json
+          key: string
+          kind: string
+          opened_at?: string
+          resolved_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          detail?: Json
+          key?: string
+          kind?: string
+          opened_at?: string
+          resolved_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      price_history: {
+        Row: {
+          currency: string
+          id: number
+          list_price_cents: number
+          program_id: string
+          recorded_at: string
+        }
+        Insert: {
+          currency: string
+          id?: never
+          list_price_cents: number
+          program_id: string
+          recorded_at?: string
+        }
+        Update: {
+          currency?: string
+          id?: never
+          list_price_cents?: number
+          program_id?: string
+          recorded_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "price_history_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "firm_programs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           age_confirmed_at: string | null
+          analytics_consent: boolean | null
+          analytics_consent_at: string | null
           country_code: string | null
           created_at: string
           display_name: string | null
           id: string
+          journal_review_day: number
           onboarded_at: string | null
           referral_code: string
           referred_by: string | null
@@ -163,10 +1988,13 @@ export type Database = {
         }
         Insert: {
           age_confirmed_at?: string | null
+          analytics_consent?: boolean | null
+          analytics_consent_at?: string | null
           country_code?: string | null
           created_at?: string
           display_name?: string | null
           id: string
+          journal_review_day?: number
           onboarded_at?: string | null
           referral_code: string
           referred_by?: string | null
@@ -177,10 +2005,13 @@ export type Database = {
         }
         Update: {
           age_confirmed_at?: string | null
+          analytics_consent?: boolean | null
+          analytics_consent_at?: string | null
           country_code?: string | null
           created_at?: string
           display_name?: string | null
           id?: string
+          journal_review_day?: number
           onboarded_at?: string | null
           referral_code?: string
           referred_by?: string | null
@@ -195,6 +2026,302 @@ export type Database = {
             columns: ["referred_by"]
             isOneToOne: false
             referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      purchase_claims: {
+        Row: {
+          amount_paid_cents: number
+          checkout_email: string | null
+          click_id: string | null
+          created_at: string
+          currency: string
+          expected_cents: number
+          firm_id: string
+          id: string
+          order_ref: string
+          program_id: string
+          purchased_on: string
+          receipt_hash: string | null
+          receipt_path: string | null
+          review_note: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          user_id: string | null
+        }
+        Insert: {
+          amount_paid_cents: number
+          checkout_email?: string | null
+          click_id?: string | null
+          created_at?: string
+          currency: string
+          expected_cents: number
+          firm_id: string
+          id?: string
+          order_ref: string
+          program_id: string
+          purchased_on: string
+          receipt_hash?: string | null
+          receipt_path?: string | null
+          review_note?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Update: {
+          amount_paid_cents?: number
+          checkout_email?: string | null
+          click_id?: string | null
+          created_at?: string
+          currency?: string
+          expected_cents?: number
+          firm_id?: string
+          id?: string
+          order_ref?: string
+          program_id?: string
+          purchased_on?: string
+          receipt_hash?: string | null
+          receipt_path?: string | null
+          review_note?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "purchase_claims_click_id_fkey"
+            columns: ["click_id"]
+            isOneToOne: false
+            referencedRelation: "clicks"
+            referencedColumns: ["click_id"]
+          },
+          {
+            foreignKeyName: "purchase_claims_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "purchase_claims_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "firm_programs"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "purchase_claims_reviewed_by_fkey"
+            columns: ["reviewed_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "purchase_claims_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      push_subscriptions: {
+        Row: {
+          auth: string
+          created_at: string
+          endpoint: string
+          failures: number
+          id: string
+          p256dh: string
+          user_id: string
+        }
+        Insert: {
+          auth: string
+          created_at?: string
+          endpoint: string
+          failures?: number
+          id?: string
+          p256dh: string
+          user_id: string
+        }
+        Update: {
+          auth?: string
+          created_at?: string
+          endpoint?: string
+          failures?: number
+          id?: string
+          p256dh?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "push_subscriptions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      redemptions: {
+        Row: {
+          cost_coins: number
+          created_at: string
+          fulfilled_at: string | null
+          id: string
+          instructions: string
+          request_id: string
+          reward_id: string
+          reward_name: string
+          staff_note: string | null
+          status: string
+          target_at: string
+          wallet_id: string
+        }
+        Insert: {
+          cost_coins: number
+          created_at?: string
+          fulfilled_at?: string | null
+          id?: string
+          instructions: string
+          request_id: string
+          reward_id: string
+          reward_name: string
+          staff_note?: string | null
+          status: string
+          target_at?: string
+          wallet_id: string
+        }
+        Update: {
+          cost_coins?: number
+          created_at?: string
+          fulfilled_at?: string | null
+          id?: string
+          instructions?: string
+          request_id?: string
+          reward_id?: string
+          reward_name?: string
+          staff_note?: string | null
+          status?: string
+          target_at?: string
+          wallet_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "redemptions_reward_id_fkey"
+            columns: ["reward_id"]
+            isOneToOne: false
+            referencedRelation: "rewards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "redemptions_wallet_id_fkey"
+            columns: ["wallet_id"]
+            isOneToOne: false
+            referencedRelation: "wallet_accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      reward_goals: {
+        Row: {
+          reward_id: string
+          user_id: string
+        }
+        Insert: {
+          reward_id: string
+          user_id: string
+        }
+        Update: {
+          reward_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reward_goals_reward_id_fkey"
+            columns: ["reward_id"]
+            isOneToOne: false
+            referencedRelation: "rewards"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reward_goals_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      rewards: {
+        Row: {
+          active: boolean
+          cost_coins: number
+          countries: string[]
+          description: string
+          ends_at: string | null
+          id: string
+          instructions: string
+          kind: string
+          low_stock: number
+          min_tier: number
+          name: string
+          per_user_limit: number | null
+          program_id: string | null
+          revision: number
+          starts_at: string | null
+        }
+        Insert: {
+          active?: boolean
+          cost_coins: number
+          countries?: string[]
+          description: string
+          ends_at?: string | null
+          id?: string
+          instructions: string
+          kind: string
+          low_stock?: number
+          min_tier?: number
+          name: string
+          per_user_limit?: number | null
+          program_id?: string | null
+          revision?: number
+          starts_at?: string | null
+        }
+        Update: {
+          active?: boolean
+          cost_coins?: number
+          countries?: string[]
+          description?: string
+          ends_at?: string | null
+          id?: string
+          instructions?: string
+          kind?: string
+          low_stock?: number
+          min_tier?: number
+          name?: string
+          per_user_limit?: number | null
+          program_id?: string | null
+          revision?: number
+          starts_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rewards_min_tier_fkey"
+            columns: ["min_tier"]
+            isOneToOne: false
+            referencedRelation: "levels"
+            referencedColumns: ["tier"]
+          },
+          {
+            foreignKeyName: "rewards_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "firm_programs"
             referencedColumns: ["id"]
           },
         ]
@@ -225,6 +2352,380 @@ export type Database = {
           value?: Json
         }
         Relationships: []
+      }
+      spin_prizes: {
+        Row: {
+          active: boolean
+          daily_cap: number | null
+          id: string
+          kind: string
+          label: string
+          odds_ppm: number
+          sort: number
+          value: number
+        }
+        Insert: {
+          active?: boolean
+          daily_cap?: number | null
+          id?: string
+          kind: string
+          label: string
+          odds_ppm: number
+          sort?: number
+          value: number
+        }
+        Update: {
+          active?: boolean
+          daily_cap?: number | null
+          id?: string
+          kind?: string
+          label?: string
+          odds_ppm?: number
+          sort?: number
+          value?: number
+        }
+        Relationships: []
+      }
+      spins: {
+        Row: {
+          created_at: string
+          id: number
+          kind: string
+          label: string
+          local_day: string
+          prize_id: string | null
+          rng: string
+          user_id: string
+          value: number
+        }
+        Insert: {
+          created_at?: string
+          id?: never
+          kind: string
+          label: string
+          local_day: string
+          prize_id?: string | null
+          rng: string
+          user_id: string
+          value: number
+        }
+        Update: {
+          created_at?: string
+          id?: never
+          kind?: string
+          label?: string
+          local_day?: string
+          prize_id?: string | null
+          rng?: string
+          user_id?: string
+          value?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "spins_prize_id_fkey"
+            columns: ["prize_id"]
+            isOneToOne: false
+            referencedRelation: "spin_prizes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "spins_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      streaks: {
+        Row: {
+          current_streak: number
+          last_day: string
+          last_weekly_freeze: string | null
+          longest: number
+          saved_freezes: number
+          user_id: string
+        }
+        Insert: {
+          current_streak: number
+          last_day: string
+          last_weekly_freeze?: string | null
+          longest: number
+          saved_freezes?: number
+          user_id: string
+        }
+        Update: {
+          current_streak?: number
+          last_day?: string
+          last_weekly_freeze?: string | null
+          longest?: number
+          saved_freezes?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "streaks_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      support_messages: {
+        Row: {
+          author_id: string | null
+          body: string
+          created_at: string
+          from_staff: boolean
+          id: number
+          internal: boolean
+          ticket_id: string
+        }
+        Insert: {
+          author_id?: string | null
+          body: string
+          created_at?: string
+          from_staff: boolean
+          id?: never
+          internal?: boolean
+          ticket_id: string
+        }
+        Update: {
+          author_id?: string | null
+          body?: string
+          created_at?: string
+          from_staff?: boolean
+          id?: never
+          internal?: boolean
+          ticket_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "support_messages_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "support_messages_ticket_id_fkey"
+            columns: ["ticket_id"]
+            isOneToOne: false
+            referencedRelation: "support_tickets"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      support_tickets: {
+        Row: {
+          assigned_to: string | null
+          claim_id: string | null
+          created_at: string
+          id: string
+          priority: string
+          redemption_id: string | null
+          respond_by: string | null
+          status: string
+          subject: string
+          topic: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          assigned_to?: string | null
+          claim_id?: string | null
+          created_at?: string
+          id?: string
+          priority?: string
+          redemption_id?: string | null
+          respond_by?: string | null
+          status?: string
+          subject: string
+          topic: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          assigned_to?: string | null
+          claim_id?: string | null
+          created_at?: string
+          id?: string
+          priority?: string
+          redemption_id?: string | null
+          respond_by?: string | null
+          status?: string
+          subject?: string
+          topic?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "support_tickets_assigned_to_fkey"
+            columns: ["assigned_to"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "support_tickets_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: false
+            referencedRelation: "commission_matches"
+            referencedColumns: ["candidate_id"]
+          },
+          {
+            foreignKeyName: "support_tickets_claim_id_fkey"
+            columns: ["claim_id"]
+            isOneToOne: false
+            referencedRelation: "purchase_claims"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "support_tickets_redemption_id_fkey"
+            columns: ["redemption_id"]
+            isOneToOne: false
+            referencedRelation: "redemptions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "support_tickets_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      telegram_links: {
+        Row: {
+          chat_id: number
+          linked_at: string
+          user_id: string
+          username: string | null
+        }
+        Insert: {
+          chat_id: number
+          linked_at?: string
+          user_id: string
+          username?: string | null
+        }
+        Update: {
+          chat_id?: number
+          linked_at?: string
+          user_id?: string
+          username?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "telegram_links_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_badges: {
+        Row: {
+          awarded_at: string
+          badge: string
+          user_id: string
+        }
+        Insert: {
+          awarded_at?: string
+          badge: string
+          user_id: string
+        }
+        Update: {
+          awarded_at?: string
+          badge?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_badges_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_boosters: {
+        Row: {
+          expires_at: string | null
+          kind: string
+          user_id: string
+          value: number
+        }
+        Insert: {
+          expires_at?: string | null
+          kind: string
+          user_id: string
+          value: number
+        }
+        Update: {
+          expires_at?: string | null
+          kind?: string
+          user_id?: string
+          value?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_boosters_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      voucher_inventory: {
+        Row: {
+          ciphertext: string
+          code_hash: string
+          created_at: string
+          expires_at: string | null
+          id: string
+          redemption_id: string | null
+          reward_id: string
+        }
+        Insert: {
+          ciphertext: string
+          code_hash: string
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          redemption_id?: string | null
+          reward_id: string
+        }
+        Update: {
+          ciphertext?: string
+          code_hash?: string
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          redemption_id?: string | null
+          reward_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "voucher_inventory_redemption_id_fkey"
+            columns: ["redemption_id"]
+            isOneToOne: true
+            referencedRelation: "redemptions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "voucher_inventory_reward_id_fkey"
+            columns: ["reward_id"]
+            isOneToOne: false
+            referencedRelation: "rewards"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       waitlist_signups: {
         Row: {
@@ -288,11 +2789,297 @@ export type Database = {
           },
         ]
       }
+      wallet_accounts: {
+        Row: {
+          id: string
+          user_id: string | null
+        }
+        Insert: {
+          id?: string
+          user_id?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wallet_accounts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      xp_events: {
+        Row: {
+          amount: number
+          created_at: string
+          id: number
+          idempotency_key: string
+          source: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: never
+          idempotency_key: string
+          source: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: never
+          idempotency_key?: string
+          source?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "xp_events_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
-      [_ in never]: never
+      campaign_budget_usage: {
+        Row: {
+          active: boolean | null
+          cap_coins: number | null
+          ends_at: string | null
+          granted: number | null
+          id: string | null
+          name: string | null
+          purpose: string | null
+          remaining: number | null
+          starts_at: string | null
+        }
+        Relationships: []
+      }
+      commission_matches: {
+        Row: {
+          amount_cents: number | null
+          candidate_id: string | null
+          claim_status: string | null
+          confidence: number | null
+          created_at: string | null
+          external_ref: string | null
+          firm_id: string | null
+          firm_name: string | null
+          id: string | null
+          order_ref: string | null
+          paid_at: string | null
+          paid_reference: string | null
+          release_at: string | null
+          status: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "commissions_firm_id_fkey"
+            columns: ["firm_id"]
+            isOneToOne: false
+            referencedRelation: "firms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      commission_reconciliation: {
+        Row: {
+          amount_cents: number | null
+          claim_id: string | null
+          commission_id: string | null
+          firm_id: string | null
+          firm_name: string | null
+          issue: string | null
+          order_ref: string | null
+          since: string | null
+        }
+        Relationships: []
+      }
+      finance_totals: {
+        Row: {
+          available: number | null
+          confirmed_cents: number | null
+          liability_ratio: number | null
+          paid_cents: number | null
+          pending: number | null
+          reported_cents: number | null
+        }
+        Relationships: []
+      }
+      wallet_balances: {
+        Row: {
+          available: number | null
+          pending: number | null
+          user_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "wallet_accounts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
+      admin_add_note: {
+        Args: { p_actor: string; p_body: string; p_user: string }
+        Returns: undefined
+      }
+      admin_adjust_xp: {
+        Args: {
+          p_actor: string
+          p_amount: number
+          p_reason: string
+          p_request_id: string
+          p_user: string
+        }
+        Returns: undefined
+      }
+      admin_find_members: {
+        Args: { p_actor: string; p_limit?: number; p_query: string }
+        Returns: {
+          country_code: string
+          created_at: string
+          email: string
+          id: string
+          referral_code: string
+          restriction: string
+        }[]
+      }
+      admin_grant_booster: {
+        Args: {
+          p_actor: string
+          p_hours: number
+          p_kind: string
+          p_reason: string
+          p_request_id: string
+          p_user: string
+          p_value: number
+        }
+        Returns: undefined
+      }
+      admin_grant_coins: {
+        Args: {
+          p_actor: string
+          p_amount: number
+          p_budget: string
+          p_confirmed: boolean
+          p_member_note: string
+          p_reason: string
+          p_request_id: string
+          p_user: string
+        }
+        Returns: number
+      }
+      admin_remove_coins: {
+        Args: {
+          p_actor: string
+          p_amount: number
+          p_confirmed: boolean
+          p_member_note: string
+          p_reason: string
+          p_request_id: string
+          p_user: string
+        }
+        Returns: number
+      }
+      admin_save_article: {
+        Args: {
+          p_actor: string
+          p_body: string
+          p_category: string
+          p_id: string
+          p_request_id: string
+          p_slug: string
+          p_status: string
+          p_summary: string
+          p_title: string
+        }
+        Returns: string
+      }
+      admin_save_budget: {
+        Args: {
+          p_active: boolean
+          p_actor: string
+          p_cap: number
+          p_ends: string
+          p_id: string
+          p_name: string
+          p_purpose: string
+          p_reason: string
+          p_request_id: string
+          p_starts: string
+        }
+        Returns: string
+      }
+      admin_save_catalogue: {
+        Args: {
+          p_actor: string
+          p_id: string
+          p_kind: string
+          p_reason: string
+          p_request_id: string
+          p_revision: number
+          p_values: Json
+        }
+        Returns: string
+      }
+      admin_save_changelog: {
+        Args: {
+          p_actor: string
+          p_body: string
+          p_id: string
+          p_request_id: string
+          p_status: string
+          p_title: string
+        }
+        Returns: string
+      }
+      admin_save_draw: {
+        Args: {
+          p_actor: string
+          p_cancel: boolean
+          p_ends: string
+          p_id: string
+          p_max: number
+          p_prize: string
+          p_request_id: string
+          p_starts: string
+          p_title: string
+        }
+        Returns: string
+      }
+      admin_save_reward: {
+        Args: {
+          p_actor: string
+          p_id: string
+          p_reason: string
+          p_request_id: string
+          p_revision: number
+          p_values: Json
+        }
+        Returns: string
+      }
+      admin_save_spin_prizes: {
+        Args: {
+          p_actor: string
+          p_prizes: Json
+          p_reason: string
+          p_request_id: string
+        }
+        Returns: undefined
+      }
       admin_set_feature_flag: {
         Args: {
           p_actor: string
@@ -317,6 +3104,17 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      admin_set_restriction: {
+        Args: {
+          p_actor: string
+          p_level: string
+          p_message: string
+          p_reason: string
+          p_request_id: string
+          p_user: string
+        }
+        Returns: undefined
+      }
       admin_set_role: {
         Args: {
           p_actor: string
@@ -328,13 +3126,549 @@ export type Database = {
         }
         Returns: undefined
       }
+      appeal_claim: {
+        Args: { p_claim: string; p_evidence: string; p_user: string }
+        Returns: string
+      }
+      cancel_deletion: { Args: { p_user: string }; Returns: undefined }
+      cancel_redemption: {
+        Args: {
+          p_actor: string
+          p_id: string
+          p_reason: string
+          p_request_id: string
+        }
+        Returns: undefined
+      }
+      catalogue_programs: {
+        Args: { p_ip_country: string; p_profile_country: string }
+        Returns: {
+          account_size: number
+          asset_classes: Database["public"]["Enums"]["asset_class"][]
+          checkout_cents: number
+          created_at: string
+          currency: string
+          daily_loss_bps: number
+          description: string
+          discount_bps: number
+          drawdown_type: string
+          ends_at: string
+          estimated_coins: number
+          firm_id: string
+          firm_name: string
+          firm_status: string
+          is_sample: boolean
+          list_price_cents: number
+          max_loss_bps: number
+          net_cents: number
+          offer_code: string
+          offer_id: string
+          offer_terms: string
+          offer_title: string
+          payout_frequency: string
+          platforms: string[]
+          profit_split_bps: number
+          profit_target_bps: number
+          program_id: string
+          program_name: string
+          rebate_permission: boolean
+          rules: Json
+          slug: string
+          status_note: string
+          steps: number
+        }[]
+      }
+      claim_notification_batch: {
+        Args: { p_limit: number; p_now?: string }
+        Returns: {
+          detail: string
+          external: boolean
+          id: number
+          kind: string
+          user_id: string
+        }[]
+      }
       complete_onboarding: {
         Args: { p_country: string; p_is_adult: boolean; p_timezone: string }
         Returns: undefined
       }
+      confirm_commission: {
+        Args: {
+          p_actor: string
+          p_cap_reviewed?: boolean
+          p_id: string
+          p_reason: string
+          p_request_id: string
+        }
+        Returns: string
+      }
+      confirm_deletion: {
+        Args: { p_hash: string; p_user: string }
+        Returns: string
+      }
+      daily_checkin: {
+        Args: { p_user: string }
+        Returns: {
+          awarded_xp: number
+          created_at: string
+          freezes_used: number
+          local_day: string
+          streak: number
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "checkins"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      decide_appeal: {
+        Args: {
+          p_actor: string
+          p_appeal: string
+          p_note: string
+          p_overturn: boolean
+          p_request_id: string
+        }
+        Returns: undefined
+      }
+      due_calendar_digests: {
+        Args: { p_limit?: number; p_now?: string }
+        Returns: {
+          currencies: string[]
+          local_day: string
+          timezone: string
+          user_id: string
+        }[]
+      }
+      due_deletions: {
+        Args: { p_limit: number }
+        Returns: {
+          user_id: string
+        }[]
+      }
+      enter_draw: {
+        Args: { p_draw: string; p_ip_country: string; p_user: string }
+        Returns: number
+      }
+      erase_member: {
+        Args: { p_actor: string; p_user: string }
+        Returns: {
+          bucket: string
+          path: string
+        }[]
+      }
+      finance_record_commission: {
+        Args: {
+          p_actor: string
+          p_cents: number
+          p_external: string
+          p_firm: string
+          p_order: string
+          p_reason: string
+          p_request_id: string
+        }
+        Returns: string
+      }
+      finish_email: {
+        Args: { p_lease: string; p_nonce: string; p_sent: boolean }
+        Returns: undefined
+      }
+      import_commissions: {
+        Args: {
+          p_actor: string
+          p_fingerprint: string
+          p_firm: string
+          p_mapping: Json
+          p_reason: string
+          p_request_id: string
+          p_rows: Json
+        }
+        Returns: string
+      }
+      journal_add_screenshot: {
+        Args: {
+          p_bytes: number
+          p_path: string
+          p_trade: string
+          p_user: string
+        }
+        Returns: string
+      }
+      journal_archive_strategy: {
+        Args: { p_id: string; p_user: string }
+        Returns: undefined
+      }
+      journal_create_tag: {
+        Args: { p_kind: string; p_name: string; p_user: string }
+        Returns: string
+      }
+      journal_delete_tag: {
+        Args: { p_id: string; p_user: string }
+        Returns: undefined
+      }
+      journal_delete_trade: {
+        Args: { p_id: string; p_user: string }
+        Returns: string[]
+      }
+      journal_no_trades: { Args: { p_user: string }; Returns: string }
+      journal_remove_screenshot: {
+        Args: { p_id: string; p_user: string }
+        Returns: string
+      }
+      journal_review_week: { Args: { p_user: string }; Returns: string }
+      journal_save_strategy: {
+        Args: {
+          p_description: string
+          p_id: string
+          p_name: string
+          p_rules: string[]
+          p_user: string
+        }
+        Returns: string
+      }
+      journal_save_trade: {
+        Args: {
+          p_closed_at: string
+          p_commission_cents: number
+          p_confidence: number
+          p_currency: string
+          p_direction: string
+          p_emotion_after: number
+          p_emotion_before: number
+          p_entry: number
+          p_exit: number
+          p_id: string
+          p_lots: number
+          p_notes: string
+          p_opened_at: string
+          p_pips: number
+          p_r_multiple: number
+          p_result_cents: number
+          p_rules_broken: string[]
+          p_rules_followed: string[]
+          p_session: string
+          p_source: string
+          p_stop_loss: number
+          p_strategy: string
+          p_swap_cents: number
+          p_symbol: string
+          p_tags: string[]
+          p_take_profit: number
+          p_user: string
+        }
+        Returns: string
+      }
+      lease_email: {
+        Args: { p_limit: number; p_nonce?: string }
+        Returns: {
+          email: string
+          lease: string
+          nonce: string
+          token_hash: string
+        }[]
+      }
+      mark_calendar_digest_sent: {
+        Args: { p_day: string; p_user: string }
+        Returns: boolean
+      }
+      mark_commissions_paid: {
+        Args: {
+          p_actor: string
+          p_ids: string[]
+          p_paid_on: string
+          p_reason: string
+          p_reference: string
+          p_request_id: string
+        }
+        Returns: number
+      }
+      member_rewards: {
+        Args: { p_ip_country: string; p_user: string }
+        Returns: {
+          account_size: number
+          cost_coins: number
+          description: string
+          eligible: boolean
+          firm_name: string
+          id: string
+          is_goal: boolean
+          kind: string
+          min_tier: number
+          name: string
+          per_user_limit: number
+          stock: number
+        }[]
+      }
+      ops_alert_conditions: {
+        Args: never
+        Returns: {
+          detail: Json
+          key: string
+          kind: string
+        }[]
+      }
+      process_coin_expiry: {
+        Args: { p_now?: string }
+        Returns: {
+          expired: number
+          warned: number
+        }[]
+      }
+      push_failed: {
+        Args: { p_endpoint: string; p_gone: boolean }
+        Returns: undefined
+      }
+      push_subscribe: {
+        Args: {
+          p_auth: string
+          p_endpoint: string
+          p_p256dh: string
+          p_user: string
+        }
+        Returns: undefined
+      }
+      push_succeeded: { Args: { p_endpoint: string }; Returns: undefined }
+      push_unsubscribe: {
+        Args: { p_endpoint: string; p_user: string }
+        Returns: undefined
+      }
+      queue_journal_review_reminders: {
+        Args: { p_now?: string }
+        Returns: number
+      }
       rate_limit_hit: {
         Args: { p_key: string; p_max: number; p_window_seconds: number }
         Returns: boolean
+      }
+      read_inbox_item: {
+        Args: { p_id: number; p_user: string }
+        Returns: undefined
+      }
+      record_export: { Args: { p_user: string }; Returns: string }
+      record_mission_event: {
+        Args: { p_event: string; p_user: string }
+        Returns: undefined
+      }
+      record_outbound: {
+        Args: {
+          p_declared_country: string
+          p_ip_country: string
+          p_program: string
+          p_source: string
+          p_user: string
+        }
+        Returns: {
+          click_id: string
+          tracking_url: string
+        }[]
+      }
+      redeem_reward: {
+        Args: {
+          p_expected_cost: number
+          p_ip_country: string
+          p_request: string
+          p_reward: string
+          p_user: string
+        }
+        Returns: string
+      }
+      release_pending_coins: { Args: { p_limit?: number }; Returns: number }
+      request_deletion: {
+        Args: { p_hash: string; p_user: string }
+        Returns: string
+      }
+      reverse_commission: {
+        Args: {
+          p_actor: string
+          p_id: string
+          p_reason: string
+          p_request_id: string
+        }
+        Returns: undefined
+      }
+      review_claim: {
+        Args: {
+          p_actor: string
+          p_id: string
+          p_reason: string
+          p_request_id: string
+          p_status: string
+        }
+        Returns: undefined
+      }
+      run_draw: {
+        Args: { p_actor: string; p_draw: string; p_request_id: string }
+        Returns: string
+      }
+      save_economy_settings: {
+        Args: {
+          p_actor: string
+          p_reason: string
+          p_request_id: string
+          p_values: Json
+          p_version: number
+        }
+        Returns: number
+      }
+      save_journal_review: {
+        Args: {
+          p_costly_mistake: string
+          p_feeling: number
+          p_followed_plan: string
+          p_next_rule: string
+          p_previous_rule_kept: boolean
+          p_user: string
+          p_week: string
+          p_what_didnt: string
+          p_what_worked: string
+        }
+        Returns: number
+      }
+      set_analytics_consent: {
+        Args: { p_granted: boolean; p_user: string }
+        Returns: undefined
+      }
+      set_calendar_digest: {
+        Args: {
+          p_active: boolean
+          p_currencies: string[]
+          p_send_hour: number
+          p_user: string
+        }
+        Returns: undefined
+      }
+      set_inbox_preferences: {
+        Args: {
+          p_claim: boolean
+          p_daily_cap?: number
+          p_journal_review?: boolean
+          p_quiet_end?: number
+          p_quiet_start?: number
+          p_redemption: boolean
+          p_release: boolean
+          p_user: string
+        }
+        Returns: undefined
+      }
+      set_journal_review_day: {
+        Args: { p_day: number; p_user: string }
+        Returns: undefined
+      }
+      set_reward_goal: {
+        Args: { p_ip_country: string; p_reward: string; p_user: string }
+        Returns: undefined
+      }
+      spin: {
+        Args: { p_ip_country: string; p_user: string }
+        Returns: {
+          kind: string
+          label: string
+          odds_ppm: number
+          value: number
+        }[]
+      }
+      stock_vouchers: {
+        Args: {
+          p_actor: string
+          p_codes: Json
+          p_expiry: string
+          p_reason: string
+          p_request_id: string
+          p_reward: string
+        }
+        Returns: number
+      }
+      submit_claim: {
+        Args: {
+          p_amount: number
+          p_email: string
+          p_hash: string
+          p_id: string
+          p_ip_country: string
+          p_order_ref: string
+          p_path: string
+          p_program: string
+          p_purchased_on: string
+          p_user: string
+        }
+        Returns: string
+      }
+      support_open: {
+        Args: {
+          p_body: string
+          p_claim: string
+          p_redemption: string
+          p_subject: string
+          p_topic: string
+          p_user: string
+        }
+        Returns: string
+      }
+      support_reply_member: {
+        Args: { p_body: string; p_ticket: string; p_user: string }
+        Returns: undefined
+      }
+      support_reply_staff: {
+        Args: {
+          p_actor: string
+          p_body: string
+          p_internal: boolean
+          p_request_id: string
+          p_status: string
+          p_ticket: string
+        }
+        Returns: undefined
+      }
+      suppress_email: { Args: { p_email: string }; Returns: undefined }
+      sync_ops_alerts: {
+        Args: never
+        Returns: {
+          detail: Json
+          key: string
+          kind: string
+          transition: string
+        }[]
+      }
+      telegram_issue_code: {
+        Args: { p_hash: string; p_user: string }
+        Returns: undefined
+      }
+      telegram_link: {
+        Args: { p_chat: number; p_hash: string; p_username: string }
+        Returns: string
+      }
+      telegram_unlink: { Args: { p_user: string }; Returns: undefined }
+      telegram_unlink_chat: { Args: { p_chat: number }; Returns: undefined }
+      trader_progress: {
+        Args: { p_user: string }
+        Returns: {
+          checked_in: boolean
+          level_name: string
+          local_day: string
+          next_purchases: number
+          next_xp: number
+          purchases: number
+          streak: number
+          tier: number
+          xp: number
+        }[]
+      }
+      waitlist_enqueue: {
+        Args: {
+          p_country: string
+          p_email: string
+          p_ip_hash: string
+          p_nonce: string
+          p_referral_code: string
+          p_source: string
+          p_token_hash: string
+        }
+        Returns: {
+          is_new: boolean
+          signup_id: string
+        }[]
       }
       waitlist_join: {
         Args: {

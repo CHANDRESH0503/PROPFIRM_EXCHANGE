@@ -9,18 +9,24 @@ import { log } from "@/lib/log";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { flagUpdateSchema } from "@/lib/validation/schemas";
 
-export type FlagActionState = { status: "idle" } | { status: "saved"; key: string } | { status: "error"; message: string };
+export type FlagActionState =
+  { status: "idle" } | { status: "saved"; key: string } | { status: "error"; message: string };
 
 /** Owner only. The database function re-checks the role and writes the audit row. */
-export async function setFeatureFlag(_prev: FlagActionState, formData: FormData): Promise<FlagActionState> {
+export async function setFeatureFlag(
+  _prev: FlagActionState,
+  formData: FormData,
+): Promise<FlagActionState> {
   const { user } = await requireStaff("owner");
   const parsed = flagUpdateSchema.safeParse({
     key: formData.get("key"),
     enabled: formData.get("enabled") === "true",
     reason: formData.get("reason"),
   });
-  if (!parsed.success) return { status: "error", message: parsed.error.issues[0]?.message ?? "Invalid input." };
-  if (!(await rateLimit("adminWrite", user.id))) return { status: "error", message: "Too many changes. Wait a minute." };
+  if (!parsed.success)
+    return { status: "error", message: parsed.error.issues[0]?.message ?? "Invalid input." };
+  if (!(await rateLimit("adminWrite", user.id)))
+    return { status: "error", message: "Too many changes. Wait a minute." };
 
   const { requestId } = await requestMeta();
   const { error } = await createAdminClient().rpc("admin_set_feature_flag", {

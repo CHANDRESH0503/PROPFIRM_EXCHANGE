@@ -19,7 +19,10 @@ export async function getGeoRules(): Promise<GeoRule[]> {
 }
 
 /** Server-side geo check for the current request and (optionally) the signed-in user's country. */
-export async function checkGeo(assetClasses: readonly AssetClass[], profileCountry: string | null): Promise<GeoDecision> {
+export async function checkGeo(
+  assetClasses: readonly AssetClass[],
+  profileCountry: string | null,
+): Promise<GeoDecision> {
   const [rules, meta] = await Promise.all([getGeoRules(), requestMeta()]);
   return evaluateGeo(rules, { profileCountry, ipCountry: meta.ipCountry }, assetClasses);
 }

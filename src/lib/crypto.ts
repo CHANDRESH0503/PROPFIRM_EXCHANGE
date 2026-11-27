@@ -18,3 +18,10 @@ export function hashIp(ip: string, salt: string, now: Date = new Date()): string
   const period = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}`;
   return createHmac("sha256", `${salt}:${period}`).update(ip).digest("hex");
 }
+
+/** Rebuild a queued confirmation link without keeping its bearer secret in Postgres. */
+export function waitlistToken(nonce: string, secret: string): string {
+  return createHmac("sha256", secret)
+    .update("waitlist-confirm/v1:" + nonce)
+    .digest("base64url");
+}

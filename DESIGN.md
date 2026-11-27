@@ -1,54 +1,86 @@
 ---
 name: Fundback
-description: Dark, candid fintech with a game inside it. Exact figures, hairline structure, gold only where Coins are.
+description: Arcade Night. An indigo night lit by aurora, where every challenge is an item card, colour names the place you are in, and gold is only ever Coins.
 colors:
-  ink: "#0b0d10"
-  surface: "#14171c"
-  raised: "#1c2026"
-  hairline: "#2a2f37"
-  text: "#f2f0eb"
-  text-soft: "#c9cdd3"
-  muted: "#9aa3af"
-  gold: "#d4af6a"
-  gold-soft: "#d4af6a26"
-  positive: "#3ccb8d"
-  caution: "#f2b544"
-  danger: "#f0566b"
+  ink: "#120c32"
+  ink-deep: "#0d0929"
+  surface: "#1c1449"
+  surface-2: "#231858"
+  raised: "#2c2068"
+  hairline: "#3d3086"
+  text: "#f8f5ff"
+  text-soft: "#d9d2f7"
+  muted: "#aca2de"
+  brand: "#7b4dff"
+  brand-2: "#e0338f"
+  brand-deep: "#5a33e6"
+  brand-deep-2: "#c22277"
+  cyan: "#2fd6ff"
+  pink: "#ff5fae"
+  lime: "#c6f432"
+  violet: "#b094ff"
+  gold: "#ffc94a"
+  gold-2: "#ff9d2e"
+  gold-soft: "#ffc94a24"
+  common: "#a9adcf"
+  rare: "#4fa8ff"
+  epic: "#c084ff"
+  legendary: "#ff9a3c"
+  xp: "#8b5cff"
+  xp-2: "#2fd6ff"
+  positive: "#3ef0b0"
+  caution: "#ffc24a"
+  danger: "#ff5c7a"
 typography:
   display:
-    fontFamily: "Sora, Inter, ui-sans-serif, sans-serif"
-    fontSize: "clamp(2.125rem, 6vw, 3.5rem)"
-    fontWeight: 700
-    lineHeight: 1.06
-    letterSpacing: "-0.02em"
+    fontFamily: "Archivo, ui-sans-serif, sans-serif"
+    fontSize: "clamp(2.25rem, 6vw, 3.6rem)"
+    fontWeight: 800
+    lineHeight: 1.02
+    letterSpacing: "-0.025em"
+    fontVariation: "\"wdth\" 112"
   headline:
-    fontFamily: "Sora, Inter, ui-sans-serif, sans-serif"
-    fontSize: "1.75rem"
-    fontWeight: 600
-    lineHeight: 1.25
-    letterSpacing: "-0.02em"
+    fontFamily: "Archivo, ui-sans-serif, sans-serif"
+    fontSize: "1.875rem"
+    fontWeight: 800
+    lineHeight: 1.2
+    letterSpacing: "-0.025em"
+    fontVariation: "\"wdth\" 112"
   title:
-    fontFamily: "Sora, Inter, ui-sans-serif, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 800
+    lineHeight: 1.3
+    letterSpacing: "-0.025em"
+    fontVariation: "\"wdth\" 112"
+  item-title:
+    fontFamily: "Archivo, ui-sans-serif, sans-serif"
     fontSize: "1.125rem"
-    fontWeight: 600
-    lineHeight: 1.4
-    letterSpacing: "-0.02em"
+    fontWeight: 800
+    lineHeight: 1.25
+    fontVariation: "\"wdth\" 108"
   body:
-    fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.65
     fontFeature: "\"cv11\", \"ss01\""
   body-small:
-    fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.625
   label:
-    fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 500
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 700
     lineHeight: 1.4
+  tag:
+    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.625rem"
+    fontWeight: 900
+    lineHeight: 1.2
+    letterSpacing: "0.14em"
   figure:
     fontFamily: "JetBrains Mono, ui-monospace, monospace"
     fontSize: "1rem"
@@ -56,216 +88,269 @@ typography:
     lineHeight: 1.4
     fontFeature: "\"tnum\", \"zero\""
 rounded:
-  sm: "6px"
-  md: "9px"
-  lg: "12px"
-  xl: "16px"
+  sm: "7px"
+  md: "10.5px"
+  lg: "14px"
+  xl: "18.6px"
+  2xl: "23.2px"
+  3xl: "24px"
+  pill: "9999px"
 spacing:
   gutter-phone: "20px"
   gutter-desktop: "32px"
   panel: "20px"
-  row: "16px"
-  section: "40px"
+  panel-wide: "24px"
+  section-app: "40px"
+  section-public: "80px"
+  section-public-wide: "96px"
 components:
   button-primary:
-    backgroundColor: "{colors.text}"
+    backgroundColor: "{colors.brand-deep}"
+    textColor: "#ffffff"
+    rounded: "{rounded.pill}"
+    padding: "0 16px"
+    height: "44px"
+    typography: "{typography.label}"
+  button-gold:
+    backgroundColor: "{colors.gold}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
+    rounded: "{rounded.pill}"
     padding: "0 16px"
     height: "44px"
     typography: "{typography.label}"
   button-secondary:
-    backgroundColor: "{colors.surface}"
+    backgroundColor: "#7b4dff1f"
     textColor: "{colors.text}"
-    rounded: "{rounded.lg}"
+    rounded: "{rounded.pill}"
     padding: "0 16px"
     height: "44px"
   button-secondary-hover:
-    backgroundColor: "{colors.raised}"
+    backgroundColor: "#7b4dff38"
   button-ghost:
     backgroundColor: "transparent"
     textColor: "{colors.text-soft}"
-    rounded: "{rounded.lg}"
+    rounded: "{rounded.pill}"
     height: "44px"
   button-ghost-hover:
-    backgroundColor: "{colors.raised}"
+    backgroundColor: "#7b4dff26"
     textColor: "{colors.text}"
   button-danger:
-    backgroundColor: "#f0566b26"
+    backgroundColor: "#ff5c7a1f"
     textColor: "{colors.danger}"
-    rounded: "{rounded.lg}"
+    rounded: "{rounded.pill}"
     height: "44px"
   input:
-    backgroundColor: "{colors.surface}"
+    backgroundColor: "#0d092999"
     textColor: "{colors.text}"
-    rounded: "{rounded.lg}"
+    rounded: "{rounded.xl}"
     padding: "0 16px"
     height: "48px"
   panel:
     backgroundColor: "{colors.surface}"
-    rounded: "{rounded.xl}"
+    rounded: "{rounded.2xl}"
     padding: "20px"
+  item-card:
+    backgroundColor: "{colors.surface}"
+    rounded: "{rounded.2xl}"
+    padding: "24px 16px 16px"
+  chip:
+    backgroundColor: "#1c1449b3"
+    textColor: "{colors.text-soft}"
+    rounded: "{rounded.pill}"
+    padding: "0 16px"
+    height: "44px"
+  chip-active:
+    backgroundColor: "{colors.brand-deep}"
+    textColor: "#ffffff"
   coin-amount:
     textColor: "{colors.gold}"
     typography: "{typography.figure}"
+  xp-pill:
+    backgroundColor: "{colors.xp}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.pill}"
+    padding: "4px 10px"
   tab-bar-item:
     textColor: "{colors.muted}"
     height: "56px"
-  tab-bar-item-active:
-    textColor: "{colors.text}"
 ---
 
 # Design System: Fundback
 
 ## Overview
 
-**Creative North Star: "The Signed Ledger"**
+**Creative North Star: "Arcade Night"**
 
-Fundback reads like a statement from a private bank that happens to keep score. The ground is near-black ink, the text is warm paper, and structure comes from one-pixel hairlines rather than boxes, shadows or colour fills. Numbers are the content: every amount, rate and count is set in JetBrains Mono with tabular figures, so columns align and nothing reads as decoration. The game layer (Coins, the streak flame, the level ring) sits inside this calm frame and is the only place colour carries excitement.
+Fundback is a game hall at night that keeps honest books. The ground is an indigo night, never black, lit from behind by a fixed aurora (violet top left, cyan top right, pink bottom right, a faint mint bottom left) over a faint 44px chart grid that fades out down the page. On that night sit lit panels and item cards: every challenge is an item with a rarity frame and a stat block, every deal is a drop with a stamped discount affix, Coins are gold loot, and progress is an XP beam beside a hexagonal level badge. Colour is plentiful, but every colour has a job: the violet-to-pink beam means "the main thing to do", gold means Coins, rarity means account size, each area of the product owns one hue, and green, amber and red mean state.
 
-The system is dark-only (the root element carries `dark`; there is no light theme). It is a default theme, not a fixed one: every component reads CSS custom properties from `:root` in `src/app/globals.css`, so a theme the owner saves in admin (09-admin.md §2) restyles the product by overriding those variables, with no rebuild. Never hard-code a palette value in a component.
+This record replaces the "Signed Ledger" world (ink #0b0d10, Sora and Inter, paper-on-ink buttons, gold-only colour, flat and gradient-free). It was replaced first by "Item Cards" (22 Nov 2026) and then, on 23 Nov 2026, the owner asked for a much more colourful, gamified UI with no plain black background, taking craft cues from prop-firm sites (propfirmmatch.com, FTMO, FundingPips, FundedNext, E8, The5ers, Alpha Capital). Arcade Night is that evolution of Item Cards; the item card, rarity, stat block and stamp devices carry over, the palette, type and buttons do not.
 
-Density is phone-first and moderate: 20px gutters, 20px panel padding, 16–20px list rows, 44px minimum touch targets everywhere a finger lands. Desktop widens the container but keeps reading text at a measure.
+The system is dark-only and themeable by variable: every component reads the CSS custom properties on `:root` in `src/app/globals.css`, so a theme saved in admin (09-admin.md §2) restyles the product with no rebuild. Density is phone-first: 20px gutters, 44px minimum touch targets, 48px inputs, 56px bottom tabs.
 
 **Key Characteristics:**
-- Ink ground, paper text, hairline rules; flat at rest.
-- Gold means Coins, levels and rewards, and nothing else.
-- Positive, caution and danger mean state, and nothing else.
-- Primary action is paper on ink: the brightest thing on screen without a brand colour.
-- Every figure is mono and tabular.
-- Themeable by variable; dark-only.
+- Indigo night with an aurora and a faint grid behind every page; never plain black.
+- The brand beam (violet into hot pink) marks the primary action, the active chip and the brand mark.
+- Gold means Coins, levels and rewards; the gold button is only for Coins actions.
+- Rarity frames are fixed by account size, never by commission or sponsorship.
+- Each area owns a hue: Today violet, Deals pink, Rewards gold, Accounts cyan, Profile mint.
+- Archivo at a wide stretch for display, Archivo for body, JetBrains Mono tabular for every figure.
+- Lit panels with soft, coloured glows; no gradient text, no fake counts or presence.
 
 ## Colors
 
-A near-monochrome cool-ink palette with one warm reward accent and three state signals.
+A saturated night palette: indigo neutrals, one violet-to-pink brand beam, a gold reward pair, four rarity hues, an XP beam, area accents and three state signals.
 
 ### Primary
-- **Warm Paper** (text): body text, headings, and the fill of the primary button. It doubles as the primary action colour (`--primary` maps to it), which is why the system needs no brand hue. It also marks text selection (a 24% wash) and the input caret.
+- **Violet Beam** (brand) into **Hot Pink Beam** (brand-2): the brand gradient. Its deep pair (brand-deep, brand-deep-2) fills primary buttons, the active filter chip, the public header's "Open app" pill and the directory title tile; the bright pair draws the brand mark and the brand frame border. Violet also tints secondary and ghost buttons, hover fills on links and chips, and text selection (55%).
 
 ### Secondary
-- **Struck Gold** (gold): Coin figures, the Coin glyph, the current level name, level progress rings, and the give-back figure in the home headline. **Gold Wash** (gold-soft, gold at 15%) is the defined tint for reward backgrounds; no shipped surface uses it yet.
+- **Coin Gold** (gold) into **Ember Orange** (gold-2): Coins and levels. Coin figures and the Coin glyph, the level badge, the level name on Today, the wallet pill in the player bar, the reward-goal bar, the gold button, the gold frame around the Coins example and the reward goal, and the give-back figure in the landing headline. **Gold Wash** (gold-soft) backs Coin pills ("Earn about N Coins back").
 
-### Tertiary (state signals)
-- **Safe Green** (positive): safe and positive states, success toasts, Guardian rings within limits.
-- **Signal Amber** (caution): caution states, draft notices on legal pages (border at 40%, fill at 10%), and warning toasts.
-- **Breach Red** (danger): danger and breach, field errors, destructive buttons (fill at 15%, 25% on hover).
+### Tertiary
+- **Rarity hues**: **Common Pewter** (common), **Rare Blue** (rare), **Epic Orchid** (epic), **Legendary Flame** (legendary). The 2px item-card border, the wash across the card top, its glow and the rarity tab.
+- **XP Beam**: **XP Violet** (xp) into **XP Cyan** (xp-2), for XP bars and the "+N XP" pills.
+- **Area accents**: **Arcade Cyan** (cyan) is also the focus ring, the input caret and link colour; **Arcade Pink** (pink) is Deals and the discount affix; **Arcade Violet** (violet, #b094ff) is the readable violet for text and icons (Today's tab, accent cycles); the XP violet #8b5cff is only a fill. **Arcade Lime** (lime) is a decorative accent in icon cycles, the stat block's split cell and the tools fact chip.
 
 ### Neutral
-- **Ink** (ink): page ground, the bar behind sticky headers and the bottom tab bar (at 95% with a light backdrop blur), and the primary button's text.
-- **Surface** (surface): panels, inputs, secondary buttons.
-- **Raised** (raised): hover fills, the active desktop tab, skeletons, popovers.
-- **Hairline** (hairline): every border, divider and rule; also the track of progress rings and the scrollbar thumb.
-- **Soft Paper** (text-soft): reading paragraphs and secondary labels.
-- **Muted Slate** (muted): hints, captions, inactive tabs, pending Coins, unlit icons.
+- **Indigo Night** (ink): page ground (with a vertical deepening to #160e3c mid-page), the theme-color meta.
+- **Deep Night** (ink-deep): sticky headers and the bottom tab bar (80–95% with backdrop blur), input fills, recessed tracks.
+- **Surface** (surface) and **Surface Lift** (surface-2): the top-lit panel gradient (surface-2 at the top edge into surface).
+- **Raised** (raised): popovers, skeletons, scrollbar thumb.
+- **Hairline** (hairline): every border and divider.
+- **Star White** (text), **Lilac Mist** (text-soft) for reading text and labels, **Dusk Lilac** (muted) for hints, inactive tabs and pending Coins.
+
+### State
+- **Mint** (positive), **Amber** (caution), **Breach Red** (danger): safe, caution and breach; success and error; a cleared mission and its DONE stamp; a check-in day on the calendar.
 
 ### Named Rules
-**The Gold Means Coins Rule.** Gold appears only on Coins, levels and rewards. All gold text comes through the Coin amount component or a level/reward figure. Never use gold for links, buttons, headings or emphasis.
+**The Never Black Rule.** The ground is Indigo Night with the aurora and grid behind it. No page, section or panel sits on #000 or a neutral grey.
 
-**The State Only Rule.** Green, amber and red describe the state of something (safe, caution, breach, error, success). They are never decoration, brand colour or a call to action.
+**The Gold Means Coins Rule.** Gold appears only on Coins, levels and rewards. The gold button is only for Coins actions (redeem, claim, spend, browse rewards). Never gold for links, headings, navigation or general emphasis.
 
-**The Variables Only Rule.** Components read `var(--ink)`, `var(--gold)` and the rest, or their Tailwind mappings (`bg-surface`, `text-gold`, `border-hairline`). Literal hex lives only in `globals.css`, plus the places that cannot read CSS (the `themeColor` meta, the global error fallback, email templates).
+**The Rarity Is Size Rule.** An item's rarity frame and tab come from its account size alone (`rarityFor(account_size)`), never from commission rate, sponsorship or any paid placement (CLAUDE.md §2.7). A rarity frame is never used on anything that is not an item.
+
+**The Area Hue Rule.** Each area owns one hue, carried by its tab and its title tile: Today violet (violet), Deals pink, Rewards gold, Accounts cyan, Profile mint (positive). Within lists, icon tiles cycle the accent hues (cyan, pink, violet, lime) so neighbours never match. Gold, the state colours and the rarity colours are left out of every cycle; a cleared quest turns mint because cleared is a state.
+
+**The State Rule.** Green, amber and red describe the state of something. Mint's one second job is Profile's area hue; red and amber have none.
+
+**The Variables Only Rule.** Components read `var(--brand)`, `var(--gold)` and the rest, or their Tailwind mappings. Literal hex lives in `globals.css` and in the few places that cannot read CSS (the `themeColor` meta, the global error fallback, email templates).
 
 ## Typography
 
-**Display Font:** Sora (fallback Inter, ui-sans-serif)
-**Body Font:** Inter (fallback ui-sans-serif, system-ui), with `cv11` and `ss01`
-**Figure Font:** JetBrains Mono (fallback ui-monospace), tabular with slashed zero
+**Display Font:** Archivo with the width axis (fallback ui-sans-serif), stretched to 112% for h1 to h4
+**Body Font:** Archivo at normal width, with `cv11` and `ss01`
+**Figure Font:** JetBrains Mono (fallback ui-monospace), tabular with slashed zero; not preloaded
 
-**Character:** Sora's geometric confidence carries the headlines; Inter does the reading; Mono marks every number as a fact you can check. All three load through `next/font`; Mono is not preloaded so it never delays first paint.
+**Character:** One family doing two voices. Stretched and heavy, Archivo reads like an arcade marquee; at normal width it reads plainly. Mono turns every number into a checkable fact.
 
 ### Hierarchy
-- **Display** (700, 2.125rem phone to 3rem at sm and 3.5rem at lg, line-height 1.06, max 14ch): the one page headline. A key figure inside it may switch to Mono, gold if it is a reward figure.
-- **Headline** (600, 1.5rem to 1.75rem): section headings on public pages; legal page titles run 1.875–2.25rem at 700.
-- **Title** (600, 1.125rem; 1rem or 0.9375rem in lists): panel and list-item titles, always Sora.
-- **Body** (400, 1rem, line-height 1.65; 1.125rem from sm on the letter): reading text in Soft Paper, held to a measure (65ch utility, 62ch letter column, 68ch legal article).
-- **Body Small** (400, 0.875rem, relaxed): hints, empty-state bodies, captions in Muted Slate.
-- **Label** (500, 0.875rem): field labels in Soft Paper, button text (0.9375rem on the default button), tab labels (0.6875rem under icons in the bottom bar).
-- **Figure** (Mono, tabular): every amount, XP count, rate and code, at whatever size its context needs.
+- **Display** (800, 2.25rem phone, 3rem sm, 3.6rem lg, line-height 1.02, max 15ch): the landing headline only. Its key figure switches to Mono 900 in gold.
+- **Headline** (800, 1.875rem to 2.25rem): page titles on the directories (led by a title tile), and public section headings (1.5rem to 1.875rem).
+- **Title** (800, 1.25rem): section headings inside the signed-in app and panel headings.
+- **Item title** (800, 1.125rem, width 108%): the firm name on an item card.
+- **Body** (400, 1rem, line-height 1.65; 1.125rem from sm on the landing letter): reading text in Lilac Mist, held to 60–65ch.
+- **Body Small** (400, 0.875rem): hints, item subtitles, empty-state bodies.
+- **Label** (700, 0.9375rem): button text; chips and tabs run 600 at 0.875rem, bottom-tab labels at 0.6875rem.
+- **Tag** (900, 0.625rem, 0.14em tracking, uppercase): only the rarity tab, the loot-card tab and the rotated DONE stamp. Stat-block labels use the same idea at 700 and 0.1em.
+- **Figure** (Mono, tabular): every price, Coin amount, XP count, rate, code and date figure. Prices on item cards run 1.65rem at 900.
 
 ### Named Rules
-**The Every Figure Is Mono Rule.** Money, Coins, XP, percentages and codes are set in JetBrains Mono with the `tabular` utility. A number in Inter is a bug.
+**The Every Figure Is Mono Rule.** Money, Coins, XP, percentages and codes are JetBrains Mono with the `tabular` utility. A figure in Archivo is a bug.
 
-**The Tight Heading Rule.** Headings h1–h4 are Sora with -0.02em tracking and balanced wrapping; paragraphs use pretty wrapping.
+**The Solid Type Rule.** Text is filled with a solid colour. Gradients fill buttons, bars, badges and frames, never letters.
 
 ## Layout
 
-Single column first. Page gutters are 20px on phones and 32px from 640px. The public site sits in a 72rem container; the signed-in app in 64rem; admin pages and auth forms in narrower 28rem columns. On the home page the letter is a 62ch column, and from 1024px a second column (sticky) holds the worked arithmetic beside it.
+Single column first. Gutters are 20px on phones and 32px from 640px. Public pages and the signed-in app share a 72rem container (max-w-6xl). The landing page sets the letter in a 60ch column beside a sticky Coins loot card from 1024px; the directories run item cards in one column, two from 768px, three from 1280px, with 24–28px between rows so the rarity tabs clear the card above.
 
-The signed-in app has a sticky ink header (56px, 64px from 768px). Navigation is a fixed bottom tab bar on phones (five 56px targets, safe-area aware) and moves into the header as tabs from 768px; main content reserves bottom padding for the bar.
+The signed-in app has a sticky Deep Night header (56px, 64px from 768px) with the wordmark, the desktop tabs and the player bar (level badge with a small XP bar, and the Coin pill). On phones navigation is a fixed bottom tab bar (five 56px targets, safe-area aware); focus scrolling keeps clear of it.
 
-Rhythm: 40px between page sections in the app, 48–112px between public sections (each opened by a hairline rule), 20px inside panels, 16–20px per list row.
+Rhythm: 40px between sections in the app, 80–96px between public sections, 20–24px inside panels, 10px between quest rows.
 
 ## Elevation & Depth
 
-Flat. Page surfaces carry no shadows; depth comes from tonal steps (Ink, Surface, Raised) and hairline borders. There is one elevation in the system, the overlay token (`--shadow-overlay` in `globals.css`), used by the sheet because it floats above the page.
+Layered and lit. Panels are lifted off the night by a top-edge highlight (an inset 1px white at 6%), a surface gradient that is lighter at the top, and a soft shadow that falls below. Meaningful surfaces add coloured light: the brand frame glows pink, the gold frame glows orange, an item card glows in its rarity hue, buttons glow in their beam colour, and soft radial light sources sit behind the player card and the closing panel.
 
 ### Shadow Vocabulary
-- **Overlay** (`box-shadow: 0 12px 32px -8px rgb(0 0 0 / 0.6), 0 2px 6px rgb(0 0 0 / 0.4)`): floating overlays only, read through `var(--shadow-overlay)`. Nothing that sits in the page flow uses it.
+- **Panel** (`--shadow-panel`: `0 10px 30px -14px rgb(5 2 20 / 0.8)`, plus `inset 0 1px 0 rgb(255 255 255 / 0.06)`): every panel and card.
+- **Overlay** (`--shadow-overlay`: `0 16px 40px -10px rgb(5 2 20 / 0.75), 0 2px 8px rgb(5 2 20 / 0.5)`): sheets and floating layers.
+- **Brand frame glow** (`0 18px 44px -18px rgb(224 51 143 / 0.55)`) and **Gold frame glow** (`0 18px 44px -18px rgb(255 157 46 / 0.5)`).
+- **Rarity glow** (`0 14px 34px -18px` in the rarity hue at 70%, 90% on hover).
+- **Beam button glow** (`0 8px 22px -8px rgb(194 34 119 / 0.75)` with a top highlight and a 2px bottom inner shade); it tightens to 2px on press.
 
 ### Named Rules
-**The Hairline Not Box Rule.** Group related figures into one bordered panel split by 1px hairline gaps (a grid with a 1px gap over a hairline fill), or into a ruled list (`divide-y` with a top and bottom rule). Never put a card inside a card, and never stack empty boxes.
+**The Glow Means Something Rule.** Coloured light comes from meaning: the brand action, Coins, an item's rarity, an area's hue. Neutral panels cast only the dark panel shadow.
 
-**The Ledger Rule.** A worked calculation is a ruled statement: a strong top rule (paper at 70%), hairline rows, and a double rule above the total.
+**The Frames Are Few Rule.** Brand and gold frames mark a screen's key surfaces (Today: the player card and the reward goal; landing: the waitlist form, the loot card, the drops and the closing reply). Everything else is a plain panel.
 
 ## Shapes
 
-One radius family driven by `--radius` (0.75rem), so the admin theme's corner setting reaches everything. Controls (buttons, inputs, selects, tabs, nav links) use 12px; panels, tables and empty states use 16px; small parts use 6–9px. Borders are always 1px hairline; empty states use a dashed hairline. Rings and the Coin glyph are the only circles.
+Round and friendly. One radius root (`--radius`, 0.875rem) drives the scale. Every button, chip, tab, pill and badge is a full pill; inputs and small tiles use 18.6px (xl); panels, item cards and icon tiles use 23px (2xl); the hero panels (player card, frames, quest log) use 24px. Borders are 1px hairline, 1.5px on brand and gold frames, 2px on item cards. Two shapes break the curve on purpose: the hexagonal level badge, and the rotated stamps (the dashed pink discount affix at -3°, the DONE stamp at -6°).
 
 ## Components
 
 ### Buttons
-Quiet and certain; the press nudges down 1px.
-- **Shape:** gently rounded (12px).
-- **Primary:** Warm Paper fill, Ink text, 44px tall (48px large), 16px side padding. Hover mixes 12% ink into the paper.
-- **Secondary:** Surface fill, hairline border; Raised on hover.
-- **Ghost:** Soft Paper text, Raised fill on hover. **Danger:** red at 15%, 25% on hover. **Link:** underlined with a hairline decoration that brightens on hover.
-- **Focus:** 2px ring in paper at 70%, offset 2px from the ink ground. Transitions 150ms on the expo ease-out.
-- **Pending:** inline spinner, `aria-busy`, repeat submits blocked. Disabled is 50% opacity.
-- The small 36px size is for dense desktop tables only.
+Glossy and pressable; every size is a pill.
+- **Primary:** the brand beam (brand-deep into brand-deep-2 at 135°), white bold text, 44px tall (48px large, 36px small for dense tables only), pink glow; hover brightens 10%, press drops 1px into a tighter shadow.
+- **Gold:** the gold beam with Indigo Night text. Only for Coins actions.
+- **Secondary:** violet tint (brand at 12%) with a violet border at 45%; 22% and 80% on hover.
+- **Ghost:** Lilac Mist text, violet 15% fill on hover. **Danger:** red at 12% with a red border. **Link:** cyan with a cyan underline at 40%.
+- **Focus:** 2px cyan ring offset 2px from the night. **Pending:** inline spinner and `aria-busy`. Transitions 150ms on the expo ease-out.
+
+### Chips
+- **Filter chip:** 44px pill, surface at 70% with a hairline border, Lilac Mist text; active fills with the brand beam and white text. Sort chips are the 36px size.
+- **Fact chip (landing):** a pill tinted with its hue at 12%, a round icon tile inside; each states a real value from config or the tool registry, never an invented count.
+- **XP pill:** the XP beam with Indigo Night Mono text ("+20 XP"). **Coin pill:** Gold Wash with a gold border.
+
+### Cards / Containers
+- **Panel:** 23px radius, top-lit surface gradient, hairline border, panel shadow, 20px padding (24px from 640px). Ruled lists inside a panel split rows with hairlines.
+- **Brand frame:** a 1.5px violet-pink-orange gradient border around the panel fill; for the main action surface on a screen.
+- **Gold frame:** the same with gold into orange into pink; for Coins and rewards.
 
 ### Inputs / Fields
-- **Style:** 48px tall, Surface fill, hairline border, 12px radius, 16px text (no zoom on iOS).
-- **Focus:** the border brightens toward paper and a soft paper ring appears.
-- **Error:** red border with a red ring at 25%; the message below is announced politely. Label above in Soft Paper, hint below in Muted Slate.
-- **Select:** a native `<select>` styled like the input (48px, Surface, hairline, 12px radius) with a muted chevron drawn on the right. No custom dropdown.
-- **Checkbox:** a native checkbox (20px, `appearance: none`, Ink fill, brightened hairline border, 5px radius; checked fills with Paper and an Ink tick) inside a full-width label row that is at least 48px tall, Surface fill with a hairline border, so the whole row is the touch target.
-
-### Panels
-- **Corner Style:** 16px. **Background:** Surface on Ink. **Border:** hairline (the Card primitive uses the same hairline border). **Shadow:** none. **Padding:** 20px (24px from 640px).
-- Multi-stat panels split into cells with 1px hairline gaps, not separate cards.
+- **Style:** 48px, Deep Night at 60%, hairline border, 18.6px radius, 16px text.
+- **Hover / Focus:** violet border on hover; on focus a cyan border and a cyan ring. **Error:** red border and red ring at 25%.
+- Selects are native, styled like the input; the compare checkbox is native with a violet accent colour.
 
 ### Navigation
-- **Phone:** fixed bottom bar on Ink at 95% with a top hairline; icon over label; active is Paper with a heavier icon stroke, inactive is Muted Slate.
-- **Desktop:** header tabs, 44px tall; active tab gets a Raised fill. The in-page tabs primitive is also 44px tall.
-- **Public header:** text wordmark (Sora 700) and two text links, each 44px tall.
+- **Phone:** fixed bottom bar on Deep Night at 95% with a top hairline; the active tab turns its area hue and gains a pill-shaped hue wash with a glow behind the icon.
+- **Desktop:** header tabs are 40px pills with the icon in the area hue; the active tab takes a hue border and a hue wash.
+- **Public header:** wordmark, text links as pills, and a brand-beam "Open app" pill.
 
-### Coin Amount (signature)
-A Mono, tabular figure in gold, preceded by the Coin glyph (a milled rim and struck centre drawn to read at 12px) and followed by the unit in Inter at 0.75em. Pending Coins render in Muted Slate with the word "pending": they are not spendable yet. Sizes run from 0.875rem to 2.25rem.
+### Item Card (signature)
+A challenge as an item. A 2px rarity border, a radial wash of the rarity hue across the top, a rarity glow beneath; it lifts 4px with a brighter glow on hover or focus within. A rarity tab sits on the top edge (gem, rarity word, size). Inside: the firm name, a one-line program summary, a four-cell stat block (target, daily, max, split: each cell tinted in its own hue with a Mono value), the checkout price in large Mono with the list price struck through, the net price, a Coin pill when Coins apply, and the deal action at the foot.
 
-### Progress Ring (signature)
-Hairline track, round-capped arc. Gold for levels; positive, caution or danger for Guardian risk. Fills on mount over 700ms on the expo ease-out; instantly under reduced motion. On Today the level ring (56px, 6px stroke) is empty in the centre and sits beside the level name in gold and one Mono line of progress ("0 / 1,000 XP to Silver"); figures are not crammed inside the ring.
+### Level Badge and XP Bar (signature)
+A gold hexagon with the tier number in heavy Archivo, glowing orange. The XP bar is a recessed Deep Night track with a violet-to-cyan beam and a top highlight, filling over 700ms on the expo ease-out; the gold tone measures progress toward a reward in Coins.
+
+### Title Tile
+A 44px rounded tile tinted with the area hue (20% fill, 55% border, hue glow) leading each page title, so the tile tells you where you are.
 
 ### Streak Flame
-Outline in Muted Slate until the first check-in; lit is filled Warm Paper. The flame is a game mark, not a state, so it takes no state colour.
+Outline in Dusk Lilac until the day's check-in; lit, it burns pink into flame with a pink glow.
 
-### Empty State
-Dashed hairline, 16px radius, Sora title, a body at reading measure that says what will appear, and the next useful action.
+### Stamps
+Status that must not rely on colour alone is printed: the rotated dashed discount affix on a deal, the rotated DONE stamp on a cleared quest.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** read every colour, radius and font from the CSS variables in `globals.css`, so an admin theme applies everywhere.
+- **Do** keep the night indigo with the aurora and grid layers behind it, on every page.
+- **Do** use the brand beam for the one main action, and the gold button only for Coins actions.
+- **Do** derive rarity from account size only, and show it with the frame, tab and gem.
+- **Do** give each area its hue on its tab and title tile, and cycle hues across list tiles, leaving gold out.
 - **Do** set every figure in JetBrains Mono with the `tabular` utility.
+- **Do** print status as a stamp or word as well as a colour.
 - **Do** keep touch targets at 44px or larger (inputs 48px, bottom tabs 56px).
-- **Do** separate content with hairlines: one bordered panel with hairline gaps, or a ruled list.
-- **Do** design the empty, loading (skeleton in Raised) and error state of every screen.
-- **Do** keep motion to 150–300ms on the expo ease-out for controls; ring fills and count-ups may run longer, and all of it collapses under `prefers-reduced-motion`.
+- **Do** keep control motion to 150–200ms on the expo ease-out; bar fills run 700ms; all of it collapses under `prefers-reduced-motion`.
+- **Do** read every colour, radius and font from the variables in `globals.css`.
 
 ### Don't:
+- **Don't** use plain black or neutral grey grounds.
 - **Don't** use gold for anything except Coins, levels and rewards.
-- **Don't** use green, amber or red as decoration or as a call to action.
-- **Don't** fill the primary button with a colour; it is paper on ink.
-- **Don't** nest cards or give page surfaces drop shadows; the overlay shadow is for floating layers only.
-- **Don't** add a light theme or light sections; the product is dark-only.
+- **Don't** let commission, sponsorship or paid placement change a rarity, frame, glow or order.
+- **Don't** fill text with a gradient.
+- **Don't** show invented counts, live presence, "someone just bought" activity or resetting timers; the only live activity is the member's own.
+- **Don't** use green, amber or red as decoration or a call to action.
+- **Don't** frame ordinary panels; frames are for the key brand and Coins surfaces.
 - **Don't** hard-code hex values in components.
-- **Don't** build custom dropdowns or checkboxes; theme the native controls.

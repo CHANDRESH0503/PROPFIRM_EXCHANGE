@@ -14,23 +14,53 @@ export default defineConfig({
   fullyParallel: false,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
+  // Pages stream from the remote staging database; 10 s absorbs its latency under two workers.
+  expect: { timeout: 10_000 },
   reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : [["list"]],
   use: {
     baseURL: `http://localhost:${PORT}`,
     trace: "retain-on-failure",
+    // Journeys start with a recorded "essential only" choice so the cookie banner does not sit
+    // over the controls they exercise. tests/e2e/consent.spec.ts covers the banner itself.
+    storageState: {
+      cookies: [
+        {
+          name: "analytics_consent",
+          value: "denied",
+          domain: "localhost",
+          path: "/",
+          expires: -1,
+          httpOnly: false,
+          secure: false,
+          sameSite: "Lax",
+        },
+      ],
+      origins: [],
+    },
   },
   projects: [
     { name: "phone", use: { ...devices["Pixel 7"] } },
-    { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } } },
+    {
+      name: "desktop",
+      use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } },
+    },
   ],
   webServer: {
     // Test what ships: a production build, no hot reload to disturb navigation mid-test.
     command: `pnpm exec next build && pnpm exec next start --port ${PORT}`,
     url: `http://localhost:${PORT}/api/health`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 240_000,
-    // Only the mail sink is set here; everything else comes from .env.local (APP_ENV=local,
-    // no Resend key, no Turnstile secret, so verification and email stay local).
-    env: { DEV_MAIL_DIR: MAIL_DIR },
+    // Exercise the production build with local transports even when .env.local contains
+    // live email and CAPTCHA credentials for interactive testing.
+    env: {
+      APP_ENV: "local",
+      DEV_MAIL_DIR: MAIL_DIR,
+      NEXT_PUBLIC_SITE_URL: `http://localhost:${PORT}`,
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: "",
+      TURNSTILE_SECRET_KEY: "",
+      RESEND_API_KEY: "",
+      EMAIL_FROM: "",
+    },
   },
 });

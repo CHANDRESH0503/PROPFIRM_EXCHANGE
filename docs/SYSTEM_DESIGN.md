@@ -6,19 +6,20 @@
 
 | Task | State | What exists | What is left |
 |---|---|---|---|
-| S1 Version control | Owner | `.gitignore`, CI workflow ready | Owner initialises and pushes the repository; protect `main`, require CI |
-| S2 Backups | Not started | Supabase's own | Nightly encrypted dump to B2, restore drill |
-| S3 Environments and migrations | **Staging done** | Staging `fabiunrsxibmyjkfhfsd`: 2 migrations, drift 0; `pnpm db:status/migrate/types`; types generated | Production project; CI migration job |
+| S1 Version control | Repository initialized | Local repository with origin and CI workflow | Verify protected main and required checks on the remote |
+| S2 Backups | Implementation present | Encrypted dump and restore scripts, nightly GitHub workflow | Verify off-site retention and complete a restore drill |
+| S3 Environments and migrations | **Staging done** | Staging `fabiunrsxibmyjkfhfsd`: twelve migrations through 20261122000300; `pnpm db:status/migrate/types`; types generated | Production project and release-tag migration gate |
 | S4 Errors and uptime | Partly | Redacting JSON logger with request ids; `/api/health`, `/api/status` | Sentry with scrubbing; uptime monitors after deploy |
 | S5 Data rights | Not started | Profiles cascade on user delete | Export and deletion flows (Phase 1.8d) |
 | S6 Secrets | Documented | `docs/runbooks/secrets.md`; `.env.local` mode 600 | Production values on the VPS |
 | D1–D4 Deploy | **Written, not run** | Dockerfile, `deploy/vps/compose.yml`, Caddy block, `deploy.sh` with rollback, `docs/runbooks/deploy.md` | Run on the VPS once the domain exists |
 | B1 Rate-limit coverage | **Done** | Postgres limiter; `src/test/mutation-coverage.test.ts` fails on any unlimited action or route | — |
+| B2 Email delivery | Staging schema applied | Transactional waitlist outbox, leases, retry backoff, daily counters and signed suppression webhook | Install host timer and verify live Resend events after deployment |
 | B4 CSP | Partly | Full policy report-only; framing/plugins/base-uri enforced | Enforce after two clean weeks |
 | U1 Loading/error states | **Done in code** | Skeletons in every Suspense boundary, `error.tsx`, `global-error.tsx`, `not-found.tsx`, `forbidden.tsx` | Throttled 4G check |
 | U2 Forms | **Done in code** | Errors beside fields and announced, focus to error, `inputmode`/`autocomplete`, pending blocks double submit, works without JS | — |
 | Q0 CI | Done in code | Typecheck, lint, unit + DB tests, build, audit; e2e on staging | Runs once pushed |
-| Q1 Browser tests | **Partly** | 14 Playwright journeys (phone + desktop) with axe, against staging | Economy flow arrives with Phase 1 |
+| Q1 Browser tests | **Partly** | 16 Playwright cases (phone + desktop) with axe against staging, including notification preferences and MFA-gated inventory. A local database scenario reconciles buyer and referral wallets after voucher redemption | Playwright claim-to-redemption journey |
 
 Update this table as tasks land. `docs/PROGRESS.md` tracks product phases; this table tracks production readiness.
 

@@ -15,8 +15,14 @@ test.describe("waitlist", () => {
     await expect(page.getByRole("contentinfo")).toContainText(/earns a commission/i);
     await expect(page.getByText("2,025").first()).toBeAttached();
 
-    const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag22aa"]).analyze();
-    expect(results.violations.map((v) => `${v.id}: ${v.nodes.length}`)).toEqual([]);
+    const results = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag22aa"])
+      .analyze();
+    expect(
+      results.violations.flatMap((v) =>
+        v.nodes.map((n) => `${v.id}: ${n.target.join(" ")} ${n.failureSummary ?? ""}`),
+      ),
+    ).toEqual([]);
   });
 
   test("join → confirm by email → see place and referral link", async ({ page }) => {

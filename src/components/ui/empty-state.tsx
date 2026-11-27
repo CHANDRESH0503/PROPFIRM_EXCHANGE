@@ -18,7 +18,12 @@ export function EmptyState({
   className?: string;
 }) {
   return (
-    <div className={cn("flex flex-col items-start gap-3 rounded-xl border border-dashed border-hairline px-5 py-6", className)}>
+    <div
+      className={cn(
+        "flex flex-col items-start gap-3 rounded-xl border border-dashed border-hairline px-5 py-6",
+        className,
+      )}
+    >
       {icon ? <div className="text-muted-foreground [&_svg]:size-6">{icon}</div> : null}
       <div className="space-y-1">
         <p className="font-heading text-base font-semibold text-foreground">{title}</p>

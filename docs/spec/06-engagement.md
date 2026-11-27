@@ -2,6 +2,8 @@
 
 Part of the project brief. The rules in `/CLAUDE.md` §2 override anything here.
 
+**Implementation status, 22 November 2026.** Local-day check-ins, automatic freezes, milestone boosters, initial missions, reward goals on Today and earned badges on Profile are implemented. The full mission pool, reminders and Guardian integration remain open.
+
 
 The goal is a daily habit that never depends on spending. Build it as one connected loop.
 
@@ -22,7 +24,9 @@ The goal is a daily habit that never depends on spending. Build it as one connec
 
 **Seasons and leaderboards.** A season lasts 90 days and has a theme, a banner and a season badge. Leaderboards (weekly and season) rank engagement XP plus milestone XP. Purchase XP is excluded so the board cannot be bought. Users choose a public display name and can opt out. Prizes are firm-donated challenges recorded as a funded campaign.
 
-**Referrals.** Each user has a link and a code. The referrer is paid when the friend's first purchase is confirmed, never at sign-up. One level only; no multi-level payouts.
+**Referrals.** Member invite links and codes are available on Profile. Sign-in supports manual entry and invite-link prefill for email and Google. Purchase confirmation retries and subsequent purchases are covered by the database regression test in `supabase/tests/core-loop.test.ts`.
+
+Each user has a link and a code. The referrer is paid when the friend's first purchase is confirmed, never at sign-up. One level only; no multi-level payouts.
 
 **Community contributions.** "Report a change" on any firm page (price, rule, payout policy) with a source link. Admin accepts or rejects. Accepted reports update the firm's change history and pay XP. A weekly one-question poll (for example, which firm to add next) pays a small amount of XP.
 
